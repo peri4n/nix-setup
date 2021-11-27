@@ -8,12 +8,19 @@
   home.homeDirectory = "/home/fbull";
 
   home.packages = [
+    pkgs.dunst
     pkgs.git
     pkgs.gh
-    pkgs.tmux
-    pkgs.stack
     pkgs.haskell-language-server
+    pkgs.neovim
+    pkgs.rtorrent
+    pkgs.stack
+    pkgs.tmux
+    pkgs.tree
+    pkgs.youtube-dl
   ];
+
+  nixpkgs.config.allowUnfree = true;
 
   home.stateVersion = "21.11";
 
