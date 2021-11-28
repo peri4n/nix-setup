@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./programs/bat.nix
     ./programs/tmux.nix
     ./programs/git.nix
 
@@ -15,6 +16,7 @@
   home.homeDirectory = "/home/fbull";
 
   home.packages = [
+    pkgs.bat
     pkgs.dunst
     pkgs.git
     pkgs.gh
