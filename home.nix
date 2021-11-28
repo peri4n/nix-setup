@@ -6,6 +6,7 @@
     ./programs/git.nix
 
     ./services/dunst.nix
+    ./services/redshift.nix
   ];
 
   programs.home-manager.enable = true;
