@@ -1,0 +1,76 @@
+{ config, pkgs, lib, ... }:
+
+{
+  programs.tmux = {
+    enable = true;
+    shortcut = "a";
+    keyMode = "vi";
+    terminal = "tmux-256color";
+    escapeTime = 0;
+    historyLimit = 3000;
+    shell = "${pkgs.zsh}/bin/zsh";
+    plugins = with pkgs.tmuxPlugins; [
+      open
+      yank
+      {
+        plugin = copycat;
+        extraConfig = ''
+          set -g @copycat_search_m "\b[0-9a-f]{5,40}\b"
+        '';
+      }
+      {
+        plugin = dracula;
+        extraConfig = ''
+          set -g @dracula-show-left-icon session
+          set -g @dracula-plugins "time"
+        '';
+      }
+    ];
+    extraConfig = ''
+      # split panes using | and -
+      bind "|" split-window -h
+      bind "-" split-window -v
+
+      bind-key -n M-H resize-pane -L 10
+      bind-key -n M-J resize-pane -D 10
+      bind-key -n M-K resize-pane -U 10
+      bind-key -n M-L resize-pane -R 10
+
+      bind-key -n M-h select-pane -L
+      bind-key -n M-j select-pane -D
+      bind-key -n M-k select-pane -U
+      bind-key -n M-l select-pane -R
+
+      bind-key -n C-S-Left swap-window -t -1
+      bind-key -n C-S-Right swap-window -t +1
+
+      bind -n M-. previous-window
+      bind -n M-/ next-window
+
+      # new windows have the same working directory as the previous ones
+      bind c new-window -c "#{pane_current_path}"
+
+      set-option -g mouse on
+
+      # Highlight active window.
+      set-window-option -g window-status-current-style bg="#ff8080",fg=white
+
+      # Automatically renumber window numbers on closing a pane
+      set -g renumber-windows on
+
+      set -g focus-events on
+
+      # Mark if a bell is sind in a window
+      set -w -g window-status-bell-style bg=colour236,fg=magenta
+
+      set -w -g visual-bell off
+      set -w -g bell-action other # only notify when not in current window
+
+      # Copy mode settings
+      unbind p
+      bind p paste-buffer
+      bind -Tcopy-mode v send -X begin-selection
+      bind -Tcopy-mode y send -X copy-selection
+    '';
+  };
+}
