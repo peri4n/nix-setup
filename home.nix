@@ -2,8 +2,10 @@
 
 {
   imports = [
-    ./tmux.nix
-    ./git.nix
+    ./programs/tmux.nix
+    ./programs/git.nix
+
+    ./services/dunst.nix
   ];
 
   programs.home-manager.enable = true;
