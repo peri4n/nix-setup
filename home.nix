@@ -5,6 +5,7 @@
     ./programs/bat.nix
     ./programs/tmux.nix
     ./programs/git.nix
+    ./programs/st/st.nix
 
     ./services/dunst.nix
     ./services/redshift.nix
@@ -15,19 +16,19 @@
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
 
-  home.packages = [
-    pkgs.bat
-    pkgs.dunst
-    pkgs.git
-    pkgs.gh
-    pkgs.haskell-language-server
-    pkgs.neovim
-    pkgs.rtorrent
-    pkgs.stack
-    pkgs.tmux
-    pkgs.tree
-    pkgs.youtube-dl
-    pkgs.zsh
+  home.packages = with pkgs; [
+    bat
+    dunst
+    git
+    gh
+    haskell-language-server
+    neovim
+    rtorrent
+    stack
+    tmux
+    tree
+    youtube-dl
+    zsh
   ];
 
   nixpkgs.config.allowUnfree = true;
