@@ -15,6 +15,12 @@
       core = {
         editor = "nvim";
         autocrlf = "input";
+        pager = "delta";
+      };
+      delta = {
+        dark = true;
+        line-numbers = true;
+        side-by-side = true;
       };
       init = {
         defaultBranch = "main";
