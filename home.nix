@@ -6,6 +6,7 @@
     ./programs/tmux.nix
     ./programs/git.nix
     ./programs/st/st.nix
+    ./programs/dmenu/dmenu.nix
 
     ./services/dunst.nix
     ./services/redshift.nix
