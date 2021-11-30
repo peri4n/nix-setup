@@ -7,6 +7,7 @@
     ./programs/git.nix
     ./programs/st/st.nix
     ./programs/dmenu/dmenu.nix
+    ./programs/xmobar.nix
 
     ./services/dunst.nix
     ./services/redshift.nix
