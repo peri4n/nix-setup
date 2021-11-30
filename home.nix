@@ -36,4 +36,10 @@
   nixpkgs.config.allowUnfree = true;
 
   home.stateVersion = "21.11";
+
+  services = {
+    clipmenu = {
+      enable = true;
+    };
+  };
 }
