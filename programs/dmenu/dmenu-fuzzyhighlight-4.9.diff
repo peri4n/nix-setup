@@ -6,7 +6,7 @@ diff -upN dmenu-4.9/config.def.h dmenu-4.9-fuzzyhighlight/config.def.h
 +++ dmenu-4.9-fuzzyhighlight/config.def.h	2020-04-04 10:26:36.990890854 +0200
 @@ -11,6 +11,8 @@ static const char *colors[SchemeLast][2]
  	/*     fg         bg       */
- 	[SchemeNorm] = { "#f8f8f2", "#44475a" },
+ 	[SchemeNorm] = { "#f8f8f2", "#282a36" },
  	[SchemeSel] = { "#bd93f9", "#44475a" },
 +	[SchemeSelHighlight] = { "#ffb86c", "#44475a" },
 +	[SchemeNormHighlight] = { "#ffb86c", "#44475a" },
