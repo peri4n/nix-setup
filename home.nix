@@ -24,15 +24,18 @@
     dunst
     git
     gh
-    haskell-language-server
     neovim
     rtorrent
-    rnix-lsp
     stack
     tmux
     tree
     youtube-dl
     zsh
+
+    # language servers
+    rust-analyzer
+    rnix-lsp
+    haskell-language-server
   ];
 
   nixpkgs.config.allowUnfree = true;
