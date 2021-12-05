@@ -27,6 +27,7 @@
     haskell-language-server
     neovim
     rtorrent
+    rnix-lsp
     stack
     tmux
     tree
