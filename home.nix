@@ -32,7 +32,6 @@
     htop
     jq
     maim
-    neovim
     rtorrent
     ripgrep
     rustup
