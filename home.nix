@@ -19,17 +19,30 @@
   home.homeDirectory = "/home/fbull";
 
   home.packages = with pkgs; [
+    aspell
+    aspellDicts.de
     bat
     delta
     dunst
+    feh
+    fzf
     git
     gh
+    gnupg
+    htop
+    jq
+    maim
     neovim
     rtorrent
+    ripgrep
+    rustup
+    sqlite
     stack
     tmux
     tree
+    unzip
     youtube-dl
+    zathura
     zsh
 
     # language servers
