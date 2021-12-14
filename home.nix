@@ -7,6 +7,7 @@
     ./programs/git.nix
     ./programs/st/st.nix
     ./programs/dmenu/dmenu.nix
+    ./programs/nvim/nvim.nix
     ./programs/xmobar.nix
 
     ./services/dunst.nix
@@ -48,6 +49,7 @@
     rust-analyzer
     rnix-lsp
     haskell-language-server
+    sumneko-lua-language-server
   ];
 
   nixpkgs.config.allowUnfree = true;
