@@ -33,6 +33,7 @@
     htop
     jq
     maim
+    nodejs
     rtorrent
     ripgrep
     rustup
@@ -40,6 +41,7 @@
     stack
     tmux
     tree
+    tree-sitter
     unzip
     youtube-dl
     zathura
@@ -50,6 +52,8 @@
     rnix-lsp
     haskell-language-server
     sumneko-lua-language-server
+    nixpkgs-fmt
+    luaformatter
   ];
 
   nixpkgs.config.allowUnfree = true;
