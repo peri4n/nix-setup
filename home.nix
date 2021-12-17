@@ -54,6 +54,7 @@
     sumneko-lua-language-server
     nixpkgs-fmt
     luaformatter
+    nodePackages.typescript-language-server
   ];
 
   nixpkgs.config.allowUnfree = true;

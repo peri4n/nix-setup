@@ -25,7 +25,7 @@ in
     plugins = with pkgs.vimPlugins; [
       dracula-theme
       fzf-vim
-      nvim-treesitter
+      (nvim-treesitter.withPlugins (p: pkgs.tree-sitter.allGrammars))
       nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
