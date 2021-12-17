@@ -15,6 +15,7 @@
           url = "https://st.suckless.org/patches/copyurl/st-copyurl-0.8.4.diff";
           sha256 = "03gcc6c2jczk5zi17bfrrv3scf4lyvc7a8apk8pmlf1k1ibqy23a";
         })
+        ./st-openclipboard-20210802-2ec571.diff
         (fetchpatch {
           url = "https://st.suckless.org/patches/clipboard/st-clipboard-0.8.3.diff";
           sha256 = "1h1nwilwws02h2lnxzmrzr69lyh6pwsym21hvalp9kmbacwy6p0g";
