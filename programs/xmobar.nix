@@ -9,7 +9,7 @@
       orange = "#ffb86c";
       purple = "#bd93f9";
     in ''
-      Config { font = "xft:JetBrains Mono Light-10"
+      Config { font = "xft:Fira Code Light-10"
              , additionalFonts = []
              , borderColor = "black"
              , border = TopB

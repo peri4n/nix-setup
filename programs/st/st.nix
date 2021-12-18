@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    jetbrains-mono
+    fira-code
     (st.overrideAttrs (oldAttrs: rec {
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       patches = [

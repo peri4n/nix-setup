@@ -46,7 +46,7 @@ in
           separator_color = "frame";
 
           # Text
-          font = "JetBrains Mono 10";
+          font = "Fira Code 10";
           line_height = 0;
           markup = "full";
           format = "%s %p\n%b";
