@@ -38,7 +38,6 @@
     ripgrep
     rustup
     sqlite
-    stack
     tmux
     tree
     tree-sitter
@@ -47,10 +46,11 @@
     zathura
     zsh
 
-    # language servers
+    # Haskell
+    haskell-language-server
+
     rust-analyzer
     rnix-lsp
-    haskell-language-server
     sumneko-lua-language-server
     nixpkgs-fmt
     luaformatter
