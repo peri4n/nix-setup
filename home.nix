@@ -48,6 +48,7 @@
 
     # Haskell
     haskell-language-server
+    cabal2nix
 
     rust-analyzer
     rnix-lsp
