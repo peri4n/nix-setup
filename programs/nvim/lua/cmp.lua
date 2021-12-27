@@ -2,6 +2,11 @@
 local cmp = require 'cmp'
 
 cmp.setup({
+   snippet = {
+      expand = function(args)
+        vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
+    },
   mapping = {
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
@@ -12,7 +17,7 @@ cmp.setup({
     -- Set `select` to `false` to only confirm explicitly selected items.
     ['<CR>'] = cmp.mapping.confirm({select = true})
   },
-  sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'buffer'}})
+  sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'buffer'}, {name = 'ultisnips'}})
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).

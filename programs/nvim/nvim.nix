@@ -10,6 +10,17 @@ let
       sha256 = "Tmxb7xiDKz+swLV/B5a1/kGlOkdxKCo/XJBf4o8SsFg=";
     };
   };
+  cmp-nvim-ultisnips = (pkgs.vimUtils.buildVimPlugin {
+    name = "cmp=nvim-ultisnips";
+    src = pkgs.fetchFromGitHub {
+      owner = "quangnguyen30192";
+      repo = "cmp-nvim-ultisnips";
+      rev = "79fd645096c406fb41b38ef4dd99525965b446b1";
+      sha256 = "7Hu7H5Q7XgqgMFkFLRkwqDen6535h83KnsCHsfd1yas=";
+    };
+  }).overrideAttrs (oldAttrs: rec {
+      buildInputs = [ pkgs.lua53Packages.luacheck ];
+  });
 in
 {
   programs.neovim = {
@@ -48,6 +59,9 @@ in
       vim-unimpaired
       vim-surround
 
+      ultisnips
+      cmp-nvim-ultisnips
+      vim-snippets
     ];
   };
 
