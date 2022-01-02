@@ -11,7 +11,7 @@ let
     };
   };
   cmp-nvim-ultisnips = (pkgs.vimUtils.buildVimPlugin {
-    name = "cmp=nvim-ultisnips";
+    name = "cmp-nvim-ultisnips";
     src = pkgs.fetchFromGitHub {
       owner = "quangnguyen30192";
       repo = "cmp-nvim-ultisnips";
