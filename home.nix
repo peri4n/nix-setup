@@ -73,4 +73,18 @@
   };
 
   fonts.fontconfig.enable = true;
+
+  xdg.enable = true;
+  xdg.mime.enable = true;
+  xdg.mimeApps.enable = true;
+  xdg.mimeApps.defaultApplications = {
+    "application/pdf" = [ "zathura.desktop" ];
+  };
+
+  programs.zathura = {
+    enable = true;
+    extraConfig = ''
+      set selection-clipboard clipboard
+    '';
+  };
 }
