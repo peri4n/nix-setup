@@ -38,6 +38,7 @@
     ripgrep
     rustup
     sqlite
+    syncthing
     tmux
     tree
     tree-sitter
@@ -64,6 +65,9 @@
 
   services = {
     clipmenu = {
+      enable = true;
+    };
+    syncthing = {
       enable = true;
     };
   };
