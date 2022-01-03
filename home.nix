@@ -9,6 +9,7 @@
     ./programs/dmenu/dmenu.nix
     ./programs/nvim/nvim.nix
     ./programs/xmobar.nix
+    ./programs/zathura.nix
 
     ./services/dunst.nix
     ./services/redshift.nix
@@ -36,7 +37,6 @@
     nodejs
     rtorrent
     ripgrep
-    rustup
     sqlite
     syncthing
     tmux
@@ -51,11 +51,19 @@
     haskell-language-server
     cabal2nix
 
+    # Rust
     rust-analyzer
+    rustup
+
+    # Nix
     rnix-lsp
-    sumneko-lua-language-server
     nixpkgs-fmt
+
+    # Lua
+    sumneko-lua-language-server
     luaformatter
+
+    # Typescript
     nodePackages.typescript-language-server
   ];
 
@@ -74,17 +82,14 @@
 
   fonts.fontconfig.enable = true;
 
-  xdg.enable = true;
-  xdg.mime.enable = true;
-  xdg.mimeApps.enable = true;
-  xdg.mimeApps.defaultApplications = {
-    "application/pdf" = [ "zathura.desktop" ];
-  };
-
-  programs.zathura = {
+  xdg = {
     enable = true;
-    extraConfig = ''
-      set selection-clipboard clipboard
-    '';
+    mime.enable = true;
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+          "application/pdf" = [ "zathura.desktop" ];
+        };
+    };
   };
 }
