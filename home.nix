@@ -10,6 +10,7 @@
     ./programs/nvim/nvim.nix
     ./programs/xmobar.nix
     ./programs/zathura.nix
+    ./programs/zsh/zsh.nix
 
     ./services/dunst.nix
     ./services/redshift.nix

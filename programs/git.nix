@@ -38,5 +38,30 @@
         enabled = true;
       };
     };
+    aliases = {
+      a = "add";
+      aa = "add --all";
+      b = "branch";
+      c = "commit -v";
+      can = "commit --amend --no-edit";
+      cb = "checkout -b";
+      co = "checkout";
+      cm = "checkout master";
+      cd = "checkout dev";
+      cp = "cherry-pick";
+      cpa = "cherry-pick --abort";
+      cpc = "cherry-pick --continue";
+      d = "diff";
+      ds = "diff --staged";
+      f = "fetch";
+      pl = "pull --ff-only";
+      lr = "pull --rebase";
+      lg = "log --pretty=format:'%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]' --decorate --date=relative";
+      ll = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      ls = "log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat";
+      ph = "push";
+      st = "status --short --branch";
+      rc = "rev-parse HEAD | tr -d '\n' | xsel";
+    };
   };
 }
