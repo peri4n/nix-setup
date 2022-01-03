@@ -7,6 +7,7 @@
     ./programs/git.nix
     ./programs/st/st.nix
     ./programs/dmenu/dmenu.nix
+    ./programs/dircolors.nix
     ./programs/nvim/nvim.nix
     ./programs/xmobar.nix
     ./programs/zathura.nix
