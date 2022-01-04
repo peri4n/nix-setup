@@ -22,8 +22,8 @@ with builtins;
 
     sessionVariables = { 
       EDITOR = "nvim";
-      XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
       GPG_TTY = "$(tty)";
+      NIX_PATH = "$NIX_PATH:$HOME/.nix-defexpr/channels";
 
       # FZF
       FZF_CTRL_T_OPTS = "--preview 'bat --style=numbers --color=always --line-range :500 {}'";
