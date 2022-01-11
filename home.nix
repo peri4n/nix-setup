@@ -28,6 +28,7 @@
     bat
     delta
     dunst
+    entr
     feh
     fzf
     git
