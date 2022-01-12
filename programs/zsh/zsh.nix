@@ -23,7 +23,6 @@ with builtins;
     sessionVariables = { 
       EDITOR = "nvim";
       GPG_TTY = "$(tty)";
-      NIX_PATH = "$NIX_PATH:$HOME/.nix-defexpr/channels";
 
       # FZF
       FZF_CTRL_T_OPTS = "--preview 'bat --style=numbers --color=always --line-range :500 {}'";
@@ -31,6 +30,9 @@ with builtins;
 
       # NNN
       NNN_BMS = "n:~/docs/notes/;D:~/downloads/";
+
+      # XDG
+      XDG_DATA_DIRS = "$HOME/.nix-profile/share";
     };
 
     initExtraBeforeCompInit = ''
@@ -72,7 +74,7 @@ with builtins;
 
       # ================ Functions ====================
       mcd () {
-          mkdir "$1" && cd "$1"
+          mkdir -p "$1" && cd "$1"
       }
     '';
 
