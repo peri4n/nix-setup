@@ -37,7 +37,16 @@ in
     plugins = with pkgs.vimPlugins; [
       dracula-theme
       fzf-vim
-      (nvim-treesitter.withPlugins (p: pkgs.tree-sitter.allGrammars))
+      (nvim-treesitter.withPlugins (p: [
+        pkgs.tree-sitter-grammars.tree-sitter-javascript
+        pkgs.tree-sitter-grammars.tree-sitter-typescript
+        pkgs.tree-sitter-grammars.tree-sitter-haskell
+        pkgs.tree-sitter-grammars.tree-sitter-java
+        pkgs.tree-sitter-grammars.tree-sitter-python
+        pkgs.tree-sitter-grammars.tree-sitter-rust
+        pkgs.tree-sitter-grammars.tree-sitter-scala
+        pkgs.tree-sitter-grammars.tree-sitter-lua
+      ]))
       nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
