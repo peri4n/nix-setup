@@ -9,6 +9,7 @@
     escapeTime = 0;
     historyLimit = 3000;
     shell = "${pkgs.zsh}/bin/zsh";
+    secureSocket = false;
     plugins = with pkgs.tmuxPlugins; [
       open
       yank
