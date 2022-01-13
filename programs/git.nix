@@ -21,6 +21,7 @@
         dark = true;
         line-numbers = true;
         side-by-side = true;
+        syntax-theme = "Dracula";
       };
       init = {
         defaultBranch = "main";
