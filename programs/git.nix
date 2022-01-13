@@ -43,6 +43,7 @@
       aa = "add --all";
       b = "branch";
       c = "commit -v";
+      ca = "commit --amend";
       can = "commit --amend --no-edit";
       cb = "checkout -b";
       co = "checkout";
@@ -55,12 +56,14 @@
       ds = "diff --staged";
       f = "fetch";
       pl = "pull --ff-only";
-      lr = "pull --rebase";
-      lg = "log --pretty=format:'%C(yellow)%h %ad%Cred%d %Creset%s%Cblue [%cn]' --decorate --date=relative";
+      plr = "pull --rebase";
       ll = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       ls = "log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat";
       ph = "push";
-      st = "status --short --branch";
+      s = "status --short --branch";
+      st = "stash";
+      stl = "stash list";
+      stp = "stash pop";
       rc = "rev-parse HEAD | tr -d '\n' | xsel";
     };
   };
