@@ -46,6 +46,7 @@ in
         pkgs.tree-sitter-grammars.tree-sitter-rust
         pkgs.tree-sitter-grammars.tree-sitter-scala
         pkgs.tree-sitter-grammars.tree-sitter-lua
+        pkgs.tree-sitter-grammars.tree-sitter-nix
       ]))
       nvim-lspconfig
       nvim-cmp
