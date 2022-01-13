@@ -6,6 +6,7 @@
     ./programs/tmux.nix
     ./programs/git.nix
     ./programs/st/st.nix
+    ./programs/fzf.nix
     ./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
     ./programs/nvim/nvim.nix
