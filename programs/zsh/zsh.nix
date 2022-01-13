@@ -92,6 +92,9 @@ with builtins;
       tn = "tmux new-session";
       ta = "tmux attach";
       tl = "tmux list-sessions";
+
+      # Docker
+      d = "docker";
     };
 
     shellGlobalAliases  =  {
@@ -103,6 +106,7 @@ with builtins;
       dl = "$HOME/downloads";
       dap = "$HOME/work/repos/dap/master";
       eur = "$HOME/work/repos/europa";
+      nix = "$HOME/.config/nixpkgs/";
     };
 
     plugins = [ 
