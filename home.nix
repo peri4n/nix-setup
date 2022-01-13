@@ -9,6 +9,7 @@
     ./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
     ./programs/nvim/nvim.nix
+    ./programs/nnn.nix
     ./programs/xmobar.nix
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
