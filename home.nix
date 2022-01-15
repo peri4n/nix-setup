@@ -12,6 +12,7 @@
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
     ./programs/nnn.nix
+    ./programs/readline.nix
     ./programs/xmobar.nix
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
