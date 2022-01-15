@@ -9,6 +9,7 @@
     ./programs/fzf.nix
     ./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
+    ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
     ./programs/nnn.nix
     ./programs/xmobar.nix
