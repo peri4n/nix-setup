@@ -54,6 +54,7 @@
     tree
     tree-sitter
     unzip
+    (vivaldi.override { proprietaryCodecs = true; })
     youtube-dl
     zathura
     zsh
