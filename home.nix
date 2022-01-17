@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./programs/autorandr.nix
     ./programs/bat.nix
     ./programs/tmux.nix
     ./programs/git.nix
@@ -29,6 +30,7 @@
   targets.genericLinux.enable = true;
 
   home.packages = with pkgs; [
+    autorandr
     aspell
     aspellDicts.de
     bat
