@@ -61,6 +61,7 @@
       ll = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       ls = "log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat";
       ph = "push";
+      phf = "push -f";
       s = "status --short --branch";
       st = "stash";
       stl = "stash list";
