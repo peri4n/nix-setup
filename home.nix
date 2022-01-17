@@ -27,6 +27,12 @@
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
 
+  home.keyboard = {
+    layout = "us";
+    variant = "colemak";
+    options = ["ctrl:nocaps" "compose:ralt"];
+  };
+
   targets.genericLinux.enable = true;
 
   home.packages = with pkgs; [
