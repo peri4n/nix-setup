@@ -1,5 +1,7 @@
 { config, pkgs, lib, ... }:
-
+let
+  my-xmonad = pkgs.callPackage ./programs/xmonad.nix {};
+in
 {
   imports = [
     ./programs/autorandr.nix
@@ -17,7 +19,6 @@
     ./programs/xmobar.nix
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
-
     ./services/dunst.nix
     ./services/redshift.nix
   ];
@@ -61,6 +62,7 @@
     tree-sitter
     unzip
     (vivaldi.override { proprietaryCodecs = true; })
+    my-xmonad
     youtube-dl
     zathura
     zsh
@@ -116,4 +118,14 @@
         };
     };
   };
+
+  xsession = {
+    enable = true;
+    windowManager.command = "${my-xmonad}/bin/wm-exe";
+  };
+
+  home.file.".xinitrc".source = ./xinitrc;
+
+
 }
+
