@@ -14,18 +14,39 @@ let
     "1010101010101010101010101010101ac3780a070383e403020350058c2100000180000000000" +
     "00000000000000000000000000000000fe00544b365237804c513135364d31000000000002410" +
     "328001200000a010a2020002b";
+  officeLeftScreen =
+    "00ffffffffffff0010aca4a04c3734370f19010380351e78ee7e75a755529c270f5054a54b007" +
+    "14f8180a9c0a940d1c0010101010101023a801871382d40582c45000f282100001e000000ff00" +
+    "33343135583534393734374c0a000000fc0044454c4c205532343134480a20000000fd00384c1" +
+    "e5311000a20202020202001de02031ff14c9005040302071601141f12132309070765030c0010" +
+    "0083010000023a801871382d40582c45000f282100001e011d8018711c1620582c25000f28210" +
+    "0009e011d007251d01e206e2855000f282100001e8c0ad08a20e02d10103e96000f2821000018" +
+    "00000000000000000000000000000000000000000000000037";
+  officeRightScreen =
+    "00ffffffffffff0010aca2a04c31573018190104a5351e783e7e75a755529c270f5054a54b007" +
+    "14f8180a9c0a940d1c0010101010101023a801871382d40582c45000f282100001e000000ff00" +
+    "33343135583536423057314c0a000000fc0044454c4c205532343134480a20000000fd00384c1" +
+    "e5311000a202020202020012a020319f14c9005040302071601141f1213230907078301000002" +
+    "3a801871382d40582c45000f282100001e011d8018711c1620582c25000f282100009e011d007" +
+    "251d01e206e2855000f282100001e8c0ad08a20e02d10103e96000f2821000018000000000000" +
+    "000000000000000000000000000000000000000000000000c1";
+  screens = {
+    DP-1 = homeScreen;
+    eDP-1 = laptopScreen;
+    DP-1-1 = officeLeftScreen;
+    DP-1-2 = officeRightScreen;
+  };
 in
 {
   programs.autorandr = {
     enable = true;
     profiles = {
       laptop = {
-        fingerprint = {
-          DP-1 = homeScreen;
-          eDP-1 = laptopScreen;
-        };
+        fingerprint = screens;
         config = {
-          DB-1.enable = false;
+          DP-1.enable = false;
+          DP-1-1.enable = false;
+          DP-1-2.enable = false;
           eDP-1 = {
             enable = true;
             primary = true;
@@ -36,13 +57,12 @@ in
           };
         };
       };
-      home = { 
-        fingerprint = {
-          DP-1 = homeScreen;
-          eDP-1 = laptopScreen;
-        };
+      home = {
+        fingerprint = screens;
         config = {
           eDB-1.enable = false;
+          DP-1-1.enable = false;
+          DP-1-2.enable = false;
           DP-1 = {
             enable = true;
             primary = true;
@@ -50,6 +70,29 @@ in
             mode = "3440x1440";
             position = "0x0";
             rate = "49.99";
+          };
+        };
+      };
+      office = {
+        fingerprint = screens;
+        config = {
+          eDB-1.enable = false;
+          DP-1.enable = false;
+          DP-1-1 = {
+            enable = true;
+            crtc = 1;
+            gamma = "1.0:0.909:0.833";
+            mode = "1920x1080";
+            position = "0x0";
+            rate = "60.00";
+          };
+          DP-1-2 = {
+            enable = true;
+            crtc = 2;
+            gamma = "1.0:0.909:0.833";
+            mode = "1920x1080";
+            position = "1920x0";
+            rate = "60.00";
           };
         };
       };
