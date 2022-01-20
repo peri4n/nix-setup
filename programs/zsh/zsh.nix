@@ -55,8 +55,6 @@ with builtins;
     shellAliases = { 
       # utility
       v = "nvim";
-      l = "ls -lh --color --group-directories-first";
-      ll = "ls -Alh --color --group-directories-first";
       gw = "./gradlew";
       gwi = "./gradlew -i";
       g = "git";
@@ -81,6 +79,10 @@ with builtins;
 
       # Docker
       d = "docker";
+
+      # exa
+      l = "exa -l --git --group-directories-first";
+      la = "exa -la --git --group-directories-first";
     };
 
     shellGlobalAliases  =  {

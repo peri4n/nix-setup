@@ -6,6 +6,7 @@ in
   imports = [
     ./programs/autorandr.nix
     ./programs/bat.nix
+    ./programs/exa.nix
     ./programs/tmux.nix
     ./programs/git.nix
     ./programs/st/st.nix
