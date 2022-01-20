@@ -43,20 +43,6 @@ with builtins;
     '';
     
     initExtra = ''
-      # Set normal mode timout to 0.1s
-      export KEYTIMEOUT=1
-
-      # ================ Prompt ====================
-      function zle-line-init zle-keymap-select {
-          PROMPT_NORMAL="%F{magenta}%(!.#.$) %f%F{cyan}%c%f "
-          PROMPT_INS="%F{yellow}%(!.#.$) %f%F{cyan}%c%f "
-          PROMPT="''${''${KEYMAP/vicmd/$PROMPT_NORMAL}/(main|viins)/$PROMPT_INS}$EPS1"
-          zle reset-prompt
-      }
-
-      zle -N zle-line-init
-      zle -N zle-keymap-select
-
       bindkey '^ ' autosuggest-accept
       bindkey '^[^M' autosuggest-execute # Ctrl-Enter
 

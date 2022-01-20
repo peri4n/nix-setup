@@ -16,6 +16,7 @@ in
     ./programs/nvim/nvim.nix
     ./programs/nnn.nix
     ./programs/readline.nix
+    ./programs/starship.nix
     ./programs/xmobar.nix
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
