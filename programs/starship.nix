@@ -15,6 +15,9 @@
         error_symbol = "[λ](red)";
         vicmd_symbol = "[λ](blue)";
       };
+      directory = {
+        style = "cyan";
+      };
     };
   };
 }
