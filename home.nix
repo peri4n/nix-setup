@@ -19,7 +19,9 @@ in
     ./programs/xmobar.nix
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
+
     ./services/dunst.nix
+    ./services/picom.nix
     ./services/redshift.nix
   ];
 

@@ -34,7 +34,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 setxkbmap -variant colemak -option ctrl:nocaps -option compose:ralt
-picom -b
 ~/.fehbg &
 
 exec wm-exe
