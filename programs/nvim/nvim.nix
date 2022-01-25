@@ -65,6 +65,7 @@ in
       vim-gitgutter
       vim-eunuch
       vim-javascript
+      vim-markdown
       vim-fugitive
       vim-unimpaired
       vim-surround
