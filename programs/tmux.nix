@@ -24,6 +24,7 @@
         extraConfig = ''
           set -g @dracula-show-left-icon session
           set -g @dracula-plugins "time"
+          set -g @dracula-border-contrast true
         '';
       }
     ];
@@ -52,9 +53,6 @@
       bind c new-window -c "#{pane_current_path}"
 
       set-option -g mouse on
-
-      # Highlight active window.
-      set-window-option -g window-status-current-style bg="#ff8080",fg=white
 
       # Automatically renumber window numbers on closing a pane
       set -g renumber-windows on
