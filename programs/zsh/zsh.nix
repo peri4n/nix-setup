@@ -69,6 +69,9 @@ with builtins;
       "...." = "cd ../../..";
       "....." = "cd ../../../..";
 
+      # ripgrep
+      rga = "rg --hidden";
+
       # search
       ff = "find . -type f -name";
 
