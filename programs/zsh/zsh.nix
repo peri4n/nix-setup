@@ -60,7 +60,6 @@ with builtins;
       g = "git";
       mkdir = "mkdir -pv";
       hm = "home-manager";
-      sc = "systemctl";
       o = "xdg-open";
       e = "exit";
 
@@ -86,6 +85,12 @@ with builtins;
       # exa
       l = "exa -l --git --group-directories-first";
       la = "exa -la --git --group-directories-first";
+
+      # systemd
+      sc = "systemctl";
+      scu = "systemctl --user";
+      scus = "systemctl --user start";
+      scut = "systemctl --user stop";
     };
 
     shellGlobalAliases  =  {
