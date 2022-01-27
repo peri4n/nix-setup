@@ -59,6 +59,7 @@ in
     nodejs
     rtorrent
     ripgrep
+    slack
     sqlite
     syncthing
     tmux
