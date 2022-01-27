@@ -32,7 +32,6 @@ in
       luafile ~/.config/nvim/lua/treesitter.lua
       luafile ~/.config/nvim/lua/cmp.lua
       luafile ~/.config/nvim/lua/lsp.lua
-      luafile ~/.config/nvim/lua/tree.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -59,7 +58,8 @@ in
       lightline-vim
       haskell-vim
 
-      nvim-tree-lua
+      vim-dirvish
+      vim-dirvish-git
       nvim-web-devicons
       vim-nix
       vim-gitgutter
@@ -82,5 +82,4 @@ in
   xdg.configFile."nvim/lua/treesitter.lua".source = ./lua/treesitter.lua;
   xdg.configFile."nvim/lua/fzf.lua".source = ./lua/fzf.lua;
   xdg.configFile."nvim/lua/cmp.lua".source = ./lua/cmp.lua;
-  xdg.configFile."nvim/lua/tree.lua".source = ./lua/tree.lua;
 }
