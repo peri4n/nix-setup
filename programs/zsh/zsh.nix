@@ -81,6 +81,14 @@ with builtins;
 
       # Docker
       d = "docker";
+      dps = "docker ps";
+      dcon = "docker container";
+      di = "docker images";
+
+      # Docker Compose
+      dc = "docker compose";
+      dcu = "docker compose up";
+      dcs = "docker compose stop";
 
       # exa
       l = "exa -l --git --group-directories-first";
