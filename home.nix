@@ -8,7 +8,7 @@ in
     ./programs/bat.nix
     ./programs/exa.nix
     ./programs/tmux.nix
-    ./programs/git.nix
+    ./programs/git/git.nix
     ./programs/st/st.nix
     ./programs/fzf.nix
     ./programs/dmenu/dmenu.nix

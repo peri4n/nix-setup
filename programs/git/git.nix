@@ -12,6 +12,9 @@
       color = {
         ui = true;
       };
+      commit = {
+        message = "~/.gitmessage";
+      };
       core = {
         editor = "nvim";
         autocrlf = "input";
@@ -69,4 +72,6 @@
       rc = "rev-parse HEAD | tr -d '\n' | xsel";
     };
   };
+
+  home.file.".gitmessage".source = ./gitmessage;
 }
