@@ -110,7 +110,8 @@ with builtins;
       dl = "$HOME/downloads";
       dap = "$HOME/work/repos/dap/master";
       eur = "$HOME/work/repos/europa";
-      nix = "$HOME/.config/nixpkgs/";
+      nix = "$HOME/.config/nixpkgs";
+      know = "$HOME/docs/knowledge";
     };
 
     plugins = [ 
