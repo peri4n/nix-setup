@@ -57,6 +57,7 @@ in
     jq
     maim
     nodejs
+    proselint
     rtorrent
     ripgrep
     slack
