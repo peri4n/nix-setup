@@ -32,6 +32,7 @@ in
       luafile ~/.config/nvim/lua/treesitter.lua
       luafile ~/.config/nvim/lua/cmp.lua
       luafile ~/.config/nvim/lua/lsp.lua
+      luafile ~/.config/nvim/lua/markdown.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -82,4 +83,5 @@ in
   xdg.configFile."nvim/lua/treesitter.lua".source = ./lua/treesitter.lua;
   xdg.configFile."nvim/lua/fzf.lua".source = ./lua/fzf.lua;
   xdg.configFile."nvim/lua/cmp.lua".source = ./lua/cmp.lua;
+  xdg.configFile."nvim/lua/markdown.lua".source = ./lua/markdown.lua;
 }
