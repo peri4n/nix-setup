@@ -40,6 +40,7 @@ with builtins;
       setopt HIST_VERIFY               # Dont execute immediately upon history expansion.
       setopt VI                        # Enable vi mode
       setopt NO_BEEP                   # No beep!
+      setopt EXTENDED_GLOB             # Enable extended globbing
     '';
     
     initExtra = ''
@@ -104,6 +105,7 @@ with builtins;
     shellGlobalAliases  =  {
       L = "| less -R";
       G = "| grep";
+      NUL = "> /dev/null 2>&1";
     };
 
     dirHashes = { 
