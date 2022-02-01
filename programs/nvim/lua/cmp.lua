@@ -17,7 +17,12 @@ cmp.setup({
     -- Set `select` to `false` to only confirm explicitly selected items.
     ['<CR>'] = cmp.mapping.confirm({select = true})
   },
-  sources = cmp.config.sources({{name = 'nvim_lsp'}, {name = 'buffer'}, {name = 'ultisnips'}})
+  sources = cmp.config.sources({
+    {name = 'nvim_lsp'},
+    {name = 'buffer'},
+    {name = 'ultisnips'},
+    {name = 'path'}
+  })
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
