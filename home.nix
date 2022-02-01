@@ -6,6 +6,7 @@ in
   imports = [
     ./programs/autorandr.nix
     ./programs/bat.nix
+    ./programs/broot.nix
     ./programs/exa.nix
     ./programs/tmux.nix
     ./programs/git/git.nix
@@ -45,6 +46,7 @@ in
     aspell
     aspellDicts.de
     bat
+    broot
     delta
     dunst
     entr
