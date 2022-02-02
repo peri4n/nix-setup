@@ -114,6 +114,7 @@ with builtins;
       eur = "$HOME/work/repos/europa";
       nix = "$HOME/.config/nixpkgs";
       know = "$HOME/docs/knowledge";
+      xmonad = "$HOME/dev/repos/XMonad";
     };
 
     plugins = [ 
