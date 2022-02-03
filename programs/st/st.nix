@@ -1,10 +1,12 @@
 { config, pkgs, libs, ... }:
-
+let
+  old = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31.tar.gz") {};
+in
 {
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     fira-code
-    (st.overrideAttrs (oldAttrs: rec {
+    (old.st.overrideAttrs (oldAttrs: rec {
       buildInputs = oldAttrs.buildInputs ++ [ harfbuzz ];
       patches = [
         ./settings.diff
