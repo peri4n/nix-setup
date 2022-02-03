@@ -3,8 +3,8 @@
 let src = pkgs.fetchFromGitHub {
   owner = "peri4n";
   repo = "wm";
-  rev = "359e2945b01d8a27159232b1d457a1988f2f6089";
-  sha256 = "2OBPftMcl9DT1sfwAbO6WXfM2RjZm4N/GXMaPELnp8g=";
+  rev = "f74c857e690293f44a95b2b755003736243504a3";
+  sha256 = "lNTjRPXx3yo2DbrCPjekLkWyeHKQ7Fpi6euImDY16PI=";
 };
 in
 import "${src}/release.nix"
