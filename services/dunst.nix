@@ -49,7 +49,7 @@ in
           font = "Fira Code 10";
           line_height = 0;
           markup = "full";
-          format = "%s %p\n%b";
+          format = "%s %p\\n%b";
           alignment = "left";
           vertical_alignment = "center";
 
