@@ -12,11 +12,12 @@
       scan_timeout = 10;
       character = {
         success_symbol = "[λ](green)";
-        error_symbol = "[λ](red)";
+        error_symbol = "[✖](blue)";
         vicmd_symbol = "[λ](blue)";
       };
       directory = {
         style = "cyan";
+        truncation_length	= 2;
       };
     };
   };
