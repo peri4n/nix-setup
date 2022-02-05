@@ -31,12 +31,14 @@
       };
       merge = {
         renamelimit = 2000;
+        ff = "no";
       };
       push = {
         default = "simple";
       };
       pull = {
         rebase = true;
+        ff = "only";
       };
       rerere = {
         enabled = true;
