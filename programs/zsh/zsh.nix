@@ -28,7 +28,9 @@ with builtins;
       XDG_DATA_DIRS = "$HOME/.nix-profile/share";
     };
 
-    initExtraBeforeCompInit = ''
+    initExtraBeforeCompInit = builtins.readFile ./dracula-syntax-highlighting.zsh;
+    
+    initExtra = ''
       setopt PROMPT_SUBST              # Enable command substitution in the prompt
       setopt NULL_GLOB                 # If a glob does not match delete it as an argument
       setopt AUTO_PARAM_SLASH          # Tab completing directory appends a slash
@@ -41,9 +43,7 @@ with builtins;
       setopt VI                        # Enable vi mode
       setopt NO_BEEP                   # No beep!
       setopt EXTENDED_GLOB             # Enable extended globbing
-    '';
-    
-    initExtra = ''
+
       bindkey '^ ' autosuggest-accept
       bindkey '^[^M' autosuggest-execute # Ctrl-Enter
 
@@ -105,6 +105,7 @@ with builtins;
     shellGlobalAliases  =  {
       L = "| less -R";
       G = "| grep";
+      J = "| jq";
       NUL = "> /dev/null 2>&1";
     };
 
