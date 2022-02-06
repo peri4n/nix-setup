@@ -1,5 +1,4 @@
 local set = vim.opt
-local window = vim.wo
 
 --------------------------- Globals ---------------------------
 vim.g.mapleader = ' '
@@ -17,6 +16,7 @@ set.clipboard = 'unnamedplus' -- use only a single clipboard
 set.tags = {'./tags', 'tags;'}
 set.encoding = 'utf-8'
 set.completeopt = "menuone,noselect"
+set.undofile = true
 
 set.number = true -- Show line numbers
 set.relativenumber = true -- Center line number around current line
