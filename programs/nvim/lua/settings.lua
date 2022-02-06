@@ -30,7 +30,6 @@ set.smartcase = true -- Unless we type a capital
 --------------------------- Color Scheme ---------------------
 set.termguicolors = true
 vim.cmd('colorscheme dracula')
-vim.g.lightline = {colorscheme = "dracula"}
 
 --------------------------- Swap Files -----------------------
 set.swapfile = false -- Do not create swap files
