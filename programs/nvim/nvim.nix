@@ -56,6 +56,7 @@ in
       cmp-buffer
       cmp-path
       cmp-cmdline
+      lspkind-nvim
 
       lightline-vim
       haskell-vim
