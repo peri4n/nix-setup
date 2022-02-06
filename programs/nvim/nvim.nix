@@ -28,16 +28,15 @@ in
     extraConfig = ''
       luafile ~/.config/nvim/lua/settings.lua
       luafile ~/.config/nvim/lua/mappings.lua
-      luafile ~/.config/nvim/lua/fzf.lua
       luafile ~/.config/nvim/lua/treesitter.lua
       luafile ~/.config/nvim/lua/cmp.lua
       luafile ~/.config/nvim/lua/lsp.lua
       luafile ~/.config/nvim/lua/lightline.lua
       luafile ~/.config/nvim/lua/markdown.lua
+      luafile ~/.config/nvim/lua/telescope.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
-      fzf-vim
       (nvim-treesitter.withPlugins (p: [
         pkgs.tree-sitter-grammars.tree-sitter-javascript
         pkgs.tree-sitter-grammars.tree-sitter-typescript
@@ -50,6 +49,12 @@ in
         pkgs.tree-sitter-grammars.tree-sitter-nix
       ]))
       nvim-lspconfig
+
+      # telescope
+      telescope-nvim
+      telescope-fzf-native-nvim
+
+      # cmp
       nvim-cmp
       cmp-nvim-lsp
       cmp-nvim-lua
@@ -83,8 +88,8 @@ in
   xdg.configFile."nvim/lua/mappings.lua".source = ./lua/mappings.lua;
   xdg.configFile."nvim/lua/lsp.lua".source = ./lua/lsp.lua;
   xdg.configFile."nvim/lua/treesitter.lua".source = ./lua/treesitter.lua;
-  xdg.configFile."nvim/lua/fzf.lua".source = ./lua/fzf.lua;
   xdg.configFile."nvim/lua/cmp.lua".source = ./lua/cmp.lua;
   xdg.configFile."nvim/lua/lightline.lua".source = ./lua/lightline.lua;
   xdg.configFile."nvim/lua/markdown.lua".source = ./lua/markdown.lua;
+  xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
 }
