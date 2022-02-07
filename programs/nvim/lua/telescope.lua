@@ -13,22 +13,28 @@ telescope.setup {
   pickers = {
     find_files = {
       find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
-      theme = 'ivy'
+      theme = 'ivy',
+      border = false,
     },
     live_grep = {
-      theme = 'ivy'
+      theme = 'ivy',
+      border = false,
     },
     quickfix = {
-      theme = 'ivy'
+      theme = 'ivy',
+      border = false,
     },
     buffers = {
-      theme = 'ivy'
+      theme = 'ivy',
+      border = false,
     },
     help_tags = {
-      theme = 'ivy'
+      theme = 'ivy',
+      border = false,
     },
     edit_configs = {
-      theme = 'ivy'
+      theme = 'ivy',
+      border = false,
     }
   },
   extensions = {
