@@ -92,4 +92,5 @@ in
   xdg.configFile."nvim/lua/lightline.lua".source = ./lua/lightline.lua;
   xdg.configFile."nvim/lua/markdown.lua".source = ./lua/markdown.lua;
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
+  xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
 }
