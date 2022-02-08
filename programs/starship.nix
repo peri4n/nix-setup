@@ -7,7 +7,7 @@
     settings = {
       add_newline = false;
       format = lib.concatStrings [
-        "$directory$character"
+        "$directory$git_branch$character"
       ];
       scan_timeout = 10;
       character = {
@@ -18,6 +18,11 @@
       directory = {
         style = "cyan";
         truncation_length	= 2;
+      };
+      git_branch = {
+        symbol = "";
+        format = "[$branch]($style) ";
+        style = "blue";
       };
     };
   };
