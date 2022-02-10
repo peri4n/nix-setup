@@ -34,6 +34,7 @@ in
       luafile ~/.config/nvim/lua/lightline.lua
       luafile ~/.config/nvim/lua/markdown.lua
       luafile ~/.config/nvim/lua/telescope.lua
+      luafile ~/.config/nvim/lua/git.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -74,7 +75,8 @@ in
       vim-eunuch
       vim-javascript
       vim-markdown
-      vim-fugitive
+      neogit
+      diffview-nvim
       vim-unimpaired
       vim-surround
 
@@ -93,4 +95,5 @@ in
   xdg.configFile."nvim/lua/markdown.lua".source = ./lua/markdown.lua;
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
   xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
+  xdg.configFile."nvim/lua/git.lua".source = ./lua/git.lua;
 }
