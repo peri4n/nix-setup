@@ -35,6 +35,7 @@ in
       luafile ~/.config/nvim/lua/markdown.lua
       luafile ~/.config/nvim/lua/telescope.lua
       luafile ~/.config/nvim/lua/git.lua
+      luafile ~/.config/nvim/lua/marks.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -65,21 +66,33 @@ in
       lspkind-nvim
 
       lightline-vim
-      haskell-vim
 
-      vim-dirvish
-      vim-dirvish-git
-      nvim-web-devicons
+      # languages
+      haskell-vim
       vim-nix
-      vim-gitgutter
-      vim-eunuch
       vim-javascript
       vim-markdown
+
+      # file browser
+      vim-dirvish
+      vim-dirvish-git
+      vim-eunuch
+
+      nvim-web-devicons
+
+      # gutter
+      vim-gitgutter
+      marks-nvim
+
+      # vcs
       neogit
       diffview-nvim
+
+      # editing
       vim-unimpaired
       vim-surround
 
+      # snippets
       ultisnips
       cmp-nvim-ultisnips
       vim-snippets
@@ -96,4 +109,5 @@ in
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
   xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
   xdg.configFile."nvim/lua/git.lua".source = ./lua/git.lua;
+  xdg.configFile."nvim/lua/marks.lua".source = ./lua/marks.lua;
 }
