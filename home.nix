@@ -47,6 +47,7 @@ in
     aspellDicts.de
     bat
     broot
+    btop
     delta
     dunst
     entr
@@ -55,7 +56,6 @@ in
     git
     gh
     gnupg
-    htop
     jq
     maim
     nodejs
