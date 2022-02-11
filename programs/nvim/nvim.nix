@@ -35,7 +35,6 @@ in
       luafile ~/.config/nvim/lua/markdown.lua
       luafile ~/.config/nvim/lua/telescope.lua
       luafile ~/.config/nvim/lua/git.lua
-      luafile ~/.config/nvim/lua/marks.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -82,7 +81,6 @@ in
 
       # gutter
       vim-gitgutter
-      marks-nvim
 
       # vcs
       neogit
@@ -109,5 +107,4 @@ in
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
   xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
   xdg.configFile."nvim/lua/git.lua".source = ./lua/git.lua;
-  xdg.configFile."nvim/lua/marks.lua".source = ./lua/marks.lua;
 }
