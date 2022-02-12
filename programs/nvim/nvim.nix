@@ -10,17 +10,6 @@ let
       sha256 = "Tmxb7xiDKz+swLV/B5a1/kGlOkdxKCo/XJBf4o8SsFg=";
     };
   };
-  cmp-nvim-ultisnips = (pkgs.vimUtils.buildVimPlugin {
-    name = "cmp-nvim-ultisnips";
-    src = pkgs.fetchFromGitHub {
-      owner = "quangnguyen30192";
-      repo = "cmp-nvim-ultisnips";
-      rev = "79fd645096c406fb41b38ef4dd99525965b446b1";
-      sha256 = "7Hu7H5Q7XgqgMFkFLRkwqDen6535h83KnsCHsfd1yas=";
-    };
-  }).overrideAttrs (oldAttrs: rec {
-      buildInputs = [ pkgs.lua53Packages.luacheck ];
-  });
 in
 {
   programs.neovim = {
@@ -35,6 +24,7 @@ in
       luafile ~/.config/nvim/lua/markdown.lua
       luafile ~/.config/nvim/lua/telescope.lua
       luafile ~/.config/nvim/lua/git.lua
+      luafile ~/.config/nvim/lua/snippets.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -91,9 +81,9 @@ in
       vim-surround
 
       # snippets
-      ultisnips
-      cmp-nvim-ultisnips
-      vim-snippets
+      luasnip
+      cmp_luasnip
+      friendly-snippets
     ];
   };
 
@@ -107,4 +97,5 @@ in
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
   xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
   xdg.configFile."nvim/lua/git.lua".source = ./lua/git.lua;
+  xdg.configFile."nvim/lua/snippets.lua".source = ./lua/snippets.lua;
 }
