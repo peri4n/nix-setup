@@ -75,6 +75,9 @@ in
     zathura
     zsh
 
+    # Python
+    python39Packages.python-lsp-server
+
     # Haskell
     haskell-language-server
     cabal2nix
