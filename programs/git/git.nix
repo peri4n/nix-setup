@@ -71,7 +71,7 @@
       st = "stash";
       stl = "stash list";
       stp = "stash pop";
-      rc = "rev-parse HEAD | tr -d '\n' | xsel";
+      rc = "! git rev-parse HEAD | tr -d '\n' | xsel";
     };
   };
 
