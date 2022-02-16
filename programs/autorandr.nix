@@ -93,6 +93,7 @@ in
             mode = "1920x1080";
             position = "1920x0";
             rate = "60.00";
+            rotate = "left";
           };
         };
       };
