@@ -79,6 +79,7 @@ in
       # editing
       vim-unimpaired
       vim-surround
+      lightspeed-nvim
 
       # snippets
       luasnip
