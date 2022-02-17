@@ -11,7 +11,7 @@ set.history = 1000 -- Store lots of :cmdline history
 set.showcmd = true -- Show incomplete cmds down the bottom
 set.visualbell = true -- No sounds
 set.autoread = true -- Reread file content if file was changed outside of vim
-set.cursorline = false -- Don't highlight current line
+set.cursorline = true -- Highlight current line
 set.clipboard = 'unnamedplus' -- use only a single clipboard
 set.tags = {'./tags', 'tags;'}
 set.encoding = 'utf-8'
@@ -38,12 +38,8 @@ set.writebackup = false -- Make backup before writing a file
 
 --------------------------- Indentation ----------------------
 set.expandtab = true -- Use spaces instead of tabs
-set.expandtab = true -- Use spaces instead of tabs
-set.tabstop = 2 -- Use 2 spaces
 set.tabstop = 2 -- Use 2 spaces
 set.shiftwidth = 2 -- Use 2 spaces for indentation
-set.shiftwidth = 2 -- Use 2 spaces for indentation
-set.softtabstop = 2 -- Just so that indenting behaves sane
 set.softtabstop = 2 -- Just so that indenting behaves sane
 set.smartindent = true -- Auto indenting when adding new line
 
