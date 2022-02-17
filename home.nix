@@ -60,6 +60,7 @@ in
     maim
     nodejs
     proselint
+    qmk
     rtorrent
     ripgrep
     slack
