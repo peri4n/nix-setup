@@ -47,6 +47,11 @@ with builtins;
       bindkey '^ ' autosuggest-accept
       bindkey '^[^M' autosuggest-execute # Ctrl-Enter
 
+      # ================ Suffix aliases ===============
+
+      alias -s nix=$EDITOR
+      alias -s md=$EDITOR
+
       # ================ Functions ====================
       mcd () {
           mkdir -p "$1" && cd "$1"
