@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... }:
 let
-  my-xmonad = pkgs.callPackage ./programs/xmonad.nix {};
+  my-xmonad = pkgs.callPackage ./programs/xmonad.nix { };
 in
 {
   imports = [
     ./programs/autorandr.nix
     ./programs/bat.nix
+    ./programs/brave.nix
     ./programs/broot.nix
     ./programs/exa.nix
     ./programs/tmux.nix
@@ -36,7 +37,7 @@ in
   home.keyboard = {
     layout = "us";
     variant = "colemak";
-    options = ["ctrl:nocaps" "compose:ralt"];
+    options = [ "ctrl:nocaps" "compose:ralt" ];
   };
 
   targets.genericLinux.enable = true;
@@ -46,6 +47,7 @@ in
     aspell
     aspellDicts.de
     bat
+    brave
     broot
     btop
     delta
@@ -70,7 +72,6 @@ in
     tree
     tree-sitter
     unzip
-    (vivaldi.override { proprietaryCodecs = true; })
     my-xmonad
     youtube-dl
     zathura
@@ -120,14 +121,15 @@ in
     mimeApps = {
       enable = true;
       defaultApplications = {
-          "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-          "x-scheme-handler/jetbrains" = [ "jetbrains-toolbox.desktop" ];
-          "text/html" = [ "vivaldi-stable.desktop" ];
-          "x-scheme-handler/http" = [ "vivaldi-stable.desktop" ];
-          "x-scheme-handler/https" = [ "vivaldi-stable.desktop" ];
-          "x-scheme-handler/about" = [ "vivaldi-stable.desktop" ];
-          "x-scheme-handler/unknown" = [ "vivaldi-stable.desktop" ];
-        };
+        "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        "text/html" = [ "brave-browser.desktop" ];
+        "x-scheme-handler/about" = [ "brave-browser.desktop" ];
+        "x-scheme-handler/http" = [ "brave-browser.desktop" ];
+        "x-scheme-handler/https" = [ "brave-browser.desktop" ];
+        "x-scheme-handler/jetbrains" = [ "jetbrains-toolbox.desktop" ];
+        "x-scheme-handler/unknown" = [ "brave-browser.desktop" ];
+
+      };
     };
   };
 
