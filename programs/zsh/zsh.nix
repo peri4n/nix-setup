@@ -23,6 +23,7 @@ with builtins;
     sessionVariables = { 
       EDITOR = "nvim";
       GPG_TTY = "$(tty)";
+      JDTLS_HOME = "$HOME/downloads/jdtls/";
 
       # XDG
       XDG_DATA_DIRS = "$HOME/.nix-profile/share";

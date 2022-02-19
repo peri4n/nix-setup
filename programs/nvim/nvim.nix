@@ -75,6 +75,7 @@ in
       vim-nix
       vim-javascript
       vim-markdown
+      nvim-jdtls
 
       # file browser
       vim-dirvish
