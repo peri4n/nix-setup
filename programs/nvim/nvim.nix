@@ -10,6 +10,15 @@ let
       sha256 = "Tmxb7xiDKz+swLV/B5a1/kGlOkdxKCo/XJBf4o8SsFg=";
     };
   };
+  telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
+    name = "telescope-ui-select";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-telescope";
+      repo = "telescope-ui-select.nvim";
+      rev = "d02a3d3a6b3f6b933c43a28668ae18f78846d3aa";
+      sha256 = "RKwoXrIWhW29kPEyQSGDg+0kcxCXPEl+U+DmuAgHhNM=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -45,6 +54,7 @@ in
       # telescope
       telescope-nvim
       telescope-fzf-native-nvim
+      telescope-ui-select
 
       # cmp
       nvim-cmp

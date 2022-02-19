@@ -42,6 +42,9 @@ telescope.setup {
       override_generic_sorter = true,
       override_file_sorter = true,
     },
+    ["ui-select"] = {
+      require("telescope.themes").get_ivy()
+    }
   }
 }
 vim.api.nvim_set_keymap('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<cr>", {noremap = true, silent = true})
@@ -51,5 +54,6 @@ vim.api.nvim_set_keymap('n', '<leader>fb', "<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap('n', '<leader>fh', "<cmd>lua require('telescope.builtin').help_tags()<cr>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>fc', "<cmd>lua require('telescopeconfig').edit_configs()<cr>", {noremap = true, silent = true})
 
+telescope.load_extension("ui-select")
 telescope.load_extension('fzf')
 
