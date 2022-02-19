@@ -24,6 +24,7 @@ in
       luafile ~/.config/nvim/lua/markdown.lua
       luafile ~/.config/nvim/lua/telescope.lua
       luafile ~/.config/nvim/lua/git.lua
+      luafile ~/.config/nvim/lua/gitsigns.lua
       luafile ~/.config/nvim/lua/snippets.lua
     '';
     plugins = with pkgs.vimPlugins; [
@@ -70,7 +71,7 @@ in
       nvim-web-devicons
 
       # gutter
-      vim-gitgutter
+      gitsigns-nvim
 
       # vcs
       neogit
@@ -98,5 +99,6 @@ in
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
   xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
   xdg.configFile."nvim/lua/git.lua".source = ./lua/git.lua;
+  xdg.configFile."nvim/lua/gitsigns.lua".source = ./lua/gitsigns.lua;
   xdg.configFile."nvim/lua/snippets.lua".source = ./lua/snippets.lua;
 }
