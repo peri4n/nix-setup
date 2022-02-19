@@ -15,7 +15,7 @@ set.cursorline = true -- Highlight current line
 set.clipboard = 'unnamedplus' -- use only a single clipboard
 set.tags = {'./tags', 'tags;'}
 set.encoding = 'utf-8'
-set.completeopt = "menuone,noselect"
+set.completeopt = "menu,menuone,noselect"
 set.undofile = true
 
 set.number = true -- Show line numbers
