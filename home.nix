@@ -3,6 +3,12 @@ let
   my-xmonad = pkgs.callPackage ./programs/xmonad.nix { };
 in
 {
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+    }))
+  ];
+
   imports = [
     ./programs/autorandr.nix
     ./programs/bat.nix
@@ -73,6 +79,7 @@ in
     tree-sitter
     unzip
     my-xmonad
+    neovim-nightly
     youtube-dl
     zathura
     zsh
