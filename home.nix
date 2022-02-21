@@ -21,6 +21,7 @@ in
     ./programs/fzf.nix
     ./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
+#    ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
     ./programs/nnn.nix
