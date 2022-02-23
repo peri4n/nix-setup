@@ -23,6 +23,9 @@ in
 {
   programs.neovim = {
     enable = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
     extraConfig = ''
       luafile ~/.config/nvim/lua/settings.lua
       luafile ~/.config/nvim/lua/mappings.lua
@@ -97,6 +100,8 @@ in
       cmp_luasnip
       friendly-snippets
     ];
+
+    extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
   };
 
   xdg.configFile."nvim/lua/settings.lua".source = ./lua/settings.lua;
