@@ -2,12 +2,12 @@
 
 let
   dracula-theme = pkgs.vimUtils.buildVimPlugin {
-    name = "dracula-theme";
+    name = "dracula-theme-nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "dracula";
-      repo = "vim";
-      rev = "74f63c304a0625c4ff9ce16784fce583b3a60661";
-      sha256 = "Tmxb7xiDKz+swLV/B5a1/kGlOkdxKCo/XJBf4o8SsFg=";
+      owner = "Mofiqul";
+      repo = "dracula.nvim";
+      rev = "a219971291c56bcca3827cb7bd40aaaef23feeca";
+      sha256 = "r1VhURChdutQFO9fiF+YV+MJycuj6xohTmR9DYpUFdk=";
     };
   };
   telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
@@ -32,7 +32,7 @@ in
       luafile ~/.config/nvim/lua/treesitter.lua
       luafile ~/.config/nvim/lua/cmp.lua
       luafile ~/.config/nvim/lua/lsp.lua
-      luafile ~/.config/nvim/lua/lightline.lua
+      luafile ~/.config/nvim/lua/lualine.lua
       luafile ~/.config/nvim/lua/markdown.lua
       luafile ~/.config/nvim/lua/telescope.lua
       luafile ~/.config/nvim/lua/git.lua
@@ -68,7 +68,7 @@ in
       cmp-cmdline
       lspkind-nvim
 
-      lightline-vim
+      lualine-nvim
 
       # languages
       haskell-vim
@@ -110,7 +110,7 @@ in
   xdg.configFile."nvim/lua/lsp.lua".source = ./lua/lsp.lua;
   xdg.configFile."nvim/lua/treesitter.lua".source = ./lua/treesitter.lua;
   xdg.configFile."nvim/lua/cmp.lua".source = ./lua/cmp.lua;
-  xdg.configFile."nvim/lua/lightline.lua".source = ./lua/lightline.lua;
+  xdg.configFile."nvim/lua/lualine.lua".source = ./lua/lualine.lua;
   xdg.configFile."nvim/lua/markdown.lua".source = ./lua/markdown.lua;
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
   xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
