@@ -66,7 +66,6 @@ with builtins;
       gwi = "./gradlew -i";
       g = "git";
       mkdir = "mkdir -pv";
-      hm = "home-manager";
       o = "xdg-open";
       e = "exit";
 
@@ -106,6 +105,11 @@ with builtins;
       scu = "systemctl --user";
       scus = "systemctl --user start";
       scut = "systemctl --user stop";
+
+      # Home manager
+      hm = "home-manager";
+      hms = "home-manager switch";
+      hmo = "home-manager option";
     };
 
     shellGlobalAliases  =  {
