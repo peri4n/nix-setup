@@ -13,7 +13,7 @@
         ui = true;
       };
       commit = {
-        message = "~/.gitmessage";
+        template = "~/.gitmessage";
       };
       core = {
         editor = "nvim";
