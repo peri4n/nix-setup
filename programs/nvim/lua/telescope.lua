@@ -48,6 +48,7 @@ telescope.setup {
   }
 }
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
+vim.keymap.set('n', '<leader>fa', function() require('telescope.builtin').find_files({ no_ignore = true }) end)
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep)
 vim.keymap.set('n', '<leader>fq', require('telescope.builtin').quickfix)
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers)
