@@ -26,7 +26,7 @@ with builtins;
       JDTLS_HOME = "$HOME/downloads/jdtls/";
 
       # XDG
-      XDG_DATA_DIRS = "$HOME/.nix-profile/share";
+      XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
     };
 
     initExtraBeforeCompInit = builtins.readFile ./dracula-syntax-highlighting.zsh;
