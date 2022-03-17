@@ -15,7 +15,6 @@ in
     ./programs/brave.nix
     ./programs/broot.nix
     ./programs/exa.nix
-    ./programs/tmux.nix
     ./programs/git/git.nix
     ./programs/st/st.nix
     ./programs/fzf.nix
