@@ -16,7 +16,6 @@ in
     ./programs/broot.nix
     ./programs/exa.nix
     ./programs/git/git.nix
-    ./programs/st/st.nix
     ./programs/fzf.nix
     ./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
