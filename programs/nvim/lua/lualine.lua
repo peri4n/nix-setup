@@ -1,5 +1,6 @@
 require('lualine').setup({
   options = {
-    theme = 'dracula-nvim'
+    theme = 'dracula-nvim',
+    globalstatus = true
   }
 })
