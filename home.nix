@@ -48,6 +48,8 @@ in
   targets.genericLinux.enable = true;
 
   home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    fira-code
     autorandr
     aspell
     aspellDicts.de
