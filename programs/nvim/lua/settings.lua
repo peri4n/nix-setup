@@ -4,6 +4,7 @@ local set = vim.opt
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.g.vimsyn_embed = 'l' -- Highlight Lua code in vim files
+vim.cmd('set laststatus=3')
 
 --------------------------- General ---------------------------
 set.compatible = false
@@ -69,5 +70,5 @@ set.splitbelow = true
 set.splitright = true
 
 --------------------------- Spelling -------------------------
-set.spell = false -- Turn on spelling
+set.spell = false -- Turn off spelling
 set.spelllang = 'en,de'
