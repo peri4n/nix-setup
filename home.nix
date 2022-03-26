@@ -76,6 +76,7 @@ in
     slack
     sqlite
     syncthing
+    tealdeer
     tmux
     tree
     tree-sitter
