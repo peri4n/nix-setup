@@ -63,6 +63,7 @@ in
     feh
     fzf
     git
+    git-extras
     gh
     gnupg
     jq
