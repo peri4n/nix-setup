@@ -13,27 +13,21 @@ telescope.setup {
   pickers = {
     find_files = {
       find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
-      theme = 'ivy',
       border = false,
     },
     live_grep = {
-      theme = 'ivy',
       border = false,
     },
     quickfix = {
-      theme = 'ivy',
       border = false,
     },
     buffers = {
-      theme = 'ivy',
       border = false,
     },
     help_tags = {
-      theme = 'ivy',
       border = false,
     },
     edit_configs = {
-      theme = 'ivy',
       border = false,
     }
   },
@@ -43,12 +37,13 @@ telescope.setup {
       override_file_sorter = true,
     },
     ["ui-select"] = {
-      require("telescope.themes").get_ivy()
+      require("telescope.themes").get_dropdown()
     }
   }
 }
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
 vim.keymap.set('n', '<leader>fa', function() require('telescope.builtin').find_files({ no_ignore = true }) end)
+vim.keymap.set('n', '<leader>fo', require('telescope.builtin').oldfiles)
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep)
 vim.keymap.set('n', '<leader>fq', require('telescope.builtin').quickfix)
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers)
