@@ -78,6 +78,7 @@ in
       lspkind-nvim
 
       lualine-global-status
+      lualine-lsp-progress
 
       # languages
       haskell-vim
