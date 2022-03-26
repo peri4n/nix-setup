@@ -87,6 +87,9 @@ in
     zathura
     zsh
 
+    # Scala
+    coursier
+
     # Python
     python39Packages.python-lsp-server
 

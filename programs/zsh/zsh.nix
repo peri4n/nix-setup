@@ -27,6 +27,9 @@ with builtins;
 
       # XDG
       XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
+
+      # Courcier : Stack
+      PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin";
     };
 
     initExtraBeforeCompInit = builtins.readFile ./dracula-syntax-highlighting.zsh;
