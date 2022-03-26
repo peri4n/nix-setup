@@ -19,6 +19,15 @@ let
       sha256 = "RKwoXrIWhW29kPEyQSGDg+0kcxCXPEl+U+DmuAgHhNM=";
     };
   };
+  lualine-global-status = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "lualine-global-status";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-lualine";
+      repo = "lualine.nvim";
+      rev = "181b14348f513e6f9eb3bdd2252e13630094fdd3";
+      sha256 = "qiKJNlVslVkx84202iOsNbhNNskK1h/wuCC1OiAv6Yg=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -68,7 +77,7 @@ in
       cmp-cmdline
       lspkind-nvim
 
-      lualine-nvim
+      lualine-global-status
 
       # languages
       haskell-vim
