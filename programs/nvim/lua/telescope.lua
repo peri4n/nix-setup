@@ -13,23 +13,7 @@ telescope.setup {
   pickers = {
     find_files = {
       find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
-      border = false,
     },
-    live_grep = {
-      border = false,
-    },
-    quickfix = {
-      border = false,
-    },
-    buffers = {
-      border = false,
-    },
-    help_tags = {
-      border = false,
-    },
-    edit_configs = {
-      border = false,
-    }
   },
   extensions = {
     fzy_native = {
