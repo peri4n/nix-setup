@@ -28,6 +28,15 @@ let
       sha256 = "qiKJNlVslVkx84202iOsNbhNNskK1h/wuCC1OiAv6Yg=";
     };
   };
+  nvim-metals = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-metals";
+    src = pkgs.fetchFromGitHub {
+      owner = "scalameta";
+      repo = "nvim-metals";
+      rev = "3312490ef74ea149121a82fde578a13b1921cef9";
+      sha256 = "TIqp1udXn5GW23jcprPk08nV85E3nYLXatOEEyUeIXY=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -59,7 +68,7 @@ in
         pkgs.tree-sitter-grammars.tree-sitter-rust
         pkgs.tree-sitter-grammars.tree-sitter-scala
         pkgs.tree-sitter-grammars.tree-sitter-lua
-        pkgs.tree-sitter-grammars.tree-sitter-nix
+        # pkgs.tree-sitter-grammars.tree-sitter-nix
       ]))
       nvim-lspconfig
 
@@ -86,6 +95,7 @@ in
       vim-javascript
       vim-markdown
       nvim-jdtls
+      nvim-metals
 
       # file browser
       vim-dirvish
