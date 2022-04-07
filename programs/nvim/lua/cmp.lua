@@ -25,21 +25,15 @@ cmp.setup({
     ['<C-e>'] = cmp.mapping({i = cmp.mapping.abort(), c = cmp.mapping.close()}),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
-    ['<C-k>'] = cmp.mapping(function(fallback)
+    ['<C-k>'] = cmp.mapping(function()
         if luasnip.expand_or_jumpable() then
           luasnip.expand_or_jump()
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback()
         end
       end, { 'i', 's' }),
 
-    ['<C-j>'] = cmp.mapping(function(fallback)
+    ['<C-j>'] = cmp.mapping(function()
       if luasnip.jumpable(-1) then
         luasnip.jump(-1)
-      else
-        fallback()
       end
     end, { 'i', 's' }),
 
