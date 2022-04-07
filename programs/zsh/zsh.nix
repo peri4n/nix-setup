@@ -91,13 +91,13 @@ with builtins;
       # Docker
       d = "docker";
       dps = "docker ps";
-      dcon = "docker container";
+      dc = "docker container";
       di = "docker images";
 
       # Docker Compose
-      dc = "docker compose";
-      dcu = "docker compose up";
-      dcs = "docker compose stop";
+      comp = "docker compose";
+      compu = "docker compose up";
+      comps = "docker compose stop";
 
       # exa
       l = "exa -l --git --group-directories-first";
