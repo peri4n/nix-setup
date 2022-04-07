@@ -3,8 +3,12 @@ telescope.setup {
   defaults = {
     prompt_prefix = "❯ ",
     selection_caret = "❯ ",
+    path_display = { "shorten" },
 
     layout_strategy = "horizontal",
+    layout_config = {
+      vertical = { width = 0.8 }
+    },
 
     selection_strategy = "reset",
     scroll_strategy = "cycle",
