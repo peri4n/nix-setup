@@ -128,6 +128,7 @@ with builtins;
       eur = "$HOME/work/repos/europa";
       nix = "$HOME/.config/nixpkgs";
       know = "$HOME/docs/knowledge";
+      qmk = "$HOME/dev/repos/qmk_firmware";
       xmonad = "$HOME/dev/repos/XMonad";
     };
 
