@@ -94,6 +94,9 @@ in
     # Python
     python39Packages.python-lsp-server
 
+    # Go
+    gopls
+
     # Haskell
     haskell-language-server
     cabal2nix
