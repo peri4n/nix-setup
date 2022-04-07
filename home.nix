@@ -19,7 +19,7 @@ in
     ./programs/fzf.nix
     ./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
-#    ./programs/kitty/kitty.nix
+    ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
     ./programs/nnn.nix
@@ -60,6 +60,7 @@ in
     delta
     dunst
     entr
+    exercism
     feh
     fzf
     git
