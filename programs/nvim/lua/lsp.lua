@@ -48,7 +48,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = {"hls", "rnix", "rust_analyzer", "tsserver", "pylsp", "jdtls" }
+local servers = {"hls", "rnix", "rust_analyzer", "tsserver", "pylsp", "jdtls", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -87,5 +87,5 @@ require('lspconfig').sumneko_lua.setup {
 
 vim.cmd [[augroup lsp]]
 vim.cmd [[au!]]
-vim.cmd [[au FileType java,scala,sbt lua require("metals").initialize_or_attach({})]]
+vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach({})]]
 vim.cmd [[augroup end]]
