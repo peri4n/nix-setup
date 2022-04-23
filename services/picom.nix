@@ -22,7 +22,6 @@
       ];
       fade = true;
       fadeSteps = [ "0.06" "0.06" ];
-      refreshRate = 0;
       vSync = true;
       inactiveOpacity = "0.8";
       noDockShadow = true;
