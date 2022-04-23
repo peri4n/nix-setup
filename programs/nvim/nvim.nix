@@ -46,7 +46,6 @@ in
     vimdiffAlias = true;
     extraConfig = ''
       luafile ~/.config/nvim/lua/settings.lua
-      luafile ~/.config/nvim/lua/mappings.lua
       luafile ~/.config/nvim/lua/treesitter.lua
       luafile ~/.config/nvim/lua/cmp.lua
       luafile ~/.config/nvim/lua/lsp.lua
@@ -56,6 +55,7 @@ in
       luafile ~/.config/nvim/lua/git.lua
       luafile ~/.config/nvim/lua/gitsigns.lua
       luafile ~/.config/nvim/lua/snippets.lua
+      luafile ~/.config/nvim/lua/mappings.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
