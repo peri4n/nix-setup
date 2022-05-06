@@ -56,6 +56,7 @@ in
       luafile ~/.config/nvim/lua/gitsigns.lua
       luafile ~/.config/nvim/lua/snippets.lua
       luafile ~/.config/nvim/lua/mappings.lua
+      luafile ~/.config/nvim/lua/autopairs.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -115,6 +116,7 @@ in
       vim-unimpaired
       vim-surround
       lightspeed-nvim
+      nvim-autopairs
 
       # snippets
       luasnip
@@ -137,4 +139,5 @@ in
   xdg.configFile."nvim/lua/git.lua".source = ./lua/git.lua;
   xdg.configFile."nvim/lua/gitsigns.lua".source = ./lua/gitsigns.lua;
   xdg.configFile."nvim/lua/snippets.lua".source = ./lua/snippets.lua;
+  xdg.configFile."nvim/lua/autopairs.lua".source = ./lua/autopairs.lua;
 }
