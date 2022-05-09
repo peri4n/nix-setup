@@ -20,6 +20,9 @@
         autocrlf = "input";
         pager = "delta";
       };
+      diff = {
+        tool = "nvimdiff";
+      };
       delta = {
         dark = true;
         line-numbers = true;
