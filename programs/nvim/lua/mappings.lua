@@ -26,6 +26,4 @@ vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {noremap = true, silent = true})
 
 -- Git mappings
-vim.api.nvim_set_keymap('n', '<leader>gg', ':Neogit<cr>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gc', ':Gcommit<cr>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gp', ':Neogit push<cr>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>gg', ':Git<cr>', {noremap = true, silent = true})

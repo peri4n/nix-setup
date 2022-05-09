@@ -52,7 +52,6 @@ in
       luafile ~/.config/nvim/lua/lualine.lua
       luafile ~/.config/nvim/lua/markdown.lua
       luafile ~/.config/nvim/lua/telescope.lua
-      luafile ~/.config/nvim/lua/git.lua
       luafile ~/.config/nvim/lua/gitsigns.lua
       luafile ~/.config/nvim/lua/snippets.lua
       luafile ~/.config/nvim/lua/mappings.lua
@@ -109,8 +108,8 @@ in
       gitsigns-nvim
 
       # vcs
-      neogit
       diffview-nvim
+      vim-fugitive
 
       # editing
       vim-unimpaired
@@ -136,7 +135,6 @@ in
   xdg.configFile."nvim/lua/markdown.lua".source = ./lua/markdown.lua;
   xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
   xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
-  xdg.configFile."nvim/lua/git.lua".source = ./lua/git.lua;
   xdg.configFile."nvim/lua/gitsigns.lua".source = ./lua/gitsigns.lua;
   xdg.configFile."nvim/lua/snippets.lua".source = ./lua/snippets.lua;
   xdg.configFile."nvim/lua/autopairs.lua".source = ./lua/autopairs.lua;
