@@ -91,6 +91,9 @@ vim.cmd [[au FileType scala,sbt lua require("metals").initialize_or_attach({})]]
 vim.cmd [[augroup end]]
 
 -- Java LSP config
+local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
+
+local workspace_dir = '/home/fbull/.cache/jdtls/' .. project_name
 
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
@@ -128,7 +131,7 @@ local config = {
 
     -- 💀
     -- See `data directory configuration` section in the README
-    '-data', '/home/fbull/.cache/jdtls'
+    '-data', workspace_dir
   },
 
   -- 💀
