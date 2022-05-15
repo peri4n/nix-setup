@@ -61,15 +61,22 @@ in
     plugins = with pkgs.vimPlugins; [
       dracula-theme
       (nvim-treesitter.withPlugins (p: [
-        pkgs.tree-sitter-grammars.tree-sitter-javascript
-        pkgs.tree-sitter-grammars.tree-sitter-typescript
+        pkgs.tree-sitter-grammars.tree-sitter-css
+        pkgs.tree-sitter-grammars.tree-sitter-go
         pkgs.tree-sitter-grammars.tree-sitter-haskell
+        pkgs.tree-sitter-grammars.tree-sitter-html
         pkgs.tree-sitter-grammars.tree-sitter-java
+        pkgs.tree-sitter-grammars.tree-sitter-javascript
+        pkgs.tree-sitter-grammars.tree-sitter-json
+        pkgs.tree-sitter-grammars.tree-sitter-latex
+        pkgs.tree-sitter-grammars.tree-sitter-lua
+        pkgs.tree-sitter-grammars.tree-sitter-markdown
         pkgs.tree-sitter-grammars.tree-sitter-python
         pkgs.tree-sitter-grammars.tree-sitter-rust
         pkgs.tree-sitter-grammars.tree-sitter-scala
-        pkgs.tree-sitter-grammars.tree-sitter-lua
-        # pkgs.tree-sitter-grammars.tree-sitter-nix
+        pkgs.tree-sitter-grammars.tree-sitter-tsx
+        pkgs.tree-sitter-grammars.tree-sitter-typescript
+        pkgs.tree-sitter-grammars.tree-sitter-nix
       ]))
       nvim-lspconfig
 
@@ -88,7 +95,6 @@ in
       lspkind-nvim
 
       lualine-global-status
-      lualine-lsp-progress
 
       # languages
       haskell-vim
