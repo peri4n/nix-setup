@@ -1,15 +1,13 @@
 { config, pkgs, lib, ... }:
 
+let 
+  colors = import ../dracula.nix;
+in
 {
-  programs.xmobar = {
+  programs.xmobar = with colors.dracula.hex; {
     enable = true;
-    extraConfig = let
-      background = "#282a36";
-      foreground = "#f8f8f2";
-      orange = "#ffb86c";
-      purple = "#bd93f9";
-    in ''
-      Config { font = "xft:Fira Code Light-10"
+    extraConfig = ''
+      Config { font = "xft:FiraCode Nerd Font:size=10:antialias=true:hinting=true"
              , additionalFonts = []
              , borderColor = "black"
              , border = TopB
@@ -37,13 +35,13 @@
                                                , "--normal"   , "orange"
                                                , "--high"     , "#ff8080"
                                                ] 10
-                          , Run Memory ["-t","<fc=${purple}>Mem</fc>: <usedratio>%"] 10
+                          , Run Memory ["-t","<fc=${purple}>\xf85a</fc> <usedratio>%"] 10
                           , Run BatteryP ["BAT0"] [
-                              "-t", "<fc=${purple}><acstatus></fc>: <left>% - <timeleft>",
+                              "-t", "<fc=${purple}><acstatus></fc> <left>% - <timeleft>",
                               "--",
                               --"-c", "charge_full",
-                              "-O", "AC",
-                              "-o", "Bat",
+                              "-O", "\xfba3",
+                              "-o", "\xf578",
                               "-h", "green",
                               "-l", "red"
                               ] 10
