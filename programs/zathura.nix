@@ -45,7 +45,6 @@
     set recolor-darkcolor           "#f8f8f2" # Foreground
 
     set adjust-open height
-    set recolor true
     '';
   };
 }
