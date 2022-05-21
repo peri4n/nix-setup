@@ -8,17 +8,17 @@ in
   programs.broot = {
     enable = true;
     enableZshIntegration = true;
-    skin = {
-      default = toRgb colors.dracula.rgb.foreground + " " + toRgb colors.dracula.rgb.background;
-      directory = toRgb colors.dracula.rgb.purple + " " + toRgb colors.dracula.rgb.background;
+    skin = with colors.dracula.rgb; {
+      default = toRgb foreground + " " + toRgb background;
+      directory = toRgb purple + " " + toRgb background;
       input = "none none";
       status_normal = "none none";
-      status_italic = toRgb colors.dracula.rgb.yellow + " none";
-      status_bold = toRgb colors.dracula.rgb.yellow + " none";
-      status_job = toRgb colors.dracula.rgb.yellow + " none";
-      status_code = toRgb colors.dracula.rgb.yellow + " none";
-      status_ellipsis = toRgb colors.dracula.rgb.yellow + " none";
-      flag_value = toRgb colors.dracula.rgb.yellow + " none";
+      status_italic = toRgb yellow + " none";
+      status_bold = toRgb yellow + " none";
+      status_job = toRgb yellow + " none";
+      status_code = toRgb yellow + " none";
+      status_ellipsis = toRgb yellow + " none";
+      flag_value = toRgb yellow + " none";
       flag_label = "none none";
     };
   };
