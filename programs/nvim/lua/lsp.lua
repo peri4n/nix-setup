@@ -1,54 +1,36 @@
 -- Mappings.
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', 'K', vim.lsp.buf.hover)
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation)
-vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action)
-vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help)
-vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition)
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references)
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
-
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-  local opts = {noremap = true, silent = true}
-
-  -- Set some keybinds conditional on server capabilities
-  if client.server_capabilities.document_formatting then
-    buf_set_keymap("n", "<leader>rf", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-  elseif client.server_capabilities.document_range_formatting then
-    buf_set_keymap("n", "<leader>rf", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-  end
-
-  -- Set autocommands conditional on server_capabilities
-  if client.server_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]], false)
-  end
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- Use a loop to conveniently both setup defined servers
 -- and map buffer local keybindings when the language server attaches
-local servers = {"hls", "rnix", "rust_analyzer", "tsserver", "pylsp", "gopls" }
+local servers = { "hls", "rnix", "rust_analyzer", "tsserver", "pylsp", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -73,14 +55,14 @@ require('lspconfig').sumneko_lua.setup {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'}
+        globals = { 'vim' }
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
         library = vim.api.nvim_get_runtime_file("", true)
       },
       -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {enable = false}
+      telemetry = { enable = false }
     }
   }
 }
@@ -103,7 +85,7 @@ local config = {
 
     -- 💀
     'java', -- or '/path/to/java11_or_newer/bin/java'
-            -- depends on if `java` is in your $PATH env variable and if it points to the right version.
+    -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
     '-Declipse.application=org.eclipse.jdt.ls.core.id1',
     '-Dosgi.bundles.defaultStartLevel=4',
@@ -117,16 +99,16 @@ local config = {
 
     -- 💀
     '-jar', '/home/fbull/downloads/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-         -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
-         -- Must point to the                                                     Change this to
-         -- eclipse.jdt.ls installation                                           the actual version
+    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
+    -- Must point to the                                                     Change this to
+    -- eclipse.jdt.ls installation                                           the actual version
 
 
     -- 💀
     '-configuration', '/home/fbull/downloads/jdtls/config_linux',
-                    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
-                    -- Must point to the                      Change to one of `linux`, `win` or `mac`
-                    -- eclipse.jdt.ls installation            Depending on your system.
+    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
+    -- Must point to the                      Change to one of `linux`, `win` or `mac`
+    -- eclipse.jdt.ls installation            Depending on your system.
 
 
     -- 💀
@@ -137,7 +119,7 @@ local config = {
   -- 💀
   -- This is the default if not provided, you can remove it. Or adjust as needed.
   -- One dedicated LSP server & client will be started per unique root_dir
-  root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'}),
+  root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }),
 
   -- Here you can configure eclipse.jdt.ls specific settings
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
