@@ -57,6 +57,7 @@ in
       luafile ~/.config/nvim/lua/mappings.lua
       luafile ~/.config/nvim/lua/autopairs.lua
       luafile ~/.config/nvim/lua/comment.lua
+      luafile ~/.config/nvim/lua/null.lua
     '';
     plugins = with pkgs.vimPlugins; [
       dracula-theme
@@ -79,6 +80,7 @@ in
         pkgs.tree-sitter-grammars.tree-sitter-nix
       ]))
       nvim-lspconfig
+      null-ls-nvim
 
       # telescope
       telescope-nvim
@@ -147,4 +149,5 @@ in
   xdg.configFile."nvim/lua/snippets.lua".source = ./lua/snippets.lua;
   xdg.configFile."nvim/lua/autopairs.lua".source = ./lua/autopairs.lua;
   xdg.configFile."nvim/lua/comment.lua".source = ./lua/comment.lua;
+  xdg.configFile."nvim/lua/null.lua".source = ./lua/null.lua;
 }
