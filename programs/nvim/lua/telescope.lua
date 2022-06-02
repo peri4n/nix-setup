@@ -5,7 +5,12 @@ telescope.setup {
   defaults = {
     prompt_prefix = "❯ ",
     selection_caret = "❯ ",
-    path_display = { "shorten" },
+    path_display = {
+      shorten = {
+        len = 3,
+        exclude = {1, -1, -2}
+      }
+    },
 
     layout_strategy = "horizontal",
     layout_config = {
