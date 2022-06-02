@@ -14,10 +14,11 @@ set.visualbell = true -- No sounds
 set.autoread = true -- Reread file content if file was changed outside of vim
 set.cursorline = true -- Highlight current line
 set.clipboard = 'unnamedplus' -- use only a single clipboard
-set.tags = {'./tags', 'tags;'}
+set.tags = { './tags', 'tags;' }
 set.encoding = 'utf-8'
 set.completeopt = "menu,menuone,noselect"
 set.undofile = true
+set.scrolloff = 5
 
 set.number = true -- Show line numbers
 set.relativenumber = true -- Center line number around current line
@@ -31,6 +32,9 @@ set.smartcase = true -- Unless we type a capital
 --------------------------- Color Scheme ---------------------
 set.termguicolors = true
 vim.cmd('colorscheme dracula')
+vim.g.dracula_italic_comment = true
+vim.g.dracula_show_end_of_buffer = false
+vim.g.dracula_lualine_bg_color = "#44475a"
 
 --------------------------- Swap Files -----------------------
 set.swapfile = false -- Do not create swap files
@@ -56,6 +60,11 @@ set.listchars = {
   eol = '¬'
 }
 set.showbreak = '↪' -- show at the beginning of a wrapped line
+set.fillchars = {
+  foldopen = '▾',
+  foldsep = '│',
+  foldclose = '▸',
+}
 
 --------------------------- Wrapping -------------------------
 set.wrap = false -- Don't wrap lines
