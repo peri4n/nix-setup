@@ -59,6 +59,7 @@ in
       luafile ~/.config/nvim/lua/comment.lua
       luafile ~/.config/nvim/lua/null.lua
     '';
+
     plugins = with pkgs.vimPlugins; [
       dracula-theme
       (nvim-treesitter.withPlugins (p: [
@@ -73,12 +74,14 @@ in
         pkgs.tree-sitter-grammars.tree-sitter-lua
         pkgs.tree-sitter-grammars.tree-sitter-markdown
         pkgs.tree-sitter-grammars.tree-sitter-python
+        pkgs.tree-sitter-grammars.tree-sitter-query
         pkgs.tree-sitter-grammars.tree-sitter-rust
         pkgs.tree-sitter-grammars.tree-sitter-scala
         pkgs.tree-sitter-grammars.tree-sitter-tsx
         pkgs.tree-sitter-grammars.tree-sitter-typescript
         pkgs.tree-sitter-grammars.tree-sitter-nix
       ]))
+      playground # treesitter playground
       nvim-lspconfig
       null-ls-nvim
 
