@@ -54,6 +54,7 @@ in
     aspell
     aspellDicts.de
     bat
+    bitwarden-cli
     brave
     broot
     btop
