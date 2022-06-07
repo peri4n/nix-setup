@@ -81,3 +81,6 @@ set.splitright = true
 --------------------------- Spelling -------------------------
 set.spell = false -- Turn off spelling
 set.spelllang = 'en,de'
+
+--------------------------- Diff mode ---------------------
+set.diffopt = "algorithm:patience,foldcolumn:1,indent-heuristic"
