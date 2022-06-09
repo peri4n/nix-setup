@@ -1,5 +1,3 @@
-local colors = require('dracula').colors()
-
 require('lualine').setup({
   options = {
     theme = 'dracula-nvim',
@@ -12,11 +10,6 @@ require('lualine').setup({
       {
         'filename',
         path = 1 -- relative paths
-      },
-      '%=',
-      {
-        'require("nvim-treesitter").statusline()',
-        color = { fg = colors.orange }
       }
     },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },

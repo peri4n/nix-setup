@@ -82,6 +82,7 @@ in
         pkgs.tree-sitter-grammars.tree-sitter-nix
       ]))
       playground # treesitter playground
+      nvim-treesitter-context
       nvim-lspconfig
       null-ls-nvim
 
