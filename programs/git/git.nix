@@ -4,7 +4,7 @@
   programs.git = {
     enable = true;
     userName = "Fabian Bull";
-    userEmail = "fabian@fbull.de";
+    userEmail = "spam+github@fbull.de";
     extraConfig = {
       user = {
         signingkey = "BD71629060395D89";
