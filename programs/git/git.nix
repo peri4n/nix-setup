@@ -46,7 +46,6 @@
       };
       push = {
         default = "simple";
-        gpgSign = true;
       };
       pull = {
         rebase = true;
