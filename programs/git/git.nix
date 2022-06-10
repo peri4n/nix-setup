@@ -6,6 +6,9 @@
     userName = "Fabian Bull";
     userEmail = "fabian@fbull.de";
     extraConfig = {
+      user = {
+        signingkey = "BD71629060395D89";
+      };
       branch = {
         autosetuprebase = "always";
       };
@@ -13,6 +16,7 @@
         ui = true;
       };
       commit = {
+        gpgSign = true;
         template = "~/.gitmessage";
       };
       core = {
@@ -37,8 +41,12 @@
         ff = "no";
         conflictstyle = "diff3";
       };
+      tag = {
+        gpgSign = true;
+      };
       push = {
         default = "simple";
+        gpgSign = true;
       };
       pull = {
         rebase = true;
