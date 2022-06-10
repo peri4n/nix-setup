@@ -67,7 +67,7 @@ in
     git
     git-extras
     gh
-    gnupg
+    # gnupg
     jq
     maim
     nodejs
@@ -128,6 +128,13 @@ in
     };
     syncthing = {
       enable = true;
+    };
+    gpg-agent = {
+      enable = false;
+      enableZshIntegration = true;
+      defaultCacheTtl = 60480000;
+      maxCacheTtl = 60480000;
+      pinentryFlavor = "tty";
     };
   };
 
