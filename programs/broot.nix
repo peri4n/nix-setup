@@ -21,5 +21,24 @@ in
       flag_value = toRgb yellow + " none";
       flag_label = "none none";
     };
+    verbs = [
+      { 
+        key = "ctrl-h";
+        internal = ":panel_left";
+      }
+      { 
+        key = "ctrl-j";
+        internal = ":line_down";
+      }
+      { 
+        key = "ctrl-k";
+        internal = ":line_up";
+      }
+      { 
+        key = "ctrl-l";
+        internal = ":panel_right";
+
+      }
+    ];
   };
 }
