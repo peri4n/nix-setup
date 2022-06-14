@@ -25,6 +25,10 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {noremap = true, silent = true})
 
+-- Easy tab switching
+vim.api.nvim_set_keymap('n', '<S-h>', 'gT', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-l>', 'gt', {noremap = true, silent = true})
+
 -- Git mappings
 vim.api.nvim_set_keymap('n', '<leader>gg', ':Git<cr>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>gb', ':G blame<cr>', {noremap = true, silent = true})
