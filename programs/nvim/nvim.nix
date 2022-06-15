@@ -135,6 +135,8 @@ in
       luasnip
       cmp_luasnip
       friendly-snippets
+
+      vim-ledger
     ];
 
     extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
