@@ -58,6 +58,7 @@ in
       luafile ~/.config/nvim/lua/autopairs.lua
       luafile ~/.config/nvim/lua/comment.lua
       luafile ~/.config/nvim/lua/null.lua
+      luafile ~/.config/nvim/lua/colors.lua
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -156,4 +157,5 @@ in
   xdg.configFile."nvim/lua/autopairs.lua".source = ./lua/autopairs.lua;
   xdg.configFile."nvim/lua/comment.lua".source = ./lua/comment.lua;
   xdg.configFile."nvim/lua/null.lua".source = ./lua/null.lua;
+  xdg.configFile."nvim/lua/colors.lua".source = ./lua/colors.lua;
 }
