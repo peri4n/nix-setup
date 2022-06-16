@@ -30,6 +30,9 @@ with builtins;
 
       # Courcier : Stack
       PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin";
+
+      # Quickly switch vi modes
+      KEYTIMEOUT=1;
     };
 
     initExtraBeforeCompInit = builtins.readFile ./dracula-syntax-highlighting.zsh;
