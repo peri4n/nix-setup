@@ -66,6 +66,7 @@ in
     fzf
     git
     git-extras
+    gitlint
     gh
     # gnupg
     jq
