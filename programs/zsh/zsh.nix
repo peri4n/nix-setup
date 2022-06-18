@@ -116,6 +116,9 @@ with builtins;
       hm = "home-manager";
       hms = "home-manager switch";
       hmo = "home-manager option";
+
+      # bat
+      cat = "bat";
     };
 
     shellGlobalAliases  =  {
