@@ -60,6 +60,7 @@ in
       luafile ~/.config/nvim/lua/comment.lua
       luafile ~/.config/nvim/lua/null.lua
       luafile ~/.config/nvim/lua/colors.lua
+      luafile ~/.config/nvim/lua/blankline.lua
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -140,6 +141,7 @@ in
 
       vim-ledger
       impatient-nvim
+      indent-blankline-nvim
     ];
 
     extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
@@ -160,4 +162,5 @@ in
   xdg.configFile."nvim/lua/comment.lua".source = ./lua/comment.lua;
   xdg.configFile."nvim/lua/null.lua".source = ./lua/null.lua;
   xdg.configFile."nvim/lua/colors.lua".source = ./lua/colors.lua;
+  xdg.configFile."nvim/lua/blankline.lua".source = ./lua/blankline.lua;
 }
