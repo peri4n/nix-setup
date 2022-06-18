@@ -57,7 +57,7 @@ set.listchars = {
   nbsp = '·',
   trail = '·',
   space = '·',
-  eol = '¬'
+  eol = '↴'
 }
 set.showbreak = '↪' -- show at the beginning of a wrapped line
 set.fillchars = {
