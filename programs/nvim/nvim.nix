@@ -45,6 +45,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraConfig = ''
+      lua require("impatient")
       luafile ~/.config/nvim/lua/settings.lua
       luafile ~/.config/nvim/lua/treesitter.lua
       luafile ~/.config/nvim/lua/cmp.lua
@@ -138,6 +139,7 @@ in
       friendly-snippets
 
       vim-ledger
+      impatient-nvim
     ];
 
     extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
