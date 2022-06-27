@@ -87,6 +87,7 @@ in
       playground # treesitter playground
       nvim-treesitter-context
       nvim-lspconfig
+      lualine-lsp-progress
       null-ls-nvim
 
       # telescope

@@ -159,3 +159,6 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*.java",
   callback = function() require('jdtls').start_or_attach(config) end
 })
+
+vim.keymap.set('n', 'crv', function() require('jdtls').extract_variable() end)
+vim.api.nvim_set_keymap('v', 'crm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", { noremap = true, silent = true })
