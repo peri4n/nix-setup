@@ -25,6 +25,8 @@ set.relativenumber = true -- Center line number around current line
 set.hidden = true -- Switch buffers without saving them
 
 --------------------------- Search ---------------------------
+set.ignorecase = true
+set.incsearch = true -- Find the next match as we type the search
 set.incsearch = true -- Find the next match as we type the search
 set.hlsearch = true -- Highlight searches by default
 set.smartcase = true -- Unless we type a capital
