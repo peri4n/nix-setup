@@ -45,22 +45,7 @@ in
     vimAlias = true;
     vimdiffAlias = true;
     extraConfig = ''
-      lua require("impatient")
-      luafile ~/.config/nvim/lua/settings.lua
-      luafile ~/.config/nvim/lua/treesitter.lua
-      luafile ~/.config/nvim/lua/cmp.lua
-      luafile ~/.config/nvim/lua/lsp.lua
-      luafile ~/.config/nvim/lua/lualine.lua
-      luafile ~/.config/nvim/lua/markdown.lua
-      luafile ~/.config/nvim/lua/telescope.lua
-      luafile ~/.config/nvim/lua/gitsigns.lua
-      luafile ~/.config/nvim/lua/snippets.lua
-      luafile ~/.config/nvim/lua/mappings.lua
-      luafile ~/.config/nvim/lua/autopairs.lua
-      luafile ~/.config/nvim/lua/comment.lua
-      luafile ~/.config/nvim/lua/null.lua
-      luafile ~/.config/nvim/lua/colors.lua
-      luafile ~/.config/nvim/lua/blankline.lua
+      lua require("user")
     '';
 
     plugins = with pkgs.vimPlugins; [
@@ -148,20 +133,5 @@ in
     extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
   };
 
-  xdg.configFile."nvim/lua/settings.lua".source = ./lua/settings.lua;
-  xdg.configFile."nvim/lua/mappings.lua".source = ./lua/mappings.lua;
-  xdg.configFile."nvim/lua/lsp.lua".source = ./lua/lsp.lua;
-  xdg.configFile."nvim/lua/treesitter.lua".source = ./lua/treesitter.lua;
-  xdg.configFile."nvim/lua/cmp.lua".source = ./lua/cmp.lua;
-  xdg.configFile."nvim/lua/lualine.lua".source = ./lua/lualine.lua;
-  xdg.configFile."nvim/lua/markdown.lua".source = ./lua/markdown.lua;
-  xdg.configFile."nvim/lua/telescope.lua".source = ./lua/telescope.lua;
-  xdg.configFile."nvim/lua/telescopeconfig.lua".source = ./lua/telescopeconfig.lua;
-  xdg.configFile."nvim/lua/gitsigns.lua".source = ./lua/gitsigns.lua;
-  xdg.configFile."nvim/lua/snippets.lua".source = ./lua/snippets.lua;
-  xdg.configFile."nvim/lua/autopairs.lua".source = ./lua/autopairs.lua;
-  xdg.configFile."nvim/lua/comment.lua".source = ./lua/comment.lua;
-  xdg.configFile."nvim/lua/null.lua".source = ./lua/null.lua;
-  xdg.configFile."nvim/lua/colors.lua".source = ./lua/colors.lua;
-  xdg.configFile."nvim/lua/blankline.lua".source = ./lua/blankline.lua;
+  xdg.configFile."nvim/lua/user".source = ./lua/user;
 }

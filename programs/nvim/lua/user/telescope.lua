@@ -43,7 +43,7 @@ vim.keymap.set('n', '<leader>fg', builtin.git_commits)
 vim.keymap.set('n', '<leader>fq', builtin.quickfix)
 vim.keymap.set('n', '<leader>fp', builtin.buffers)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags)
-vim.keymap.set('n', '<leader>fc', require('telescopeconfig').edit_configs)
+vim.keymap.set('n', '<leader>fc', require('user.telescopeconfig').edit_configs)
 
 telescope.load_extension("ui-select")
 telescope.load_extension('fzf')
