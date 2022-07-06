@@ -38,3 +38,6 @@ vim.api.nvim_set_keymap('n', '<leader>gb', ':G blame<cr>', opts)
 -- Buffer mappings
 vim.api.nvim_set_keymap('n', '<leader>x', ':only<cr>', opts)
 vim.api.nvim_set_keymap('n', '<leader>X', ':bdelete<cr>', opts)
+
+-- File explorer
+vim.api.nvim_set_keymap('n', '<leader>t', ':NvimTreeToggle<cr>', opts)

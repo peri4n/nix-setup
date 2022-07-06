@@ -91,9 +91,7 @@ in
       nvim-metals
 
       # file browser
-      vim-dirvish
-      vim-dirvish-git
-      vim-eunuch
+      nvim-tree-lua
 
       nvim-web-devicons
 
