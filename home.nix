@@ -22,7 +22,6 @@ in
     ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
-    ./programs/nnn.nix
     ./programs/readline.nix
     ./programs/starship.nix
     ./programs/xmobar.nix
