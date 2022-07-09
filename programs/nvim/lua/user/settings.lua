@@ -47,6 +47,7 @@ set.writebackup = false -- Make backup before writing a file
 set.expandtab = true -- Use spaces instead of tabs
 set.tabstop = 2 -- Use 2 spaces
 set.shiftwidth = 2 -- Use 2 spaces for indentation
+set.shiftround = true -- Indent in multiples of `shiftwidth`
 set.softtabstop = 2 -- Just so that indenting behaves sane
 set.smartindent = true -- Auto indenting when adding new line
 
