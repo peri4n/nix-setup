@@ -6,7 +6,7 @@ vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', op
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 local nvim_lsp = require('lspconfig')
-local on_attach = function(client, bufnr)
+local add_mappings = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -33,7 +33,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local servers = { "hls", "rnix", "rust_analyzer", "tsserver", "pylsp", "gopls" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
-    on_attach = on_attach,
+    on_attach = add_mappings,
     capabilities = capabilities
   }
 end
@@ -43,7 +43,7 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 require('lspconfig').sumneko_lua.setup {
-  on_attach = on_attach,
+  on_attach = add_mappings,
   capabilities = capabilities,
   settings = {
     Lua = {
@@ -68,7 +68,7 @@ require('lspconfig').sumneko_lua.setup {
 }
 
 local metals_config = require("metals").bare_config()
-metals_config.on_attach = on_attach
+metals_config.on_attach = add_mappings
 metals_config.capabilities = capabilities
 
 -- Autocmd that will actually be in charging of starting the whole thing
@@ -151,7 +151,13 @@ local config = {
   init_options = {
     bundles = {}
   },
-  on_attach = on_attach
+  on_attach = function(client, bufnr)
+    add_mappings(client, bufnr)
+    vim.api.nvim_buf_create_user_command(bufnr, "JdtUpdateConfig", function() require('jdtls').update_project_config() end, {})
+    vim.api.nvim_buf_create_user_command(bufnr, "JdtJol", function() require('jdtls').jol() end, {})
+    vim.api.nvim_buf_create_user_command(bufnr, "JdtBytecode", function() require('jdtls').javap() end, {})
+    vim.api.nvim_buf_create_user_command(bufnr, "JdtJshell", function() require('jdtls').jshell() end, {})
+  end
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
