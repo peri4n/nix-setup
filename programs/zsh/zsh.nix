@@ -9,6 +9,7 @@ with builtins;
 
     enableSyntaxHighlighting = true;
     enableAutosuggestions = true;
+    enableCompletion = true;
     defaultKeymap = "viins";
 
     history = { 
