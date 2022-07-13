@@ -64,6 +64,9 @@ with builtins;
       mcd () {
           mkdir -p "$1" && cd "$1"
       }
+
+      # ================ Styles ====================
+      zstyle ':completion:*' menu select
     '';
 
     shellAliases = { 
