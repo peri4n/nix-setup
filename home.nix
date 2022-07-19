@@ -64,6 +64,7 @@ in
     entr
     exercism
     feh
+    fd
     fzf
     git
     git-extras
