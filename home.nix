@@ -16,6 +16,7 @@ in
     ./programs/broot.nix
     ./programs/exa.nix
     ./programs/git/git.nix
+    ./programs/gpg.nix
     ./programs/fzf.nix
     ./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
@@ -29,7 +30,8 @@ in
     ./programs/zsh/zsh.nix
 
     ./services/dunst.nix
-    ./services/picom.nix
+    ./services/gpg-agent.nix
+    # ./services/picom.nix
     ./services/redshift.nix
   ];
 
@@ -67,10 +69,10 @@ in
     git-extras
     gitlint
     gh
-    # gnupg
     jq
     maim
     nodejs
+    pinentry
     proselint
     qmk
     rtorrent
@@ -128,13 +130,6 @@ in
     };
     syncthing = {
       enable = true;
-    };
-    gpg-agent = {
-      enable = false;
-      enableZshIntegration = true;
-      defaultCacheTtl = 60480000;
-      maxCacheTtl = 60480000;
-      pinentryFlavor = "tty";
     };
   };
 

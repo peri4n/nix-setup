@@ -7,7 +7,7 @@
     userEmail = "spam+github@fbull.de";
     extraConfig = {
       user = {
-        signingkey = "BD71629060395D89";
+        signingkey = "5CFF22DEB3BEAFDD";
       };
       branch = {
         autosetuprebase = "always";
