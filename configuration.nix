@@ -31,9 +31,11 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
+  console.useXkbConfig = true;
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.utf8";
+  #i18n.defaultLocale = "en_US.utf8";
+  #i18n.supportedLocales =  [ "en_US.UTF8/UTF8" "de_DE.UTF8/UTF8" ];
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_DE.utf8";
@@ -62,9 +64,11 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us,us";
-    xkbVariant = "colemak_dh,";
+    layout = "us";
+    #layout = "us,us";
+    #xkbVariant = "colemak_dh,";
     xkbOptions = "ctrl:nocaps, grp:alt_shift_toggle, grp_led:caps, compose:rwin";
+    exportConfiguration = true;
 
     libinput = {
       enable = true;
@@ -80,10 +84,10 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = false;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;

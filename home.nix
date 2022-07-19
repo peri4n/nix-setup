@@ -67,8 +67,10 @@ in
     gitlint
     gh
     jq
+    jetbrains.idea-ultimate
     maim
     nodejs
+    pavucontrol
     pinentry
     proselint
     qmk
