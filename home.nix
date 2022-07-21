@@ -86,6 +86,7 @@ in
     my-xmonad
     neovim-nightly
     xdotool
+    xsel
     youtube-dl
     zathura
     zsh
