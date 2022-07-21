@@ -73,8 +73,10 @@ in
     qmk
     rtorrent
     ripgrep
+    signal-desktop
     slack
     sqlite
+    steam
     syncthing
     tealdeer
     tmux
