@@ -21,21 +21,6 @@ with builtins;
       ignorePatterns = ["rm *" "cp *"];
     };
 
-    sessionVariables = { 
-      EDITOR = "nvim";
-      GPG_TTY = "$(tty)";
-      JDTLS_HOME = "$HOME/downloads/jdtls/";
-
-      # XDG
-      XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
-
-      # Courcier : Stack
-      PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin";
-
-      # Quickly switch vi modes
-      KEYTIMEOUT=1;
-    };
-
     initExtraBeforeCompInit = builtins.readFile ./dracula-syntax-highlighting.zsh;
     
     initExtra = ''

@@ -121,6 +121,21 @@ in
 
   home.stateVersion = "21.11";
 
+  home.sessionVariables = {
+      EDITOR = "nvim";
+      GPG_TTY = "$(tty)";
+      JDTLS_HOME = "$HOME/downloads/jdtls/";
+
+      # XDG
+      XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
+
+      # Courcier : Stack
+      PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin";
+
+      # Quickly switch vi modes
+      KEYTIMEOUT=1;
+  };
+
   services = {
     clipmenu = {
       enable = true;
