@@ -157,9 +157,5 @@ in
     enable = true;
     windowManager.command = "${my-xmonad}/bin/wm-exe";
   };
-
-  home.file.".xinitrc".source = ./xinitrc;
-
-
 }
 
