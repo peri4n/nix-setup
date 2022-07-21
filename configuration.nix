@@ -129,9 +129,10 @@
     vim
     usbutils
     pciutils
-    #xorg.xbacklight # control brightness
     xorg.xev # query key presses
     glxinfo
+
+    networkmanagerapplet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
