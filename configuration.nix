@@ -5,8 +5,10 @@
 { config, pkgs, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./nvidia.nix
     ];
 
   # Bootloader.
@@ -106,13 +108,9 @@
   users.users.fbull = {
     isNormalUser = true;
     description = "fbull";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "video" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
-      neovim
-      git
-      firefox
-    #  thunderbird
     ];
   };
 
@@ -122,8 +120,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-     vim
-     kitty
+    git
+    vim
+    usbutils
+    pciutils
+    #xorg.xbacklight # control brightness
+    xorg.xev # query key presses
+    glxinfo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
