@@ -31,7 +31,7 @@ in
 
     ./services/dunst.nix
     ./services/gpg-agent.nix
-    # ./services/picom.nix
+    ./services/picom.nix
     ./services/redshift.nix
   ];
 
