@@ -40,9 +40,6 @@ in
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
 
-
-  targets.genericLinux.enable = true;
-
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     fira-code
