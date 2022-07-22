@@ -44,6 +44,9 @@
   time.timeZone = "Europe/Berlin";
   console.useXkbConfig = true;
 
+  # Enable docker
+  virtualisation.docker.enable = true;
+
   # Select internationalisation properties.
   #i18n.defaultLocale = "en_US.utf8";
   #i18n.supportedLocales =  [ "en_US.UTF8/UTF8" "de_DE.UTF8/UTF8" ];
@@ -117,7 +120,7 @@
   users.users.fbull = {
     isNormalUser = true;
     description = "fbull";
-    extraGroups = [ "networkmanager" "wheel" "video" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker"];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
