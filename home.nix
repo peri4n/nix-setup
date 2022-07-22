@@ -54,6 +54,7 @@ in
     btop
     delta
     dunst
+    calibre
     entr
     exercism
     feh
