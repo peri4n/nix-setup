@@ -60,21 +60,21 @@
     LC_TIME = "de_DE.utf8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager = {
-    defaultSession = "none+xmonad";
-  };
-
-  services.xserver.windowManager.xmonad = {
-    enable = true;
-    enableContribAndExtras = true;
-  };
-
   # Configure keymap in X11
   services.xserver = {
+    # Enable the X11 windowing system.
+    enable = true;
+
+    # Enable the GNOME Desktop Environment.
+    displayManager = {
+      defaultSession = "none+xmonad";
+    };
+
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+    };
+
     layout = "us";
     #layout = "us,us";
     #xkbVariant = "colemak_dh,";
