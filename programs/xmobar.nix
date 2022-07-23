@@ -25,7 +25,7 @@ in
              , allDesktops = True
              , overrideRedirect = True
              , alignSep = "}{"
-             , template = "%StdinReader% }{ %dynnetwork% | %memory% | %battery% | %date%"
+             , template = "%StdinReader% }{ %dynnetwork% | %memory% | %battery% | %kbd% | %date%"
              , commands = [
                             Run DynNetwork     [ "--template" , "<fc=${purple}><dev></fc>: <tx> kB/s <rx> kB/s"
                                                , "--Low"      , "1000000"       -- units: B/s
@@ -35,13 +35,19 @@ in
                                                , "--high"     , "#ff8080"
                                                ] 10
                           , Run Memory ["-t","<usedratio>% <fc=${purple}> </fc>"] 10
+                          , Run Kbd [("us(colemak_dh)", "DH"), ("us", "US")]
                           , Run BatteryP ["BAT0"] [
-                              "-t", "<fc=${purple}><acstatus></fc> <left>% - <timeleft>",
+                              "-t", "<fc=${purple}><acstatus></fc> <left>%",
                               "--",
-                              "-O", "\xfba3",
-                              "-o", "\xf578",
+                              "-i", "\xf583",
+                              "-o", "",
+                              "--highs", "\xf581",
+                              "--mediums", "\xf57f",
+                              "--lows", "\xf582",
                               "-h", "green",
-                              "-l", "red"
+                              "-l", "red",
+                              "-A", "15",
+                              "-a", "notify-send -u critical 'Battery running out!!'"
                               ] 10
                           , Run Date "<fc=${orange}> %a %b %d %H</fc>:<fc=${orange}>%M</fc>" "date" 60
                           , Run StdinReader
