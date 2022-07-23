@@ -64,6 +64,7 @@ in
     git-extras
     gitlint
     gh
+    jdk
     jq
     jetbrains.idea-ultimate
     maim
@@ -84,6 +85,8 @@ in
     tree
     tree-sitter
     unzip
+    minikube
+    kubectl
     my-xmonad
     neovim-nightly
     xdotool
