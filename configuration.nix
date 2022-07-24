@@ -93,6 +93,9 @@
     };
   };
 
+  # SSD disk optimisation
+  services.fstrim.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -136,6 +139,7 @@
     vim
     usbutils
     pciutils
+    lsof
     xorg.xev # query key presses
     glxinfo
 
