@@ -44,6 +44,7 @@ in
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     fira-code
     arandr
+    anki
     autorandr
     aspell
     aspellDicts.de

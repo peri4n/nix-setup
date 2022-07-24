@@ -139,6 +139,7 @@
     xorg.xev # query key presses
     glxinfo
 
+    nmap
     libnotify # notify-send
     networkmanagerapplet
   ];
