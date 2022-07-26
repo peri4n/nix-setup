@@ -69,6 +69,7 @@ in
     jq
     jetbrains.idea-ultimate
     maim
+    maven
     nodejs
     pavucontrol
     pinentry
