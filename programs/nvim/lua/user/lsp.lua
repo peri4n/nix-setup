@@ -187,3 +187,18 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
   border = "rounded",
 })
+
+local dap, dapui = require("dap"), require("dapui")
+dapui.setup();
+
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
