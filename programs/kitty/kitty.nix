@@ -10,6 +10,7 @@
       font_family = "Fira Code Nerd Font";
       tab_bar_style = "powerline";
       disable_ligatures = "cursor";
+      enable_audio_bell = "no";
     };
     keybindings = {
       "kitty_mod+t" = "new_tab_with_cwd";
