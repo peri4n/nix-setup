@@ -74,9 +74,6 @@ metals_config.capabilities = capabilities
 -- Autocmd that will actually be in charging of starting the whole thing
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-  -- NOTE: You may or may not want java included here. You will need it if you
-  -- want basic Java support but it may also conflict if you are using
-  -- something like nvim-jdtls which also works on a java filetype autocmd.
   pattern = { "scala", "sbt" },
   callback = function()
     require("metals").initialize_or_attach(metals_config)
@@ -84,18 +81,12 @@ vim.api.nvim_create_autocmd("FileType", {
   group = nvim_metals_group,
 })
 
--- Java LSP config
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 
 local workspace_dir = '/home/fbull/.cache/jdtls/' .. project_name
 
--- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
-  -- The command that starts the language server
-  -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
   cmd = {
-
-    -- 💀
     'java', -- or '/path/to/java11_or_newer/bin/java'
     -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
@@ -109,28 +100,13 @@ local config = {
     '--add-opens', 'java.base/java.util=ALL-UNNAMED',
     '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
 
-    -- 💀
-    '-jar', '/home/fbull/downloads/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
-    -- Must point to the                                                     Change this to
-    -- eclipse.jdt.ls installation                                           the actual version
+    '-jar', '/home/fbull/dev/tools/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
 
+    '-configuration', '/home/fbull/dev/tools/jdtls/config_linux',
 
-    -- 💀
-    '-configuration', '/home/fbull/downloads/jdtls/config_linux',
-    -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
-    -- Must point to the                      Change to one of `linux`, `win` or `mac`
-    -- eclipse.jdt.ls installation            Depending on your system.
-
-
-    -- 💀
-    -- See `data directory configuration` section in the README
     '-data', workspace_dir
   },
 
-  -- 💀
-  -- This is the default if not provided, you can remove it. Or adjust as needed.
-  -- One dedicated LSP server & client will be started per unique root_dir
   root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }),
 
   -- Here you can configure eclipse.jdt.ls specific settings
@@ -159,11 +135,13 @@ local config = {
     vim.api.nvim_buf_create_user_command(bufnr, "JdtJshell", function() require('jdtls').jshell() end, {})
   end
 }
--- This starts a new client & server,
--- or attaches to an existing client & server depending on the `root_dir`.
-vim.api.nvim_create_autocmd("BufEnter", {
-  pattern = "*.java",
-  callback = function() require('jdtls').start_or_attach(config) end
+
+local nvim_jdtls_group = vim.api.nvim_create_augroup("nvim-jdtls", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "java" },
+  callback = function()
+    require('jdtls').start_or_attach(config)
+  end
 })
 
 vim.keymap.set('n', 'crv', function() require('jdtls').extract_variable() end)
