@@ -117,22 +117,20 @@ local config = {
     }
   },
 
-  -- Language server `initializationOptions`
-  -- You need to extend the `bundles` with paths to jar files
-  -- if you want to use additional eclipse.jdt.ls plugins.
-  --
-  -- See https://github.com/mfussenegger/nvim-jdtls#java-debug-installation
-  --
-  -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
   init_options = {
-    bundles = {}
+    bundles = {
+      vim.fn.glob("/home/fbull/dev/tools/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.39.0.jar")
+    }
   },
+
   on_attach = function(client, bufnr)
     add_mappings(client, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, "JdtUpdateConfig", function() require('jdtls').update_project_config() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtJol", function() require('jdtls').jol() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtBytecode", function() require('jdtls').javap() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtJshell", function() require('jdtls').jshell() end, {})
+
+    require('jdtls').setup_dap({ hotcodereplace = 'auto' })
   end
 }
 
@@ -150,7 +148,6 @@ vim.api.nvim_set_keymap('v', 'crm', "<Esc><Cmd>lua require('jdtls').extract_meth
 local icons = require("user.icons")
 
 local signs = {
-
   { name = "DiagnosticSignError", text = icons.diagnostics.Error },
   { name = "DiagnosticSignWarn", text = icons.diagnostics.Warning },
   { name = "DiagnosticSignHint", text = icons.diagnostics.Hint },

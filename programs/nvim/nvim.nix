@@ -63,6 +63,8 @@ in
       playground # treesitter playground
       nvim-treesitter-context
       nvim-lspconfig
+      nvim-dap
+      nvim-dap-ui
       lualine-lsp-progress
       null-ls-nvim
 
