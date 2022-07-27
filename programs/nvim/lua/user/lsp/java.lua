@@ -62,4 +62,4 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.keymap.set('n', 'crv', function() require('jdtls').extract_variable() end)
-vim.api.nvim_set_keymap('v', 'crm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>", { noremap = true, silent = true })
+vim.keymap.set('v', 'crm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
