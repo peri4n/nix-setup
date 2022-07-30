@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let 
-  colors = import ../dracula.nix;
+  colors = import ../themes/dracula.nix;
 in
 {
   programs.xmobar = with colors.dracula.hex; {

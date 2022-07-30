@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 let 
-  colors = import ../dracula.nix;
+  colors = import ../themes/dracula.nix;
   toRgb = with lib.strings; str: "rgb(" + concatStringsSep ", " (splitString " " str) + ")";
 in
 {
