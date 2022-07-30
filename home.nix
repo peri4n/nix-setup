@@ -1,7 +1,4 @@
 { config, pkgs, lib, ... }:
-let
-  my-xmonad = pkgs.callPackage ./programs/xmonad.nix { };
-in
 {
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
@@ -56,6 +53,7 @@ in
     delta
     dunst
     calibre
+    cabal-install
     entr
     exercism
     feh
@@ -79,6 +77,7 @@ in
     ripgrep
     signal-desktop
     slack
+    stack
     sqlite
     steam
     syncthing
@@ -89,7 +88,6 @@ in
     unzip
     minikube
     kubectl
-    my-xmonad
     neovim-nightly
     xdotool
     xsel
@@ -169,14 +167,8 @@ in
         "x-scheme-handler/https" = [ "brave-browser.desktop" ];
         "x-scheme-handler/jetbrains" = [ "jetbrains-toolbox.desktop" ];
         "x-scheme-handler/unknown" = [ "brave-browser.desktop" ];
-
       };
     };
-  };
-
-  xsession = {
-    enable = true;
-    windowManager.command = "${my-xmonad}/bin/wm-exe";
   };
 }
 

@@ -9,6 +9,7 @@
       # Include the results of the hardware scan.
       ./hardware/hardware-configuration.nix
       ./hardware/nvidia.nix
+      ./programs/xmonad/xmonad.nix
     ];
 
   nix = {
@@ -98,11 +99,6 @@
     # Enable the GNOME Desktop Environment.
     displayManager = {
       defaultSession = "none+xmonad";
-    };
-
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
     };
 
     layout = "us";
