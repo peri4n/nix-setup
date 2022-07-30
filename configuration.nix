@@ -11,9 +11,12 @@
       ./nvidia.nix
     ];
 
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -123,7 +126,7 @@
   users.users.fbull = {
     isNormalUser = true;
     description = "fbull";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];

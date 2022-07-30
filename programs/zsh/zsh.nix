@@ -35,7 +35,6 @@ with builtins;
       setopt HIST_VERIFY               # Dont execute immediately upon history expansion.
       setopt VI                        # Enable vi mode
       setopt NO_BEEP                   # No beep!
-      setopt EXTENDED_GLOB             # Enable extended globbing
 
       bindkey '^ ' autosuggest-accept
       bindkey '^[^M' autosuggest-execute # Ctrl-Enter
