@@ -7,8 +7,8 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./nvidia.nix
+      ./hardware/hardware-configuration.nix
+      ./hardware/nvidia.nix
     ];
 
   nix = {
