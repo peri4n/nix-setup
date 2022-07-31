@@ -32,8 +32,6 @@
     ./services/redshift.nix
   ];
 
-  programs.home-manager.enable = true;
-
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
 
@@ -43,8 +41,8 @@
     arandr
     anki
     autorandr
-    aspell
-    aspellDicts.de
+    #aspell
+    #aspellDicts.de
     bat
     bitwarden-cli
     brave
@@ -63,12 +61,12 @@
     git-extras
     gitlint
     gh
-    jdk
+    #jdk
     jq
-    jetbrains.idea-ultimate
+    #jetbrains.idea-ultimate
     maim
-    maven
-    nodejs
+    #maven
+    #nodejs
     pavucontrol
     pinentry
     proselint
@@ -84,15 +82,14 @@
     tealdeer
     tmux
     tree
-    tree-sitter
+    #tree-sitter
     unzip
     minikube
     kubectl
     neovim-nightly
-    xdotool
+    #xdotool
     xsel
     youtube-dl
-    zathura
     zsh
 
     # Scala
@@ -126,8 +123,13 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.stateVersion = "21.11";
+  home.stateVersion = "22.11";
 
+  # programs.direnv = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  # };
+  #
   home.sessionVariables = {
       EDITOR = "nvim";
       GPG_TTY = "$(tty)";

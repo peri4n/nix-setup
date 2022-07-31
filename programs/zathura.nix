@@ -2,7 +2,7 @@
 
 {
   programs.zathura = {
-    enable = true;
+    enable = false;
     extraConfig = ''
     set window-title-basename "true"
     set selection-clipboard "clipboard"
