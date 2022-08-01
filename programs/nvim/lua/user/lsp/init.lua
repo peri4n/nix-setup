@@ -1,6 +1,6 @@
 require("user.lsp.null")
 require("user.lsp.java")
-require("user.lsp.scala")
+--require("user.lsp.scala")
 require("user.lsp.lua")
 
 local common = require('user.lsp.common')

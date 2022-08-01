@@ -7,9 +7,9 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware/hardware-configuration.nix
+      ./hardware/pluto/hardware-configuration.nix
       ./hardware/nvidia.nix
-#      ./programs/xmonad/xmonad.nix
+      ./programs/xmonad/xmonad.nix
     ];
 
   nix = {
@@ -72,13 +72,10 @@
     # Enable the X11 windowing system.
     enable = true;
 
-    desktopManager.gnome.enable = true;
-
     displayManager = {
-#      defaultSession = "none+xmonad";
-      gdm.enable = true;
+      defaultSession = "none+xmonad";
       lightdm = {
-        enable = false;
+        enable = true;
         background = pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath;
 
         extraSeatDefaults = ''

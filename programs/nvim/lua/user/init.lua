@@ -1,4 +1,4 @@
-require("impatient")
+--require("impatient")
 require("user.settings")
 require("user.mappings")
 require("user.treesitter")

@@ -16,7 +16,7 @@
         ui = true;
       };
       commit = {
-        gpgSign = true;
+        gpgSign = false;
         template = "~/.gitmessage";
       };
       core = {

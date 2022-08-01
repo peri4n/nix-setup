@@ -28,9 +28,11 @@
 
     ./services/dunst.nix
     ./services/gpg-agent.nix
-    ./services/picom.nix
+    #./services/picom.nix
     ./services/redshift.nix
   ];
+
+  programs.home-manager.enable = true;
 
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
@@ -41,8 +43,8 @@
     arandr
     anki
     autorandr
-    #aspell
-    #aspellDicts.de
+    aspell
+    aspellDicts.de
     bat
     bitwarden-cli
     brave
@@ -61,18 +63,19 @@
     git-extras
     gitlint
     gh
-    #jdk
+    jdk
     jq
-    #jetbrains.idea-ultimate
+    jetbrains.idea-ultimate
     maim
-    #maven
-    #nodejs
+    maven
+    nodejs
     pavucontrol
     pinentry
     proselint
     qmk
     rtorrent
     ripgrep
+    rofi
     signal-desktop
     slack
     stack
@@ -82,15 +85,16 @@
     tealdeer
     tmux
     tree
-    #tree-sitter
+    tree-sitter
     unzip
     minikube
     kubectl
     neovim-nightly
-    #xdotool
+    xdotool
     xsel
     youtube-dl
     zsh
+    zoom-us
 
     # Scala
     coursier
@@ -123,7 +127,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.stateVersion = "22.11";
+  home.stateVersion = "22.05";
 
   # programs.direnv = {
   #   enable = true;
