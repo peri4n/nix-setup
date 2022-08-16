@@ -74,10 +74,11 @@ with builtins;
       # search
       ff = "find . -type f -name";
 
-      # Tmux
-      tn = "tmux new-session";
-      ta = "tmux attach";
-      tl = "tmux list-sessions";
+      # Task warrior
+      tw = "task";
+      twa = "task add";
+      twl = "task list";
+      twd = "task completed";
 
       # Docker
       d = "docker";

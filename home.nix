@@ -21,6 +21,7 @@
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
+    ./programs/rofi/rofi.nix
     ./programs/starship.nix
     ./programs/xmobar.nix
     ./programs/zathura.nix
@@ -28,7 +29,7 @@
 
     ./services/dunst.nix
     ./services/gpg-agent.nix
-    #./services/picom.nix
+    ./services/picom.nix
     ./services/redshift.nix
   ];
 
@@ -38,10 +39,11 @@
   home.homeDirectory = "/home/fbull";
 
   home.packages = with pkgs; [
+    appimage-run
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     fira-code
     arandr
-    anki
+#    anki
     autorandr
     aspell
     aspellDicts.de
@@ -63,12 +65,16 @@
     git-extras
     gitlint
     gh
+    gcc
+    gof5
+    heroku
     jdk
     jq
     jetbrains.idea-ultimate
     maim
     maven
     nodejs
+    yarn
     pavucontrol
     pinentry
     proselint
@@ -81,15 +87,25 @@
     stack
     sqlite
     steam
+    spotify
     syncthing
+    katagoWithCuda
+    slock
     tealdeer
     tmux
     tree
     tree-sitter
+    timewarrior
+    taskwarrior
+    tasksh
     unzip
+    libreoffice
     minikube
     kubectl
     neovim-nightly
+    vlc
+    vivaldi
+    vivaldi-ffmpeg-codecs
     xdotool
     xsel
     youtube-dl
@@ -116,6 +132,11 @@
     # Nix
     rnix-lsp
     nixpkgs-fmt
+
+    (jdt-language-server.overrideAttrs (old: rec { 
+      version = "1.14.0";
+      timestamp = "202207211651";
+    }))
 
     # Lua
     sumneko-lua-language-server
@@ -146,7 +167,10 @@
       PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin";
 
       # Quickly switch vi modes
-      KEYTIMEOUT=1;
+      KEYTIMEOUT = 1;
+
+      GDK_SCALE = 1;
+
   };
 
   services = {

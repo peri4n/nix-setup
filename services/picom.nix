@@ -3,11 +3,10 @@
 {
   services = {
     picom = {
-      enable = true;
+      enable = false;
       backend = "xrender";
       shadow = true;
       fade = true;
-      fadeSteps = [ 0.06 0.06 ];
       vSync = true;
     };
   };

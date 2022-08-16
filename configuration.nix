@@ -7,7 +7,7 @@
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware/pluto/hardware-configuration.nix
+      ./hardware/mars/hardware-configuration.nix
       ./hardware/nvidia.nix
       ./programs/xmonad/xmonad.nix
     ];
@@ -67,10 +67,16 @@
     LC_TIME = "de_DE.utf8";
   };
 
+  environment.variables = {
+    GDK_SCALE = "2";
+    GDK_DPI_SCALE = "0.5";
+  };
+
   # Configure keymap in X11
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
+    dpi = 180;
 
     displayManager = {
       defaultSession = "none+xmonad";
@@ -120,10 +126,10 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = false;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;

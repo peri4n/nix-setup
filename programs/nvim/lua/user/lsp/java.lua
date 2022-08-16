@@ -6,23 +6,7 @@ local workspace_dir = '/home/fbull/.cache/jdtls/' .. project_name
 
 local config = {
   cmd = {
-    'java', -- or '/path/to/java11_or_newer/bin/java'
-    -- depends on if `java` is in your $PATH env variable and if it points to the right version.
-
-    '-Declipse.application=org.eclipse.jdt.ls.core.id1',
-    '-Dosgi.bundles.defaultStartLevel=4',
-    '-Declipse.product=org.eclipse.jdt.ls.core.product',
-    '-Dlog.protocol=true',
-    '-Dlog.level=ALL',
-    '-Xms1g',
-    '--add-modules=ALL-SYSTEM',
-    '--add-opens', 'java.base/java.util=ALL-UNNAMED',
-    '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-
-    '-jar', '/home/fbull/dev/tools/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar',
-
-    '-configuration', '/home/fbull/dev/tools/jdtls/config_linux',
-
+    'jdt-language-server',
     '-data', workspace_dir
   },
 
@@ -53,7 +37,7 @@ local config = {
   end
 }
 
-local nvim_jdtls_group = vim.api.nvim_create_augroup("nvim-jdtls", { clear = true })
+local nvim_jdtls_group = vim.api.nvim_create_augroup("nvim_jdtls", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
   pattern = { "java" },
   callback = function()

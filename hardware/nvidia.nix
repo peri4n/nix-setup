@@ -10,6 +10,7 @@ let
 in
 {
   hardware.nvidia = {
+    modesetting.enable = true;
     prime = {
       offload.enable = true;
       nvidiaBusId = "PCI:1:0:0";
@@ -20,7 +21,7 @@ in
   environment.systemPackages = with pkgs; [
     nvidia-offload
   ];
-
+ 
   services.xserver = {
     videoDrivers = [ "nvidia" ];
   };

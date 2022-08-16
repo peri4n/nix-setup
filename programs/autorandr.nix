@@ -15,7 +15,7 @@ let
     "00000000000000000000000000000000fe00544b365237804c513135364d31000000000002410" +
     "328001200000a010a2020002b";
   screens = {
-    DP-1-1 = homeScreen;
+    DP-2-1 = homeScreen;
     eDP-1 = laptopScreen;
   };
 in
@@ -31,7 +31,7 @@ in
             enable = true;
             primary = true;
             crtc = 0;
-            mode = "1920x1080";
+            mode = "3840x2400";
             position = "0x0";
             rate = "60.00";
           };
@@ -41,7 +41,7 @@ in
         fingerprint = screens;
         config = {
           eDB-1.enable = false;
-          DP-1-1 = {
+          DP-2-1 = {
             enable = true;
             primary = true;
             crtc = 0;
