@@ -9,7 +9,8 @@
       # Include the results of the hardware scan.
       ./hardware/mars/hardware-configuration.nix
       ./hardware/nvidia.nix
-      ./programs/xmonad/xmonad.nix
+      # ./programs/xmonad/xmonad.nix
+      ./programs/sway/sway.nix
     ];
 
   nix = {
@@ -79,7 +80,7 @@
     dpi = 180;
 
     displayManager = {
-      defaultSession = "none+xmonad";
+      defaultSession = "sway";
       lightdm = {
         enable = true;
         background = pkgs.nixos-artwork.wallpapers.dracula.gnomeFilePath;
