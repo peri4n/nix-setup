@@ -44,6 +44,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     sway
+    gammastep
     dbus-sway-environment
     configure-gtk
     wayland
@@ -55,6 +56,7 @@ in
     grim # screenshot functionality
     slurp # screenshot functionality
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
+    clipman
     wlr-randr
     wdisplays
     bemenu # wayland clone of dmenu
@@ -81,4 +83,6 @@ in
     wrapperFeatures.gtk = true;
     extraOptions = [ "--unsupported-gpu" ];
   };
+
+  programs.light.enable = true;
 }

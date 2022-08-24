@@ -68,16 +68,10 @@
     LC_TIME = "de_DE.utf8";
   };
 
-  environment.variables = {
-    GDK_SCALE = "2";
-    GDK_DPI_SCALE = "0.5";
-  };
-
   # Configure keymap in X11
   services.xserver = {
     # Enable the X11 windowing system.
     enable = true;
-    dpi = 180;
 
     displayManager = {
       defaultSession = "sway";
@@ -105,8 +99,6 @@
     };
 
     layout = "us";
-    #layout = "us,us";
-    #xkbVariant = "colemak_dh,";
     xkbOptions = "ctrl:nocaps, grp:alt_shift_toggle, grp_led:caps, compose:rwin";
     exportConfiguration = true;
 
