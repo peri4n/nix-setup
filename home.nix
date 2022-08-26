@@ -101,6 +101,7 @@
     unzip
     libreoffice
     minikube
+    obsidian
     kubectl
     neovim-nightly
     vlc
