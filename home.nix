@@ -1,11 +1,5 @@
 { config, pkgs, lib, ... }:
 {
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-    }))
-  ];
-
   imports = [
     ./programs/autorandr.nix
     ./programs/bat.nix
@@ -42,9 +36,7 @@
     appimage-run
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     fira-code
-    arandr
 #    anki
-    autorandr
     aspell
     aspellDicts.de
     bat
@@ -81,7 +73,6 @@
     qmk
     rtorrent
     ripgrep
-    rofi
     signal-desktop
     slack
     stack
@@ -93,8 +84,6 @@
     slock
     tealdeer
     tmux
-    tree
-    tree-sitter
     timewarrior
     taskwarrior
     tasksh
@@ -103,15 +92,14 @@
     minikube
     obsidian
     kubectl
-    neovim-nightly
     vlc
     vivaldi
     vivaldi-ffmpeg-codecs
     xdotool
-    xsel
     youtube-dl
     zsh
     zoom-us
+    cura
 
     # Scala
     coursier

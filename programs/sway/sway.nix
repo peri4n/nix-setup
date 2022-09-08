@@ -60,6 +60,7 @@ in
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     clipman
     wlr-randr
+    waybar
     wdisplays
     bemenu # wayland clone of dmenu
   ];
