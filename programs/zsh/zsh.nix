@@ -119,12 +119,9 @@ with builtins;
 
     dirHashes = { 
       dl = "$HOME/downloads";
-      dap = "$HOME/work/repos/dap/master";
-      eur = "$HOME/work/repos/europa";
       nix = "$HOME/.config/nixpkgs";
-      know = "$HOME/docs/knowledge";
+      zk = "$HOME/zettelkasten";
       qmk = "$HOME/dev/repos/qmk_firmware";
-      xmonad = "$HOME/dev/repos/XMonad";
     };
 
     plugins = [ 
