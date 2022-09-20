@@ -41,6 +41,7 @@
     aspellDicts.de
     bat
     bitwarden-cli
+    blender
     brave
     broot
     btop
@@ -81,7 +82,6 @@
     spotify
     syncthing
     katagoWithCuda
-    slock
     tealdeer
     tmux
     timewarrior
@@ -93,9 +93,6 @@
     obsidian
     kubectl
     vlc
-    vivaldi
-    vivaldi-ffmpeg-codecs
-    xdotool
     youtube-dl
     zsh
     zoom-us
@@ -133,6 +130,9 @@
 
     # Typescript
     nodePackages.typescript-language-server
+
+    # HTML JSON CSS ESLINT
+    nodePackages.vscode-langservers-extracted
   ];
 
   nixpkgs.config.allowUnfree = true;
