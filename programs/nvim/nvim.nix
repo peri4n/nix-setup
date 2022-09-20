@@ -6,8 +6,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "Mofiqul";
       repo = "dracula.nvim";
-      rev = "a219971291c56bcca3827cb7bd40aaaef23feeca";
-      sha256 = "r1VhURChdutQFO9fiF+YV+MJycuj6xohTmR9DYpUFdk=";
+      rev = "0b4f6e009867027caddc1f28a81d8a7da6a2b277";
+      sha256 = "w1E7SE2sQr5nz/ftPz87jSNTGsMVKwAlVruoMa4oikE=";
     };
   };
   telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
@@ -15,8 +15,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "nvim-telescope";
       repo = "telescope-ui-select.nvim";
-      rev = "d02a3d3a6b3f6b933c43a28668ae18f78846d3aa";
-      sha256 = "RKwoXrIWhW29kPEyQSGDg+0kcxCXPEl+U+DmuAgHhNM=";
+      rev = "62ea5e58c7bbe191297b983a9e7e89420f581369";
+      sha256 = "/JM2KX70JXa3sydrUj13Vd4rRwhn3VrdW7qLLHqIqyY=";
     };
   };
   nvim-metals = pkgs.vimUtils.buildVimPluginFrom2Nix {
