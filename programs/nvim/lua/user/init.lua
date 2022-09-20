@@ -1,5 +1,5 @@
---require("impatient")
 require("user.settings")
+require("user.autocommands")
 require("user.mappings")
 require("user.treesitter")
 require("user.tree")
