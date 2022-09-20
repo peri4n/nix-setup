@@ -34,9 +34,6 @@ set.smartcase = true -- Unless we type a capital
 --------------------------- Color Scheme ---------------------
 set.termguicolors = true
 vim.cmd('colorscheme dracula')
-vim.g.dracula_italic_comment = true
-vim.g.dracula_show_end_of_buffer = false
-vim.g.dracula_lualine_bg_color = "#44475a"
 
 --------------------------- Swap Files -----------------------
 set.swapfile = false -- Do not create swap files

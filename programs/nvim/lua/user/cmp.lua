@@ -10,7 +10,7 @@ require 'nvim-web-devicons'.setup {
 cmp.setup({
   snippet = {
     expand = function(args)
-      require 'luasnip'.lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end
   },
   mapping = {
@@ -47,12 +47,15 @@ cmp.setup({
 
   },
   sources = cmp.config.sources({
+    { name = 'path' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
-    { name = 'luasnip' },
     { name = 'buffer', keyword_length = 5 },
-    { name = 'path' }
+    { name = 'luasnip' }
   }),
+  window = {
+    documentation = cmp.config.window.bordered()
+  },
   formatting = {
     format = lspkind.cmp_format({
       mode = 'symbol_text',
