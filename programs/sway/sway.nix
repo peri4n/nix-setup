@@ -46,6 +46,7 @@ in
 {
   environment.systemPackages = with pkgs; [
     sway
+    xwayland
     gammastep
     dbus-sway-environment
     configure-gtk
