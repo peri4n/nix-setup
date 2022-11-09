@@ -2,7 +2,7 @@
 
 {
   programs.brave = {
-    enable = false;
+    enable = true;
     extensions = [
       { id = "gfapcejdoghpoidkfodoiiffaaibpaem"; } # Dracula theme
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden

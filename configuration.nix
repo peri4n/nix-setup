@@ -130,6 +130,7 @@
   environment.systemPackages = with pkgs; [
     git
     vim
+    brave
     usbutils
     pciutils
     lsof
@@ -139,7 +140,22 @@
     nmap
     libnotify # notify-send
     networkmanagerapplet
+
+    globalprotect-openconnect
   ];
+
+  services.globalprotect = {
+    enable = true;
+    # if you need a Host Integrity Protection report
+    csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
+  };
+
+  environment.sessionVariables = {
+    BEMENU_OPTS = ''
+      --tb '#6272a4' --tf '#f8f8f2' --fb '#282a36' --ff '#f8f8f2' --nb '#282a36' 
+      --nf '#6272a4' --hb '#44475a' --hf '#50fa7b' --sb '#44475a' --sf '#50fa7b' 
+      --scb '#282a36' --scf '#ff79c6' '';
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

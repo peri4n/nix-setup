@@ -12,17 +12,17 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
   boot.extraModulePackages = [ ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_5_19;
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a252caab-3b3f-4ff0-9f1e-c1a02db2f571";
+    { device = "/dev/disk/by-uuid/2c3a13ab-6650-470c-b0f8-46c6f1cd7051";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-5f2fe780-d88e-437a-9d98-fa6a0de7e5ee".device = "/dev/disk/by-uuid/5f2fe780-d88e-437a-9d98-fa6a0de7e5ee";
+  boot.initrd.luks.devices."luks-3bb91992-69b0-43b3-8e73-e4c493aac179".device = "/dev/disk/by-uuid/3bb91992-69b0-43b3-8e73-e4c493aac179";
 
   fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/1B83-FEA3";
+    { device = "/dev/disk/by-uuid/03EB-34FB";
       fsType = "vfat";
     };
 
