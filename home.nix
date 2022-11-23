@@ -5,6 +5,7 @@
     ./programs/bat.nix
     ./programs/brave.nix
     ./programs/broot.nix
+    ./programs/direnv.nix
     ./programs/exa.nix
     ./programs/git/git.nix
     ./programs/gpg.nix
