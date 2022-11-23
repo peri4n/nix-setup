@@ -42,6 +42,7 @@
     aspellDicts.de
     bat
     bitwarden-cli
+    blueman
     blender
     brave
     broot
@@ -62,7 +63,7 @@
     gcc
     gof5
     heroku
-    jdk
+    openjdk8
     jq
     jetbrains.idea-ultimate
     maim
@@ -111,10 +112,6 @@
     # Haskell
     haskell-language-server
     cabal2nix
-
-    # Rust
-    rust-analyzer
-    rustup
 
     # Nix
     rnix-lsp
