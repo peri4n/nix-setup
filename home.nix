@@ -10,15 +10,15 @@
     ./programs/git/git.nix
     ./programs/gpg.nix
     ./programs/fzf.nix
-    ./programs/dmenu/dmenu.nix
+    #./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
     ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
-    ./programs/rofi/rofi.nix
+    #./programs/rofi/rofi.nix
     ./programs/starship.nix
-    ./programs/xmobar.nix
+    #./programs/xmobar.nix
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
 

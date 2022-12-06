@@ -1,15 +1,6 @@
 { config, pkgs, libs, ... }:
 
 let
-  dracula-theme = pkgs.vimUtils.buildVimPlugin {
-    name = "dracula-theme-nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "Mofiqul";
-      repo = "dracula.nvim";
-      rev = "0b4f6e009867027caddc1f28a81d8a7da6a2b277";
-      sha256 = "w1E7SE2sQr5nz/ftPz87jSNTGsMVKwAlVruoMa4oikE=";
-    };
-  };
   telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
     name = "telescope-ui-select";
     src = pkgs.fetchFromGitHub {
@@ -40,7 +31,7 @@ in
     '';
 
     plugins = with pkgs.vimPlugins; [
-      dracula-theme
+      dracula-nvim
       (nvim-treesitter.withPlugins (p: [
         pkgs.tree-sitter-grammars.tree-sitter-css
         pkgs.tree-sitter-grammars.tree-sitter-go

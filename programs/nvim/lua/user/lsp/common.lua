@@ -22,6 +22,6 @@ M.add_mappings = function(client, bufnr)
   vim.keymap.set('n', '<space>rf', function() vim.lsp.buf.formatting() end, opts)
 end
 
-M.capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+M.capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 return M
