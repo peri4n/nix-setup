@@ -17,6 +17,23 @@ local config = {
   -- for a list of options
   settings = {
     java = {
+      import = {
+        gradle = {
+          enabled = true
+        },
+        maven = {
+          enabled = true
+        },
+        referencesCodeLens = {
+          enabled = false
+        },
+        signatureHelp = {
+          enabled = false
+        },
+        implementationsCodeLens = {
+          enabled = false
+        },
+      },
     }
   },
 

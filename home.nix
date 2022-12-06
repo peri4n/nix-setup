@@ -55,6 +55,7 @@
     exercism
     feh
     fd
+    foliate
     fzf
     git
     git-extras
@@ -68,10 +69,12 @@
     jetbrains.idea-ultimate
     maim
     maven
+    mongodb
     nodejs
     yarn
     pavucontrol
     pinentry
+    postman
     proselint
     qmk
     rtorrent
@@ -118,8 +121,8 @@
     nixpkgs-fmt
 
     (jdt-language-server.overrideAttrs (old: rec { 
-      version = "1.14.0";
-      timestamp = "202207211651";
+      version = "1.18.0";
+      timestamp = "202212011657";
     }))
 
     # Lua
