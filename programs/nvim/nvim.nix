@@ -58,6 +58,7 @@ in
       nvim-dap-ui
       lualine-lsp-progress
       null-ls-nvim
+      lsp-inlayhints-nvim
 
       # telescope
       telescope-nvim
