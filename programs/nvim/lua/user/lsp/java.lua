@@ -24,16 +24,32 @@ local config = {
         maven = {
           enabled = true
         },
-        referencesCodeLens = {
-          enabled = false
-        },
-        signatureHelp = {
-          enabled = false
-        },
-        implementationsCodeLens = {
-          enabled = false
-        },
       },
+      eclipse = {
+        downloadSources = true
+      },
+      referencesCodeLens = {
+        enabled = true
+      },
+      signatureHelp = {
+        enabled = true
+      },
+      implementationsCodeLens = {
+        enabled = false
+      },
+      saveActions = {
+      organizeImports = true,
+    },
+      inlayhints = {
+        parameterNames = true
+      },
+      jdt = {
+        ls = {
+          lombokSupport = {
+            enabled = true
+          }
+        }
+      }
     }
   },
 
@@ -45,7 +61,8 @@ local config = {
 
   on_attach = function(client, bufnr)
     common.add_mappings(client, bufnr)
-    vim.api.nvim_buf_create_user_command(bufnr, "JdtUpdateConfig", function() require('jdtls').update_project_config() end, {})
+    vim.api.nvim_buf_create_user_command(bufnr, "JdtUpdateConfig",
+      function() require('jdtls').update_project_config() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtJol", function() require('jdtls').jol() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtBytecode", function() require('jdtls').javap() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtJshell", function() require('jdtls').jshell() end, {})
