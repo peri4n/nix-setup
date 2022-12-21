@@ -56,6 +56,7 @@
     feh
     fd
     foliate
+    freecad
     fzf
     git
     git-extras
@@ -95,6 +96,7 @@
     unzip
     libreoffice
     minikube
+    mplayer
     obsidian
     kubectl
     vlc
