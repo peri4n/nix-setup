@@ -13,6 +13,7 @@ let
     executable = true;
 
     text = ''
+      systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
       dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
       systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
       systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
@@ -87,8 +88,10 @@ in
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    gtkUsePortal = true;
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gtk
+    ];
   };
 
   # enable sway window manager

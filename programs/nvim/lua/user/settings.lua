@@ -66,6 +66,10 @@ set.fillchars = {
   foldclose = '▸',
 }
 
+set.foldmethod = "expr"
+set.foldexpr = "nvim_treesitter#foldexpr()"
+set.foldlevel = 100
+
 --------------------------- Wrapping -------------------------
 set.wrap = false -- Don't wrap lines
 set.linebreak = true -- Wrap lines at convenient points

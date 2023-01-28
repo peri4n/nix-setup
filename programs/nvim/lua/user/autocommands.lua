@@ -24,3 +24,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
     ]]
   end,
 })
+
+-- So that folding works for files opened with telescopes
+vim.api.nvim_create_autocmd({ "BufEnter" }, { 
+  pattern = { "*" }, 
+  command = "normal zx", 
+})
+

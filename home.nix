@@ -48,6 +48,7 @@
     broot
     btop
     delta
+    difftastic
     dunst
     calibre
     cabal-install
@@ -70,12 +71,14 @@
     jetbrains.idea-ultimate
     maim
     maven
-    mongodb
+    mongodb-tools
     nodejs
+    obs-studio
     yarn
     pavucontrol
     pinentry
     postman
+    psmisc
     proselint
     qmk
     rtorrent
@@ -98,8 +101,10 @@
     minikube
     mplayer
     obsidian
+    openscad
     kubectl
     vlc
+    v4l-utils
     youtube-dl
     zsh
     zoom-us
@@ -160,6 +165,8 @@
 
       # Quickly switch vi modes
       KEYTIMEOUT = 1;
+
+      _JAVA_AWT_WM_NONREPARENTING = 1;
   };
 
   services = {

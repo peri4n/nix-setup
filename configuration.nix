@@ -92,6 +92,8 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  services.udisks2.enable = true;
+
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -101,23 +103,15 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
   services.blueman.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.fbull = {
     isNormalUser = true;
     description = "fbull";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" "audio" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     ];
@@ -150,6 +144,13 @@
     enable = true;
     # if you need a Host Integrity Protection report
     csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
+  };
+
+  services.mongodb = {
+    enable = true;
+    package = pkgs.mongodb-6_0;
+    enableAuth = true;
+    initialRootPassword = "root";
   };
 
   environment.sessionVariables = {

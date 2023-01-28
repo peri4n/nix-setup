@@ -5,6 +5,9 @@
     enable = true;
     userName = "Fabian Bull";
     userEmail = "spam+github@fbull.de";
+    difftastic = {
+      enable = true;
+    };
     extraConfig = {
       user = {
         signingkey = "5CFF22DEB3BEAFDD";
@@ -22,16 +25,9 @@
       core = {
         editor = "nvim";
         autocrlf = "input";
-        pager = "delta";
       };
-      diff = {
-        tool = "nvimdiff";
-      };
-      delta = {
-        dark = true;
-        line-numbers = true;
-        side-by-side = true;
-        syntax-theme = "Dracula";
+      difftool = {
+        prompt = false;
       };
       init = {
         defaultBranch = "main";
