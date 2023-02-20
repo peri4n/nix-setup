@@ -55,7 +55,6 @@ with builtins;
 
     shellAliases = { 
       # utility
-      v = "nvim";
       gw = "./gradlew";
       gwi = "./gradlew -i";
       g = "git";
