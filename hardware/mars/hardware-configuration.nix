@@ -8,11 +8,15 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" "v4l2loopback" "snd-aloop" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" "nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm" ];
-  boot.extraModulePackages = [ pkgs.linuxPackages_6_0.v4l2loopback ];
-  boot.kernelPackages = pkgs.linuxPackages_6_0;
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+  boot.kernelPackages = pkgs.linuxPackages_6_1;
+
+  boot.extraModprobeConfig = ''
+    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+  '';
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/2c3a13ab-6650-470c-b0f8-46c6f1cd7051";

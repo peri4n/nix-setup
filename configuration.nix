@@ -137,13 +137,35 @@
     networkmanagerapplet
     pulseaudio
 
+    openvpn
+    inetutils
     globalprotect-openconnect
+    openconnect
+
+    (pkgs.wrapOBS {
+      plugins = with pkgs.obs-studio-plugins; [
+        wlrobs
+        obs-pipewire-audio-capture
+        obs-gstreamer
+        obs-backgroundremoval
+        input-overlay
+        looking-glass-obs
+      ];
+    })
+
+    mongosh
+    tcpdump
   ];
 
   services.globalprotect = {
     enable = true;
     # if you need a Host Integrity Protection report
     csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
+  };
+
+  programs.wireshark = {
+    enable = true;
+    package = pkgs.wireshark;
   };
 
   services.mongodb = {
