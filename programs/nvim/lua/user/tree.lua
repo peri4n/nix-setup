@@ -1,3 +1,8 @@
-require"nvim-tree".setup {}
-
-vim.g.nvim_tree_auto_close = 1
+require "nvim-tree".setup {
+  renderer = {
+    group_empty = true;
+  },
+  git = {
+    enable = true
+  }
+}
