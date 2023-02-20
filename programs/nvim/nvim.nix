@@ -1,6 +1,10 @@
 { config, pkgs, libs, ... }:
 
 let
+  nvim-wrapped = pkgs.writeShellScriptBin "v" ''
+    export JAVA_OPTS=-javaagent:${pkgs.lombok}/share/java/lombok.jar
+    nvim "$@"
+  '';
   telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
     name = "telescope-ui-select";
     src = pkgs.fetchFromGitHub {
@@ -115,6 +119,7 @@ in
 
     extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
   };
+  home.packages = [ nvim-wrapped ];
 
   xdg.configFile."nvim/lua/user".source = ./lua/user;
 }
