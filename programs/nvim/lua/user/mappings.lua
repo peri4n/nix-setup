@@ -38,5 +38,5 @@ vim.keymap.set('n', '<leader>x', ':only<cr>')
 vim.keymap.set('n', '<leader>X', ':bdelete<cr>')
 
 -- File explorer
-vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<cr>')
-vim.keymap.set('n', '<leader>T', ':NvimTreeFindFileToggle<cr>')
+vim.keymap.set('n', '<leader>T', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<leader>t', ':NvimTreeFindFileToggle<cr>')
