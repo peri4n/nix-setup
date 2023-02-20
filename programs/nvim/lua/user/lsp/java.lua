@@ -17,6 +17,12 @@ local config = {
   -- for a list of options
   settings = {
     java = {
+      sources = {
+        organizeImports = {
+          starThreshold = 9999;
+          staticStarThreshold = 9999;
+        };
+      };
       import = {
         gradle = {
           enabled = true
@@ -28,18 +34,25 @@ local config = {
       eclipse = {
         downloadSources = true
       },
-      referencesCodeLens = {
-        enabled = true
+      maven = {
+        downloadSources = true,
+        updateSnapshotts = true
       },
-      signatureHelp = {
+      referencesCodeLens = {
         enabled = true
       },
       implementationsCodeLens = {
         enabled = false
       },
+      format = {
+        enabled = true
+      },
+      signatureHelp = {
+        enabled = true
+      },
       saveActions = {
-      organizeImports = true,
-    },
+        organizeImports = true,
+      },
       inlayhints = {
         parameterNames = true
       },
