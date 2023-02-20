@@ -11,6 +11,7 @@
       tab_bar_style = "powerline";
       disable_ligatures = "cursor";
       enable_audio_bell = "no";
+      enabled_layouts = "tall";
     };
     keybindings = {
       "kitty_mod+t" = "new_tab_with_cwd";
