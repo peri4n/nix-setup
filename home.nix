@@ -14,6 +14,7 @@
     ./programs/dircolors.nix
     ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix
+    ./programs/tealdeer.nix
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
     #./programs/rofi/rofi.nix
