@@ -36,6 +36,7 @@
 
   home.packages = with pkgs; [
     appimage-run
+    arduino
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
     fira-code
 #    anki
@@ -67,14 +68,13 @@
     gcc
     gof5
     heroku
-    openjdk8
+    openjdk11
     jq
     jetbrains.idea-ultimate
     maim
     maven
     mongodb-tools
     nodejs
-    obs-studio
     yarn
     pavucontrol
     pinentry
@@ -99,6 +99,8 @@
     tasksh
     unzip
     libreoffice
+    linuxConsoleTools
+    logseq
     minikube
     mplayer
     obsidian
