@@ -31,3 +31,14 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   command = "normal zx", 
 })
 
+
+-- Set indentation for java files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "java" },
+  callback = function()
+    vim.cmd [[
+      setlocal shiftwidth=4
+      setlocal tabstop=4
+    ]]
+  end,
+})
