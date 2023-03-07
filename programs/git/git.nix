@@ -42,7 +42,7 @@
         conflictstyle = "diff3";
       };
       tag = {
-        gpgSign = true;
+        gpgSign = false;
       };
       push = {
         default = "simple";
@@ -59,7 +59,7 @@
     aliases = {
       a = "add";
       aa = "add --all";
-      b = "branch";
+      b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
       c = "commit -v";
       ca = "commit --amend";
       can = "commit --amend --no-edit";
@@ -79,8 +79,11 @@
       ls = "log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat";
       ph = "push";
       phf = "push -f";
+      rb = "rebase";
+      rbi = "rebase -i";
       s = "status --short --branch";
       st = "stash";
+      sts = "stash save";
       stl = "stash list";
       stp = "stash pop";
       rc = "! git rev-parse HEAD | tr -d '\n' | xsel";
