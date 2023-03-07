@@ -66,8 +66,6 @@
     gitlint
     gh
     gcc
-    gof5
-    heroku
     openjdk11
     jq
     jetbrains.idea-ultimate
@@ -100,7 +98,6 @@
     unzip
     libreoffice
     linuxConsoleTools
-    logseq
     minikube
     mplayer
     obsidian
