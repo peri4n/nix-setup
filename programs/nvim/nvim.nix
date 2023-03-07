@@ -57,6 +57,7 @@ in
       ]))
       playground # treesitter playground
       nvim-treesitter-context
+      nvim-treesitter-textobjects
       nvim-lspconfig
       nvim-dap
       nvim-dap-ui
