@@ -128,9 +128,10 @@
     nixpkgs-fmt
 
     (jdt-language-server.overrideAttrs (old: rec { 
-      version = "1.18.0";
-      timestamp = "202212011657";
+      version = "1.20.0";
+      timestamp = "202302201605";
     }))
+    checkstyle
 
     # Lua
     sumneko-lua-language-server
