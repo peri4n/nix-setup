@@ -22,7 +22,7 @@ with builtins;
     };
 
     initExtraBeforeCompInit = builtins.readFile ./dracula-syntax-highlighting.zsh;
-    
+
     initExtra = ''
       setopt PROMPT_SUBST              # Enable command substitution in the prompt
       setopt NULL_GLOB                 # If a glob does not match delete it as an argument

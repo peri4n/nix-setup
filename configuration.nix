@@ -120,42 +120,44 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    brave
-    usbutils
-    pciutils
-    lsof
-    xorg.xev # query key presses
-    glxinfo
+  environment = {
+    variables.EDITOR = "nvim";
 
-    nmap
-    libnotify # notify-send
-    networkmanagerapplet
-    pulseaudio
+    systemPackages = with pkgs; [
+      git
+      vim
+      brave
+      usbutils
+      pciutils
+      lsof
+      xorg.xev # query key presses
+      glxinfo
 
-    openvpn
-    inetutils
-    globalprotect-openconnect
-    openconnect
+      nmap
+      libnotify # notify-send
+      networkmanagerapplet
+      pulseaudio
 
-    (pkgs.wrapOBS {
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        obs-pipewire-audio-capture
-        obs-gstreamer
-        obs-backgroundremoval
-        input-overlay
-        looking-glass-obs
-      ];
-    })
+      openvpn
+      inetutils
+      globalprotect-openconnect
+      openconnect
 
-    mongosh
-    tcpdump
-  ];
+      (pkgs.wrapOBS {
+        plugins = with pkgs.obs-studio-plugins; [
+          wlrobs
+          obs-pipewire-audio-capture
+          obs-gstreamer
+          obs-backgroundremoval
+          input-overlay
+          looking-glass-obs
+        ];
+      })
+
+      mongosh
+      tcpdump
+    ];
+  };
 
   services.globalprotect = {
     enable = true;
