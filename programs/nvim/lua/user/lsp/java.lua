@@ -31,6 +31,10 @@ local config = {
           enabled = true
         },
       },
+      completion = {
+        enabled = true,
+        importOrder = { '' }
+      };
       eclipse = {
         downloadSources = true
       },
