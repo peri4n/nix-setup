@@ -12,6 +12,8 @@
       disable_ligatures = "cursor";
       enable_audio_bell = "no";
       enabled_layouts = "tall";
+      window_border_width = "0.5pt";
+      linux_display_server = "wayland";
     };
     keybindings = {
       "kitty_mod+t" = "new_tab_with_cwd";
