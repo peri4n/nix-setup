@@ -7,6 +7,7 @@
       include dracula.conf
     '';
     settings = {
+      font_size = "13.0";
       font_family = "Fira Code Nerd Font";
       tab_bar_style = "powerline";
       disable_ligatures = "cursor";
