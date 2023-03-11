@@ -103,6 +103,7 @@
     obsidian
     openscad
     kubectl
+    vimgolf
     vlc
     v4l-utils
     youtube-dl
