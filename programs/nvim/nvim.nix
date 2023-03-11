@@ -58,6 +58,7 @@ in
       cmp-nvim-lua
       cmp-buffer
       cmp-path
+      cmp-git
       cmp-cmdline
       lspkind-nvim
 

@@ -14,7 +14,7 @@ cmp.setup({
     end
   },
   mapping = {
-    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-Space>'] = cmp.mapping.complete({}),
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-e>'] = cmp.mapping({ i = cmp.mapping.abort(), c = cmp.mapping.close() }),
@@ -46,13 +46,14 @@ cmp.setup({
     end, { "i", "s" }),
 
   },
-  sources = cmp.config.sources({
-    { name = 'path' },
+  sources = {
+    { name = "git" },
+    { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
+    { name = 'path' },
     { name = 'buffer', keyword_length = 5 },
-    { name = 'luasnip' }
-  }),
+  },
   window = {
     documentation = cmp.config.window.bordered()
   },
@@ -72,4 +73,16 @@ cmp.setup({
     native_menu = false;
     ghost_text_view = true;
   }
+})
+
+require("cmp_git").setup()
+
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+  sources = cmp.config.sources({
+    { name = 'git' },
+  }, {
+    { name = 'buffer' },
+  })
 })
