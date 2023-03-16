@@ -170,13 +170,6 @@
     package = pkgs.wireshark;
   };
 
-  services.mongodb = {
-    enable = true;
-    package = pkgs.mongodb-6_0;
-    enableAuth = true;
-    initialRootPassword = "root";
-  };
-
   environment.sessionVariables = {
     BEMENU_OPTS = ''
       --tb '#6272a4' --tf '#f8f8f2' --fb '#282a36' --ff '#f8f8f2' --nb '#282a36' 
