@@ -44,6 +44,12 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
+    ["<A-;>"] = cmp.mapping(function()
+      if cmp.visible() then
+        cmp.select_next_item()
+        cmp.mapping.confirm({ select = false })()
+      end
+    end, { "i", "s" }),
 
   },
   sources = {
@@ -76,7 +82,6 @@ cmp.setup({
 })
 
 require("cmp_git").setup()
-
 
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
