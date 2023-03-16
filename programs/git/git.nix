@@ -60,6 +60,7 @@
       a = "add";
       aa = "add --all";
       b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
+      bd = "branch -d";
       c = "commit -v";
       ca = "commit --amend";
       can = "commit --amend --no-edit";
