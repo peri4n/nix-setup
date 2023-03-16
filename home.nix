@@ -66,6 +66,7 @@
     gitlint
     gh
     gcc
+    httpie
     openjdk11
     jq
     jetbrains.idea-ultimate
