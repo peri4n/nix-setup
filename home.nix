@@ -37,7 +37,7 @@
   home.packages = with pkgs; [
     appimage-run
     arduino
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
     fira-code
 #    anki
     aspell
