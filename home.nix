@@ -144,6 +144,8 @@
 
     # HTML JSON CSS ESLINT
     nodePackages.vscode-langservers-extracted
+    nodePackages.vscode-json-languageserver
+    nodePackages.yaml-language-server
   ];
 
   nixpkgs.config.allowUnfree = true;

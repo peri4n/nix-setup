@@ -71,6 +71,7 @@ in
       vim-markdown
       nvim-jdtls
       nvim-metals
+      SchemaStore-nvim
 
       # file browser
       nvim-tree-lua
