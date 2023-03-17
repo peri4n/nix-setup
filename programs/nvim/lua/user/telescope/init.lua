@@ -36,16 +36,17 @@ telescope.setup {
     }
   }
 }
-vim.keymap.set('n', '<leader>ff', builtin.find_files)
-vim.keymap.set('n', '<leader>fa', function() builtin.find_files({ no_ignore = true }) end)
-vim.keymap.set('n', '<leader>fw', builtin.live_grep)
-vim.keymap.set('n', '<leader>fd', builtin.diagnostics)
-vim.keymap.set('n', '<leader>fg', builtin.git_commits)
-vim.keymap.set('n', '<leader>fb', builtin.git_branches)
-vim.keymap.set('n', '<leader>fq', builtin.quickfix)
-vim.keymap.set('n', '<leader>fp', builtin.buffers)
-vim.keymap.set('n', '<leader>fh', builtin.help_tags)
-vim.keymap.set('n', '<leader>fc', require('user.telescope.picker').edit_configs)
+vim.keymap.set('n', '<leader>ss', builtin.find_files)
+vim.keymap.set('n', '<leader>sa', function() builtin.find_files({ no_ignore = true }) end)
+vim.keymap.set('n', '<leader>sg', builtin.live_grep)
+vim.keymap.set('n', '<leader>sd', builtin.diagnostics)
+vim.keymap.set('n', '<leader>sc', builtin.git_commits)
+vim.keymap.set('n', '<leader>sb', builtin.git_branches)
+vim.keymap.set('n', '<leader>sq', builtin.quickfix)
+vim.keymap.set('n', '<leader>sn', builtin.buffers)
+vim.keymap.set('n', '<leader>st', builtin.treesitter)
+vim.keymap.set('n', '<leader>sh', builtin.help_tags)
+vim.keymap.set('n', '<leader>sc', require('user.telescope.picker').edit_configs)
 
 telescope.load_extension("ui-select")
 telescope.load_extension('fzf')
