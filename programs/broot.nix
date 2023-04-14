@@ -27,11 +27,11 @@ in
         internal = ":panel_left";
       }
       { 
-        key = "ctrl-j";
+        key = "ctrl-n";
         internal = ":line_down";
       }
       { 
-        key = "ctrl-k";
+        key = "ctrl-p";
         internal = ":line_up";
       }
       { 

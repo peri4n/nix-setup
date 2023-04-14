@@ -99,10 +99,15 @@
     unzip
     libreoffice
     linuxConsoleTools
+    texlive.combined.scheme-medium
+
     minikube
+    kubernetes-helm
+
     mplayer
     obsidian
     openscad
+    pandoc
     kubectl
     vimgolf
     vlc

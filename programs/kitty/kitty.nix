@@ -15,7 +15,7 @@
       tab_bar_style = "powerline";
       disable_ligatures = "cursor";
       enable_audio_bell = "no";
-      enabled_layouts = "tall";
+      enabled_layouts = "tall, stack";
       window_border_width = "0.5pt";
       linux_display_server = "wayland";
     };
