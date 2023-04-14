@@ -161,6 +161,11 @@
 
   services.globalprotect = {
     enable = true;
+    settings = {
+      "vpn-eu.envision-digital.com" = {
+        openconnect-args = "--servercert pin-sha256:r6qE53Ea/kvnKMnktSoZMuCbrvbLlOEUZfAcCOqZ5Lg=";
+      };
+    };
     # if you need a Host Integrity Protection report
     csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
   };
