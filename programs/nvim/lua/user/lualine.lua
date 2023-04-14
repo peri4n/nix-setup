@@ -40,4 +40,4 @@ ins_left {
   spinner_symbols = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' },
 }
 
---require('lualine').setup(config)
+require('lualine').setup(config)
