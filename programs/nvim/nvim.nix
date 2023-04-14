@@ -88,7 +88,7 @@ in
       # editing
       vim-unimpaired
       vim-surround
-      lightspeed-nvim
+      leap-nvim
       nvim-autopairs
       comment-nvim
 
