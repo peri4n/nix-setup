@@ -43,6 +43,7 @@ with builtins;
 
       alias -s nix=$EDITOR
       alias -s md=$EDITOR
+      alias -s db=sqlite3
 
       # ================ Functions ====================
       mcd () {
