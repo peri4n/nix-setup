@@ -8,7 +8,7 @@ require("user.lsp.jsonls")
 local common = require('user.lsp.common')
 local nvim_lsp = require('lspconfig')
 
-local servers = { "hls", "rnix", "rust_analyzer", "tsserver", "pylsp", "gopls", "cssls", "html" }
+local servers = { "hls", "rnix", "rust_analyzer", "tsserver", "pylsp", "gopls", "cssls", "html", "marksman" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = common.add_mappings,

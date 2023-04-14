@@ -112,6 +112,9 @@
     zoom-us
     cura
 
+    # markdown
+    marksman
+
     # Scala
     coursier
 
