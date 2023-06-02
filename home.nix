@@ -66,6 +66,8 @@
     gitlint
     gh
     gcc
+    glab
+    hledger
     httpie
     openjdk11
     jq
@@ -90,7 +92,7 @@
     steam
     spotify
     syncthing
-    katagoWithCuda
+    katago
     tealdeer
     tmux
     timewarrior
@@ -99,7 +101,7 @@
     unzip
     libreoffice
     linuxConsoleTools
-    texlive.combined.scheme-medium
+    texlive.combined.scheme-full
 
     minikube
     kubernetes-helm
@@ -115,6 +117,9 @@
     youtube-dl
     zsh
     zoom-us
+    vivaldi
+    vivaldi-ffmpeg-codecs
+    visualvm
     cura
 
     # markdown
@@ -125,6 +130,7 @@
 
     # Python
     python39Packages.python-lsp-server
+    python39Packages.pygments
 
     # Go
     gopls
@@ -173,8 +179,8 @@
       # XDG
       XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
 
-      # Courcier : Stack
-      PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin";
+      # Courcier : Stack : Cargo
+      PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin:$HOME/.cargo/bin";
 
       # Quickly switch vi modes
       KEYTIMEOUT = 1;
@@ -183,9 +189,6 @@
   };
 
   services = {
-    clipmenu = {
-      enable = true;
-    };
     syncthing = {
       enable = true;
     };

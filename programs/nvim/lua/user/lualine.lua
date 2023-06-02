@@ -10,7 +10,7 @@ local config = {
     lualine_c = {
       {
         'filename',
-        path = 1 -- relative paths
+        path = 4 -- relative paths
       }
     },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },

@@ -23,6 +23,24 @@ let
       sha256 = "TIqp1udXn5GW23jcprPk08nV85E3nYLXatOEEyUeIXY=";
     };
   };
+  nvim-schemastore = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-schemastore";
+    src = pkgs.fetchFromGitHub {
+      owner = "b0o";
+      repo = "SchemaStore.nvim";
+      rev = "5e1225507dbc46710e7f2bec86f2444e578a959e";
+      sha256 = "ZVCFe74vTQl7joDY1VmRCG3ot4CMH7w18cxQi5KvxMc=";
+    };
+  };
+  nvim-lualine = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-lualine";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-lualine";
+      repo = "lualine.nvim";
+      rev = "84ffb80e452d95e2c46fa29a98ea11a240f7843e";
+      sha256 = "u79S3wFJ72vcLp7F0f/s21Kvl/pMRI8CkB+8usPQob4=";
+    };
+  };
 in
 {
   programs.neovim = {
@@ -62,7 +80,7 @@ in
       cmp-cmdline
       lspkind-nvim
 
-      lualine-nvim
+      nvim-lualine
 
       # languages
       haskell-vim
@@ -71,7 +89,7 @@ in
       vim-markdown
       nvim-jdtls
       nvim-metals
-      SchemaStore-nvim
+      nvim-schemastore
 
       # file browser
       nvim-tree-lua

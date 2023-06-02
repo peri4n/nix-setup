@@ -113,9 +113,8 @@
     description = "fbull";
     extraGroups = [ "networkmanager" "wheel" "video" "docker" "audio" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    ];
   };
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -125,18 +124,16 @@
 
     systemPackages = with pkgs; [
       git
-      vim
       brave
       usbutils
       pciutils
+      pulseaudio
       lsof
-      xorg.xev # query key presses
       glxinfo
 
       nmap
       libnotify # notify-send
       networkmanagerapplet
-      pulseaudio
 
       openvpn
       inetutils
@@ -156,6 +153,7 @@
 
       mongosh
       tcpdump
+      qpwgraph
     ];
   };
 

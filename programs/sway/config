@@ -252,7 +252,7 @@ bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 
 # screenshots
-bindsym $mod+c exec grim  -g "$(slurp)" /tmp/$(date +'%H:%M:%S.png')
+bindsym $mod+c exec grim  -g "$(slurp)" - | swappy -f - -o ~/$(date +'%H:%M:%S.png')
 
 bindsym $mod+Shift+p exec clipman pick --tool=bemenu
 
