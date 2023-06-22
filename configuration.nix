@@ -85,6 +85,7 @@
       };
     };
   };
+  services.tlp.enable = true;
 
   # SSD disk optimisation
   services.fstrim.enable = true;

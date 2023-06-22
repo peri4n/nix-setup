@@ -32,15 +32,6 @@ let
       sha256 = "ZVCFe74vTQl7joDY1VmRCG3ot4CMH7w18cxQi5KvxMc=";
     };
   };
-  nvim-lualine = pkgs.vimUtils.buildVimPluginFrom2Nix {
-    name = "nvim-lualine";
-    src = pkgs.fetchFromGitHub {
-      owner = "nvim-lualine";
-      repo = "lualine.nvim";
-      rev = "84ffb80e452d95e2c46fa29a98ea11a240f7843e";
-      sha256 = "u79S3wFJ72vcLp7F0f/s21Kvl/pMRI8CkB+8usPQob4=";
-    };
-  };
 in
 {
   programs.neovim = {
@@ -80,7 +71,7 @@ in
       cmp-cmdline
       lspkind-nvim
 
-      nvim-lualine
+      lualine-nvim
 
       # languages
       haskell-vim

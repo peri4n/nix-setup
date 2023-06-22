@@ -49,6 +49,7 @@
     brave
     broot
     btop
+    darktable
     delta
     difftastic
     dunst

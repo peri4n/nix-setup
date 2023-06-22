@@ -58,15 +58,19 @@ in
     swaycons
     swaylock
     swayidle
+    swaybg
     swappy
     grim # screenshot functionality
     slurp # screenshot functionality
+    kanshi
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     clipman
-    wlr-randr
+    wob
     waybar
     wdisplays
     bemenu # wayland clone of dmenu
+    imv
+    wshowkeys
   ];
 
 
@@ -100,6 +104,7 @@ in
     wrapperFeatures.gtk = true;
     extraOptions = [ "--unsupported-gpu" ];
   };
+  programs.wshowkeys.enable = true;
 
   programs.light.enable = true;
 }

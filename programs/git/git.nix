@@ -62,8 +62,9 @@
       b = "branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
       bd = "branch -d";
       c = "commit -v";
-      ca = "commit --amend";
-      can = "commit --amend --no-edit";
+      ca = "commit -am";
+      ce = "commit --amend";
+      cen = "commit --amend --no-edit";
       cb = "checkout -b";
       co = "checkout";
       cm = "checkout master";
@@ -89,7 +90,7 @@
       sts = "stash save";
       stl = "stash list";
       stp = "stash pop";
-      rc = "! git rev-parse HEAD | tr -d '\n' | xsel";
+      rc = "! git rev-parse HEAD | tr -d '\n' | wl-copy";
     };
   };
 
