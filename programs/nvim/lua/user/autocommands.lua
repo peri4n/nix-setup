@@ -26,11 +26,10 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- So that folding works for files opened with telescopes
-vim.api.nvim_create_autocmd({ "BufEnter" }, { 
-  pattern = { "*" }, 
-  command = "normal zx", 
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*" },
+  command = "normal zx",
 })
-
 
 -- Set indentation for java files
 vim.api.nvim_create_autocmd({ "FileType" }, {
@@ -40,5 +39,22 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
       setlocal shiftwidth=4
       setlocal tabstop=4
     ]]
+  end,
+})
+
+-- Dim inactive windows
+vim.api.nvim_create_autocmd({ "FocusLost" }, {
+  pattern = { "*" },
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#2d2e39" })
+  end
+})
+
+local colors = require('dracula').colors()
+-- Dim inactive windows
+vim.api.nvim_create_autocmd({ "FocusGained" }, {
+  pattern = { "*" },
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = colors.bg })
   end,
 })
