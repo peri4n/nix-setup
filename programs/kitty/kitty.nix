@@ -18,6 +18,8 @@
       enabled_layouts = "tall, stack";
       window_border_width = "0.5pt";
       linux_display_server = "wayland";
+      copy_on_select = "yes";
+      background_opacity = "0.95";
     };
     keybindings = {
       "kitty_mod+t" = "new_tab_with_cwd";

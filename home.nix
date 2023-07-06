@@ -66,6 +66,7 @@
     git-extras
     gitlint
     gh
+    glow
     gcc
     glab
     hledger
@@ -76,6 +77,7 @@
     maim
     maven
     mongodb-tools
+    nap
     nodejs
     yarn
     pavucontrol
@@ -161,6 +163,7 @@
     nodePackages.vscode-langservers-extracted
     nodePackages.vscode-json-languageserver
     nodePackages.yaml-language-server
+    nodePackages."@tailwindcss/language-server"
   ];
 
   nixpkgs.config.allowUnfree = true;

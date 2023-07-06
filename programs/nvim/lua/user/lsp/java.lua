@@ -49,7 +49,13 @@ local config = {
         enabled = false
       },
       format = {
-        enabled = true
+        enabled = true;
+        settings = {
+          url = "~/.config/nixpkgs/programs/nvim/GoogleStyle.xml";
+          profile = "GoogleStyle";
+        };
+        insertSpace = true;
+        tabSize = 4;
       },
       signatureHelp = {
         enabled = true

@@ -9,7 +9,7 @@ with builtins;
 
     enableSyntaxHighlighting = true;
     enableAutosuggestions = true;
-    enableCompletion = true;
+    enableCompletion = false;
     defaultKeymap = "viins";
 
     history = { 
@@ -18,12 +18,12 @@ with builtins;
       share = true;
       expireDuplicatesFirst = true;
       extended = true;
+      ignoreDups = true;
+      ignoreSpace = true;
       ignorePatterns = ["rm *" "cp *"];
     };
 
-    initExtraBeforeCompInit = builtins.readFile ./dracula-syntax-highlighting.zsh;
-
-    initExtra = ''
+    initExtra = builtins.readFile ./dracula-syntax-highlighting.zsh + ''
       setopt PROMPT_SUBST              # Enable command substitution in the prompt
       setopt NULL_GLOB                 # If a glob does not match delete it as an argument
       setopt AUTO_PARAM_SLASH          # Tab completing directory appends a slash
@@ -42,16 +42,13 @@ with builtins;
       # ================ Suffix aliases ===============
 
       alias -s nix=$EDITOR
-      alias -s md=$EDITOR
+      alias -s md=glow
       alias -s db=sqlite3
 
       # ================ Functions ====================
       mcd () {
           mkdir -p "$1" && cd "$1"
-      }
-
-      # ================ Styles ====================
-      zstyle ':completion:*' menu select
+        }
     '';
 
     shellAliases = { 
@@ -130,8 +127,8 @@ with builtins;
           src = pkgs.fetchFromGitHub {
             owner = "agkozak";
             repo = "zsh-z";
-            rev = "aaafebcd97424c570ee247e2aeb3da30444299cd";
-            sha256 = "9Wr4uZLk2CvINJilg4o72x0NEAl043lP30D3YnHk+ZA=";
+            rev = "dc9e2bc0cdbaa0a507371c248d3dcc9f58db8726";
+            sha256 = "T0iZK9Tb7ExJaZ6e2UmwecnKHMQilwAPkyAa/uhqrw0=";
           };
         }
     ];

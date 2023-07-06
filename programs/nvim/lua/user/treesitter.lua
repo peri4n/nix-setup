@@ -1,9 +1,9 @@
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = {}, -- List of parsers to ignore installing
+  sync_install = false,  -- install languages synchronously (only applied to `ensure_installed`)
+  ignore_install = {},   -- List of parsers to ignore installing
   highlight = {
-    enable = true, -- false will disable the whole extension
+    enable = true,       -- false will disable the whole extension
     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
@@ -36,6 +36,13 @@ require 'nvim-treesitter.configs'.setup {
         ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
         -- You can also use captures from other query groups like `locals.scm`
         ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+      }
+    },
+    move = {
+      enable = true,
+      set_jumps = true, -- whether to set jumps in the jumplist
+      goto_next_start = {
+        ["]y"] = { query = "@link" }
       }
     }
   }
