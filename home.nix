@@ -4,18 +4,19 @@
     ./programs/bat.nix
     ./programs/brave.nix
     ./programs/broot.nix
+    ./programs/dircolors.nix
     ./programs/direnv.nix
     ./programs/exa.nix
+    ./programs/fzf.nix
     ./programs/git/git.nix
     ./programs/gpg.nix
-    ./programs/fzf.nix
-    ./programs/dircolors.nix
     ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix
-    ./programs/tealdeer.nix
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
     ./programs/starship.nix
+    ./programs/tealdeer.nix
+    ./programs/waybar
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
 
