@@ -9,8 +9,7 @@
       # Include the results of the hardware scan.
       ./hardware/mars/hardware-configuration.nix
       ./hardware/nvidia.nix
-      # ./programs/xmonad/xmonad.nix
-      ./programs/sway/sway.nix
+      ./programs/sway
     ];
 
   nix = {
@@ -125,7 +124,6 @@
 
     systemPackages = with pkgs; [
       git
-      brave
       usbutils
       pciutils
       pulseaudio

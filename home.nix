@@ -162,7 +162,7 @@
       XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
 
       # Courcier : Stack : Cargo
-      PATH = "$PATH:$HOME/.local/share/coursier/bin:$HOME/.local/bin:$HOME/.cargo/bin";
+      PATH = "$PATH:$HOME/.local/bin";
 
       # Quickly switch vi modes
       KEYTIMEOUT = 1;
@@ -193,6 +193,9 @@
         "x-scheme-handler/unknown" = [ "brave-browser.desktop" ];
       };
     };
+
+    configFile."swaycons/config.toml".source = ./programs/sway/swaycons.toml;
   };
+
 }
 

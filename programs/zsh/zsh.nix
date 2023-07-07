@@ -7,7 +7,9 @@ with builtins;
     enable = true;
     autocd = true;
 
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting = {
+      enable = true;
+    };
     enableAutosuggestions = true;
     enableCompletion = false;
     defaultKeymap = "viins";
