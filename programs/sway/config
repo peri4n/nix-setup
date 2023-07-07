@@ -187,6 +187,8 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+p exec btop
+
+bindsym $mod+q exec swaylock -lk
 #
 # Status Bar:
 #

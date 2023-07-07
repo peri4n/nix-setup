@@ -21,7 +21,7 @@
             "1: web" = "";
             "2: terms" = "󰞷";
             "3: files" = "";
-            "4: system" = "";
+            "4: system" = "󰨇";
             "5: music" = "󰓇";
             "urgent" = "";
             "focused" = "";

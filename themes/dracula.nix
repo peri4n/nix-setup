@@ -13,6 +13,7 @@
       purple = "#bd93f9";
       red = "#ff5555";
       yellow = "#f1fa8c";
+      dark_gray = "#1f202a";
     };
     rgb = {
       background = "40 42 54";
@@ -27,6 +28,7 @@
       purple = "189 147 249";
       red = "255 85 85";
       yellow = "241 250 140";
+      dark_gray = "31 32 42";
     };
   };
 }

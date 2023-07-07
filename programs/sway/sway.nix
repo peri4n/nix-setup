@@ -51,12 +51,10 @@ in
     gammastep
     dbus-sway-environment
     configure-gtk
-    wayland
     glib # gsettings
     dracula-theme # gtk theme
     gnome3.adwaita-icon-theme # default gnome cursors
     swaycons
-    swaylock
     swayidle
     swaybg
     swappy
@@ -72,15 +70,6 @@ in
     wshowkeys
   ];
 
-
-  services.xserver.displayManager = {
-    startx.enable = true;
-    autoLogin = {
-      enable = true;
-      user = "fbull";
-    };
-  };
-
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
   # (org.freedesktop.portal.Desktop) and object path
@@ -88,6 +77,7 @@ in
   # The portal interfaces include APIs for file access, opening URIs,
   # printing and others.
   services.dbus.enable = true;
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
