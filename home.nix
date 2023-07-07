@@ -1,7 +1,6 @@
 { config, pkgs, lib, ... }:
 {
   imports = [
-    ./programs/autorandr.nix
     ./programs/bat.nix
     ./programs/brave.nix
     ./programs/broot.nix
@@ -10,23 +9,18 @@
     ./programs/git/git.nix
     ./programs/gpg.nix
     ./programs/fzf.nix
-    #./programs/dmenu/dmenu.nix
     ./programs/dircolors.nix
     ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix
     ./programs/tealdeer.nix
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
-    #./programs/rofi/rofi.nix
     ./programs/starship.nix
-    #./programs/xmobar.nix
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
 
     ./services/dunst.nix
     ./services/gpg-agent.nix
-    ./services/picom.nix
-    ./services/redshift.nix
   ];
 
   programs.home-manager.enable = true;
@@ -45,7 +39,6 @@
     bat
     bitwarden-cli
     blueman
-    blender
     brave
     broot
     btop
@@ -54,9 +47,7 @@
     difftastic
     dunst
     calibre
-    cabal-install
     entr
-    exercism
     feh
     fd
     foliate
@@ -73,56 +64,41 @@
     httpie
     openjdk11
     jq
-    jetbrains.idea-ultimate
-    maim
     maven
-    mongodb-tools
     nap
-    nodejs
-    yarn
     pavucontrol
     pinentry
     postman
-    psmisc
     proselint
-    qmk
     rtorrent
     ripgrep
     signal-desktop
     slack
-    stack
-    sqlite
     steam
     spotify
     syncthing
     katago
     tealdeer
-    tmux
     timewarrior
     taskwarrior
     tasksh
     unzip
     libreoffice
-    linuxConsoleTools
     texlive.combined.scheme-full
 
     minikube
     kubernetes-helm
+    kubectl
 
     mplayer
     obsidian
     openscad
     pandoc
-    kubectl
     vimgolf
     vlc
     v4l-utils
-    youtube-dl
     zsh
     zoom-us
-    vivaldi
-    vivaldi-ffmpeg-codecs
-    visualvm
     cura
 
     # markdown
