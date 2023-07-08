@@ -15,6 +15,7 @@
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
     ./programs/starship.nix
+    #./programs/sway
     ./programs/swaylock
     ./programs/tealdeer.nix
     ./programs/waybar
@@ -25,6 +26,7 @@
     ./services/dunst.nix
     ./services/gammastep
     ./services/gpg-agent.nix
+    ./services/swayidle
     ./services/syncthing
   ];
 
@@ -33,7 +35,6 @@
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
 
-  #wayland.windowManager.sway.enable = true;
 
   home.packages = with pkgs; [
     appimage-run
