@@ -21,8 +21,11 @@
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
 
+    ./services/clipman
     ./services/dunst.nix
+    ./services/gammastep
     ./services/gpg-agent.nix
+    ./services/syncthing
   ];
 
   programs.home-manager.enable = true;
@@ -146,7 +149,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.stateVersion = "22.05";
+  home.stateVersion = "23.11";
 
   # programs.direnv = {
   #   enable = true;
@@ -168,12 +171,6 @@
       KEYTIMEOUT = 1;
 
       _JAVA_AWT_WM_NONREPARENTING = 1;
-  };
-
-  services = {
-    syncthing = {
-      enable = true;
-    };
   };
 
   fonts.fontconfig.enable = true;

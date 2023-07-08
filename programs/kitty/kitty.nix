@@ -3,9 +3,7 @@
 {
   programs.kitty = {
     enable = true;
-    extraConfig = ''
-      include dracula.conf
-    '';
+    theme = "Dracula";
     settings = {
       font_size = "11.0";
       font_family = "Fira Code Nerd Font";
@@ -26,7 +24,6 @@
     };
   };
 
-  xdg.configFile."kitty/dracula.conf".source = ./dracula.conf;
   xdg.configFile."kitty/diff.conf".source = ./diff.conf;
   xdg.configFile."kitty/open-actions.conf".source = ./open-actions.conf;
 }

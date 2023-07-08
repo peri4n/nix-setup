@@ -167,6 +167,17 @@
     csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
   };
 
+  services.greetd = {
+    enable = true;
+    settings = rec {
+      initial_session = {
+        command = "${pkgs.sway}/bin/sway --unsupported-gpu";
+        user = "fbull";
+      };
+      default_session = initial_session;
+    };
+  };
+
   programs.wireshark = {
     enable = true;
     package = pkgs.wireshark;
