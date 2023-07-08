@@ -15,7 +15,7 @@
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
     ./programs/starship.nix
-    #./programs/sway
+    ./programs/sway
     ./programs/swaylock
     ./programs/tealdeer.nix
     ./programs/waybar
