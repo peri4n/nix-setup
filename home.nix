@@ -33,6 +33,8 @@
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
 
+  #wayland.windowManager.sway.enable = true;
+
   home.packages = with pkgs; [
     appimage-run
     arduino
@@ -81,7 +83,6 @@
     slack
     steam
     spotify
-    syncthing
     katago
     tealdeer
     timewarrior
@@ -96,7 +97,6 @@
     kubectl
 
     mplayer
-    obsidian
     openscad
     pandoc
     vimgolf

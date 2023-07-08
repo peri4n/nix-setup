@@ -10,5 +10,11 @@
       day = 5700;
       night = 3500;
     };
+    settings = {
+      general = {
+        gamma = 0.8;
+        fade = 1;
+      };
+    };
   };
 }
