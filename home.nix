@@ -4,6 +4,7 @@
     ./programs/bat.nix
     ./programs/brave.nix
     ./programs/broot.nix
+    ./programs/btop
     ./programs/dircolors.nix
     ./programs/direnv.nix
     ./programs/exa.nix
