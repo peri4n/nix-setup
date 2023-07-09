@@ -40,11 +40,9 @@
 
 
   home.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
     appimage-run
     arduino
-    (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
-    fira-code
-#    anki
     aspell
     aspellDicts.de
     bat
@@ -54,83 +52,69 @@
     brave
     broot
     btop
+    buku
+    cabal2nix
+    calibre
+    cura
     darktable
     delta
     difftastic
     dunst
-    calibre
     entr
-    feh
     fd
+    feh
+    fira-code
     foliate
     freecad
     fzf
+    gcc
+    gh
     git
     git-extras
     gitlint
-    gh
-    glow
-    gcc
     glab
+    glow
+    gopls
     hledger
     httpie
-    openjdk11
     jq
+    katago
+    kubectl
+    kubernetes-helm
+    libreoffice
+    marksman
     maven
+    minikube
+    mplayer
     nap
+    nixpkgs-fmt
+    openjdk11
+    openscad
+    pandoc
     pavucontrol
     pinentry
     postman
     proselint
-    rtorrent
+    python39Packages.pygments
+    python39Packages.python-lsp-server
     ripgrep
+    rnix-lsp
+    rtorrent
     signal-desktop
     slack
-    steam
     spotify
-    katago
-    tealdeer
-    timewarrior
-    taskwarrior
+    steam
     tasksh
-    unzip
-    libreoffice
+    taskwarrior
+    tealdeer
     texlive.combined.scheme-full
-
-    minikube
-    kubernetes-helm
-    kubectl
-
-    mplayer
-    openscad
-    pandoc
+    timewarrior
+    unzip
+    v4l-utils
     vimgolf
     vlc
-    v4l-utils
-    zsh
     zoom-us
-    cura
-
-    # markdown
-    marksman
-
-    # Scala
-    coursier
-
-    # Python
-    python39Packages.python-lsp-server
-    python39Packages.pygments
-
-    # Go
-    gopls
-
-    # Haskell
-    haskell-language-server
-    cabal2nix
-
-    # Nix
-    rnix-lsp
-    nixpkgs-fmt
+    zsh
 
     (jdt-language-server.overrideAttrs (old: rec { 
       version = "1.20.0";
