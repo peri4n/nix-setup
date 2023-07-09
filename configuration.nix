@@ -106,8 +106,6 @@
 
     systemPackages = with pkgs; [
       glib # gsettings
-      dracula-theme # gtk theme
-      gnome3.adwaita-icon-theme # default gnome cursors
       swaycons
       swappy
       grim # screenshot functionality

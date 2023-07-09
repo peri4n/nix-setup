@@ -157,6 +157,18 @@
 
   home.stateVersion = "23.11";
 
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.gnome3.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+    theme = {
+      package = pkgs.dracula-theme;
+      name = "Dracula";
+    };
+  };
+
   # programs.direnv = {
   #   enable = true;
   #   enableZshIntegration = true;
