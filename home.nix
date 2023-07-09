@@ -24,6 +24,7 @@
     ./programs/zsh/zsh.nix
     ./programs/zoxide
 
+    ./services/blueman-applet
     ./services/clipman
     ./services/dunst.nix
     ./services/gammastep
