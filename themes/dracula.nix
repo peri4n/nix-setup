@@ -14,6 +14,7 @@
       red = "#ff5555";
       yellow = "#f1fa8c";
       dark_gray = "#1f202a";
+      light_gray = "#bfbfbf";
     };
     rgb = {
       background = "40 42 54";

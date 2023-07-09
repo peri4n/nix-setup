@@ -1,6 +1,11 @@
 { config, pkgs, lib, ... }:
 let
   colors = import ../../themes/dracula.nix;
+  ws1 = "1: web";
+  ws2 = "2: terms";
+  ws3 = "3: files";
+  ws4 = "4: system";
+  ws5 = "5: music";
 in
 {
   wayland.windowManager.sway = {
@@ -43,24 +48,19 @@ in
 
       workspaceAutoBackAndForth = true;
 
-      hideEdgeBorders = "smart";
+      window.hideEdgeBorders = "smart";
 
       assigns = {
-        "1: web" = [ ];
-        "2: terms" = [ ];
-        "3: files" = [ ];
-        "4: system" = [ ];
-        "5: music" = [ ];
+        "${ws1}" = [{ class = "^Brave-browser$"; }];
+        "2: terms" = [{ app_id = "^kitty$"; }];
+        "3: files" = [{ app_id = "^broot$"; }];
+        "4: system" = [{ app_id = "^btop$"; }];
+        "5: music" = [{ class = "^Spotify$"; }];
       };
 
       keybindings =
         let
           modifier = config.wayland.windowManager.sway.config.modifier;
-          ws1 = "1: web";
-          ws2 = "2: terms";
-          ws3 = "3: files";
-          ws4 = "4: system";
-          ws5 = "5: music";
         in
         lib.mkOptionDefault {
           "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty";
@@ -84,10 +84,31 @@ in
           "${modifier}+Shift+c" = "reload";
           "${modifier}+p" = "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
           "${modifier}+q" = "exec ${pkgs.swaylock}/bin/swaylock -lk";
+          "${modifier}+n" = "exec ${pkgs.bemenu}/bin/bemenu-run ";
+          "${modifier}+c" = "exec grim  -g \"$(slurp)\" - | swappy -f - -o ~/$(date +'%H_%M_%S.png')";
         };
+
+      startup = [
+        {
+          command = "${pkgs.swaycons}/bin/swaycons";
+        }
+        {
+          command = "${pkgs.swaybg}/bin/swaybg -i ${../swaylock/lake-wallpaper.jpg}";
+        }
+        {
+          command = "${pkgs.brave}/bin/brave";
+        }
+        {
+          command = "${pkgs.kitty}/bin/kitty --class broot -e broot";
+        }
+        {
+          command = "${pkgs.kitty}/bin/kitty --class btop -e btop";
+        }
+      ];
 
       colors = with colors.dracula.hex; {
         background = foreground;
+
         focused = {
           border = comment;
           background = comment;
@@ -95,10 +116,64 @@ in
           indicator = comment;
           childBorder = comment;
         };
+
+        focusedInactive = {
+          border = selection;
+          background = selection;
+          text = foreground;
+          indicator = selection;
+          childBorder = selection;
+        };
+
+        unfocused = {
+          border = background;
+          background = background;
+          text = light_gray;
+          indicator = background;
+          childBorder = background;
+        };
+
+        urgent = {
+          border = selection;
+          background = red;
+          text = foreground;
+          indicator = red;
+          childBorder = background;
+        };
+
+        placeholder = {
+          border = background;
+          background = background;
+          text = foreground;
+          indicator = background;
+          childBorder = background;
+        };
       };
     };
+
+    xwayland = true;
+
+    wrapperFeatures = {
+      base = true;
+      gtk = true;
+    };
+
     extraOptions = [
       "--unsupported-gpu"
     ];
+
+    extraConfig = ''
+      set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
+      exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
+
+      # Brightness
+      bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+      bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $WOBSOCK
+
+      # Volume
+      bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pactl get-sink-volume @DEFAULT_SINK@ | head -n 1| awk '{print substr($5, 1, length($5)-1)}' > $WOBSOCK
+      bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pactl get-sink-volume @DEFAULT_SINK@ | head -n 1 | awk '{print substr($5, 1, length($5)-1)}' > $WOBSOCK
+      bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+    '';
   };
 } 

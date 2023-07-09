@@ -45,6 +45,7 @@
     aspell
     aspellDicts.de
     bat
+    bemenu
     bitwarden-cli
     blueman
     brave
