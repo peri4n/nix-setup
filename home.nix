@@ -29,6 +29,7 @@
     ./services/dunst.nix
     ./services/gammastep
     ./services/gpg-agent.nix
+    ./services/nm-applet
     ./services/swayidle
     ./services/syncthing
   ];
