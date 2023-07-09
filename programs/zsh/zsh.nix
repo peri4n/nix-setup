@@ -122,17 +122,5 @@ with builtins;
       zk = "$HOME/zettelkasten";
       qmk = "$HOME/dev/repos/qmk_firmware";
     };
-
-    plugins = [ 
-        {
-          name = "zsh-z";
-          src = pkgs.fetchFromGitHub {
-            owner = "agkozak";
-            repo = "zsh-z";
-            rev = "dc9e2bc0cdbaa0a507371c248d3dcc9f58db8726";
-            sha256 = "T0iZK9Tb7ExJaZ6e2UmwecnKHMQilwAPkyAa/uhqrw0=";
-          };
-        }
-    ];
   };
 }

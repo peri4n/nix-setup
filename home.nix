@@ -21,6 +21,7 @@
     ./programs/waybar
     ./programs/zathura.nix
     ./programs/zsh/zsh.nix
+    ./programs/zoxide
 
     ./services/clipman
     ./services/dunst.nix
