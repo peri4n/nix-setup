@@ -21,7 +21,7 @@
     ./programs/tealdeer.nix
     ./programs/waybar
     ./programs/zathura.nix
-    ./programs/zsh/zsh.nix
+    ./programs/zsh
     ./programs/zoxide
 
     ./services/blueman-applet
