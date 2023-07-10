@@ -105,18 +105,15 @@
     variables.EDITOR = "nvim";
 
     systemPackages = with pkgs; [
-      glib # gsettings
       swaycons
       swappy
       grim # screenshot functionality
       slurp # screenshot functionality
-      kanshi
       wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
       wob
       wdisplays
       imv
       wshowkeys
-      git
       usbutils
       pciutils
       pulseaudio
@@ -124,8 +121,6 @@
       xdg-utils
 
       nmap
-      libnotify # notify-send
-      networkmanagerapplet
 
       nixos-option
       inetutils
