@@ -9,6 +9,7 @@
     ./programs/exa.nix
     ./programs/fzf.nix
     ./programs/git/git.nix
+    ./programs/github
     ./programs/gpg.nix
     ./programs/kitty/kitty.nix
     ./programs/lesspipe.nix

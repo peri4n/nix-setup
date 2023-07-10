@@ -1,20 +1,15 @@
 { config, pkgs, ... }:
 
-with builtins;
-
 {
   programs.zsh = {
     enable = true;
     autocd = true;
 
-    syntaxHighlighting = {
-      enable = true;
-    };
     enableAutosuggestions = true;
     enableCompletion = false;
     defaultKeymap = "viins";
 
-    history = { 
+    history = {
       size = 10000000;
       save = 10000000;
       share = true;
@@ -22,10 +17,10 @@ with builtins;
       extended = true;
       ignoreDups = true;
       ignoreSpace = true;
-      ignorePatterns = ["rm *" "cp *"];
+      ignorePatterns = [ "rm *" "cp *" ];
     };
 
-    initExtra = builtins.readFile ./dracula-syntax-highlighting.zsh + ''
+    initExtra = ''
       setopt PROMPT_SUBST              # Enable command substitution in the prompt
       setopt NULL_GLOB                 # If a glob does not match delete it as an argument
       setopt AUTO_PARAM_SLASH          # Tab completing directory appends a slash
@@ -65,7 +60,7 @@ with builtins;
       export EXA_COLORS="uu=36:gu=37:sn=32:sb=32:da=34:ur=34:uw=35:ux=36:ue=36:gr=34:gw=35:gx=36:tr=34:tw=35:tx=36:"
     '';
 
-    shellAliases = { 
+    shellAliases = {
       # utility
       gw = "./gradlew";
       gwi = "./gradlew -i";
@@ -120,14 +115,14 @@ with builtins;
       cat = "bat";
     };
 
-    shellGlobalAliases  =  {
+    shellGlobalAliases = {
       L = "| less -R";
       G = "| grep";
       J = "| jq";
       NUL = "> /dev/null 2>&1";
     };
 
-    dirHashes = { 
+    dirHashes = {
       dl = "$HOME/downloads";
       nix = "$HOME/.config/nixpkgs";
       zk = "$HOME/zettelkasten";

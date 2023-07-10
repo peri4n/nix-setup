@@ -3,6 +3,9 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
+let
+  colors = import ./themes/dracula.nix;
+in
 {
   imports =
     [
@@ -96,7 +99,79 @@
     extraGroups = [ "networkmanager" "wheel" "video" "docker" "audio" ];
     shell = pkgs.zsh;
   };
-  programs.zsh.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting = {
+      enable = true;
+
+      # You can find the values at:
+      # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+      highlighters = [ "main" "cursor" ];
+      styles = with colors.dracula.hex; {
+        # comments
+        comment = "fg=${comment}";
+
+        # functions/methods
+        alias = "fg=${green}";
+        suffix-alias = "fg=${green}";
+        global-alias = "fg=${green}";
+        function = "fg=${green}";
+        command = "fg=${green}";
+        precommand = "fg=${green}, italic";
+        autodirectory = "fg=${orange}, italic";
+        single-hyphen-option = "fg=${orange}";
+        double-hyphen-option = "fg=${orange}";
+        back-quoted-argument = "fg=${purple}";
+
+        # builtins
+        builtin = "fg=${cyan}";
+        reserved-word = "fg=${cyan}";
+        hashed-command = "fg=${cyan}";
+
+        # punctuation
+        commandseparator = "fg=${pink}";
+        command-substitution-delimiter = "fg=${foreground}";
+        command-substitution-delimiter-unquoted = "fg=${foreground}";
+        process-substitution-delimiter = "fg=${foreground}";
+        back-quoted-argument-delimiter = "fg=${pink}";
+        back-double-quoted-argument = "fg=${pink}";
+        back-dollar-quoted-argument = "fg=${pink}";
+
+        # strings
+        command-substitution-quoted = "fg=${yellow}";
+        command-substitution-delimiter-quoted = "fg=${yellow}";
+        single-quoted-argument = "fg=${yellow}";
+        single-quoted-argument-unclosed = "fg=${red}";
+        double-quoted-argument = "fg=${yellow}";
+        double-quoted-argument-unclosed = "fg=${red}";
+        rc-quote = "fg=${yellow}";
+
+        # variables
+        dollar-quoted-argument = "fg=${foreground}";
+        dollar-quoted-argument-unclosed = "fg=${red}";
+        dollar-double-quoted-argument = "fg=${foreground}";
+        assign = "fg=${foreground}";
+        named-fd = "fg=${foreground}";
+        numeric-fd = "fg=${foreground}";
+
+        # no in spec
+        unknown-token = "fg=${red}";
+        path = "fg=${foreground}";
+        path_pathseparator = "fg=${pink}";
+        path_prefix = "fg=${foreground}";
+        path_prefix_pathseparator = "fg=${pink}";
+        globbing = "fg=${foreground}";
+        history-expansion = "fg=${purple}";
+
+        back-quoted-argument-unclosed = "fg=${red}";
+        redirection = "fg=${foreground}";
+        arg0 = "fg=${foreground}";
+        default = "fg=${foreground}";
+        cursor = "standout";
+      };
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
