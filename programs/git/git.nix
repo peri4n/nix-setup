@@ -26,11 +26,15 @@
       };
       diff = {
         tool = "nvimdiff";
+        colorMoved = "default";
       };
       delta = {
         dark = true;
         line-numbers = true;
         side-by-side = true;
+        decorations = true;
+        navigate = true;
+        hyperlinks = true;
         syntax-theme = "Dracula";
       };
       init = {

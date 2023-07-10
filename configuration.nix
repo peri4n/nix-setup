@@ -121,6 +121,7 @@
       pciutils
       pulseaudio
       lsof
+      xdg-utils
 
       nmap
       libnotify # notify-send
