@@ -9,7 +9,7 @@
       }
       {
         event = "after-resume";
-        command = "${pkgs.sway}/bin/swaymsg output * enable";
+        command = "${pkgs.sway}/bin/swaymsg 'output * enable'";
       }
     ];
     timeouts = [
@@ -19,7 +19,7 @@
       }
       {
         timeout = 600;
-        command = "${pkgs.sway}/bin/swaymsg output * dpms off";
+        command = "${pkgs.sway}/bin/swaymsg 'output * dpms off'";
         resumeCommand = "${pkgs.sway}/bin/swaymsg 'output * dpms on'";
       }
     ];
