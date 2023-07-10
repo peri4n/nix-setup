@@ -42,7 +42,6 @@
       };
       merge = {
         renamelimit = 2000;
-        ff = "no";
         conflictstyle = "diff3";
       };
       tag = {
