@@ -1,11 +1,3 @@
--- Work with the vimrc
-vim.keymap.set('n', '<leader>ev', ':vsplit $MYVIMRC<cr>')
-vim.keymap.set('n', '<leader>sv', ':source $MYVIMRC<cr>')
-
--- Center on the next match
-vim.keymap.set('n', 'n', 'nzz')
-vim.keymap.set('n', 'N', 'Nzz')
-
 -- Make . work with visually selected lines
 vim.keymap.set('v', '.', ':normal.<cr>')
 
@@ -42,4 +34,22 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
+-- Don't leave visual mode when changing indent
+vim.keymap.set('x', '>', '>gv')
+vim.keymap.set('x', '<', '<gv')
+
+-- Swap ; and :
+vim.keymap.set({ 'n', 'x' }, ':', ';')
+vim.keymap.set('n', ';', ':')
+
+vim.keymap.set('n', '<Esc>', ':w')
+
+-- Always use gF when pressing gf
+vim.keymap.set({'n', 'x'}, 'gf', 'gF')
+
+-- Use gF for creating a new file
+vim.keymap.set({'n', 'x'}, 'gF', ':e <cfile><CR>')
+
+-- TODO only apply in markdown buffers-- Zettelkasten
+-- Zettelkasten
 vim.keymap.set('n', '<leader>zc', ':e Cards/')
