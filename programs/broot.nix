@@ -10,8 +10,10 @@ in
     enableZshIntegration = true;
     settings = {
       skin = with colors.dracula.rgb; {
-        default = toRgb foreground + " " + toRgb background;
-        directory = toRgb purple + " " + toRgb background;
+        default_fg = toRgb foreground;
+        default_bg = toRgb background;
+        tree_fg = "red";
+        directory = toRgb cyan + " " + toRgb pink;
         input = "none none";
         status_normal = "none none";
         status_italic = toRgb yellow + " none";

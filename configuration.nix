@@ -212,7 +212,6 @@ in
         ];
       })
 
-      mongosh
       qpwgraph
     ];
   };
