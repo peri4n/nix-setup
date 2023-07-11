@@ -106,10 +106,9 @@
       scus = "systemctl --user start";
       scut = "systemctl --user stop";
 
-      # Home manager
-      hm = "home-manager";
-      hms = "home-manager switch";
-      hmo = "home-manager option";
+      # tldr
+      t = "tldr";
+      tf = "tldr --list | fzf --preview \"tldr {1} --color=always\" --preview-window=right,60% | xargs tldr";
 
       # bat
       cat = "bat";

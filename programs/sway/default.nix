@@ -10,6 +10,7 @@ in
 {
   wayland.windowManager.sway = {
     enable = true;
+    systemd.enable = true;
     config = {
       left = "h";
       down = "j";
