@@ -95,7 +95,6 @@
     pandoc
     pavucontrol
     pinentry
-    postman
     proselint
     python39Packages.pygments
     python39Packages.python-lsp-server
