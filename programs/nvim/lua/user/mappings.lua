@@ -38,12 +38,6 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('x', '>', '>gv')
 vim.keymap.set('x', '<', '<gv')
 
--- Swap ; and :
-vim.keymap.set({ 'n', 'x' }, ':', ';')
-vim.keymap.set('n', ';', ':')
-
-vim.keymap.set('n', '<Esc>', ':w')
-
 -- Always use gF when pressing gf
 vim.keymap.set({'n', 'x'}, 'gf', 'gF')
 

@@ -1,5 +1,6 @@
 require("impatient")
 require("user.dracula")
+require("user.highlights")
 require("user.settings")
 require("user.autocommands")
 require("user.mappings")

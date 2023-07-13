@@ -26,6 +26,8 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  hardware.keyboard.qmk.enable = true;
+
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
