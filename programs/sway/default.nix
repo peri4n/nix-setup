@@ -34,7 +34,7 @@ in
           xkb_variant = "colemak_dh";
         };
         "type:keyboard" = {
-          xkb_options = "caps:ctrl_modifier";
+          xkb_options = "caps:ctrl_modifier,compose:ralt";
         };
       };
 
