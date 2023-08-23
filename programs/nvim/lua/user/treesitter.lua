@@ -35,13 +35,20 @@ require 'nvim-treesitter.configs'.setup {
         ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
         -- You can also use captures from other query groups like `locals.scm`
         ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+        ["ili"] = "@list_item.inner",
+        ["ali"] = "@list_item.outer",
+        ["icb"] = "@code_block.inner",
+        ["acb"] = "@code_block.outer",
+        ["ih"] = "@link.inner",
+        ["ah"] = "@link.outer",
       }
     },
     move = {
       enable = true,
       set_jumps = true, -- whether to set jumps in the jumplist
       goto_next_start = {
-        ["]y"] = { query = "@link" }
+        ["]h"] = "@link.inner",
+        ["]H"] = "@link.outer"
       }
     }
   }

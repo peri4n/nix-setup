@@ -26,11 +26,23 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  boot.tmp = {
+    useTmpfs = true;
+    cleanOnBoot = true;
+  };
+
   hardware.keyboard.qmk.enable = true;
 
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vaapiIntel
+      vaapiVdpau
+      libvdpau-va-gl
+      intel-compute-runtime
+    ];
   };
 
   # Setup keyfile
@@ -114,7 +126,7 @@ in
       enable = true;
 
       # You can find the values at:
-      # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+      # https://ithub.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
       highlighters = [ "main" "cursor" ];
       styles = with colors.dracula.hex; {
         # comments
@@ -195,6 +207,7 @@ in
       wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
       wob
       wdisplays
+      tela-icon-theme
       imv
       wshowkeys
       usbutils
@@ -266,8 +279,10 @@ in
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
     extraPortals = [
+      pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-gtk
     ];
+    gtkUsePortal = true;
   };
 
   # enable sway window manager

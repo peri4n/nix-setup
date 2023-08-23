@@ -21,7 +21,7 @@
 }
 
 window {
-    color:      @forground;
+    color: @foreground;
     background: @background;
 }
 
@@ -52,6 +52,7 @@ window {
 #mode, #battery, #cpu, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail {
     margin:     0px 6px 0px 10px;
     min-width:  25px;
+    background: @background;
 }
 
 #pulseaudio {
@@ -69,11 +70,11 @@ window {
 }
 
 #battery.warning {
-    color:       @orange;
+    color: @orange;
 }
 
 #battery.critical {
-    color:      @red;
+    color: @red;
 }
 
 #battery.charging {

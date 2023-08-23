@@ -104,6 +104,7 @@
       sc = "systemctl";
       scu = "systemctl --user";
       scus = "systemctl --user start";
+      scur = "systemctl --user restart";
       scut = "systemctl --user stop";
 
       # tldr

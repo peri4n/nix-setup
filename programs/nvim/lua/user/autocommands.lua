@@ -14,6 +14,14 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
+-- Set wrap and spell in markdown and gitcommit
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "markdown" },
+  callback = function()
+    vim.opt_local.conceallevel = 2
+  end,
+})
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo" },

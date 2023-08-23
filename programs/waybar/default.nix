@@ -3,7 +3,10 @@
 {
   programs.waybar = {
     enable = true;
-    systemd.enable = true;
+    systemd = {
+      enable = true;
+      target = "sway-session.target";                     # Needed for waybar to start automatically
+    };
     settings = {
       mainBar = {
         layer = "top";

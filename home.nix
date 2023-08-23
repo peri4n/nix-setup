@@ -45,6 +45,7 @@
     (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
     appimage-run
     arduino
+    argocd
     aspell
     aspellDicts.de
     bat
@@ -74,11 +75,13 @@
     git
     git-extras
     gitlint
+    graphviz
     glab
     glow
     gopls
     hledger
     httpie
+    jetbrains.idea-ultimate
     jq
     katago
     kubectl
@@ -88,9 +91,9 @@
     maven
     minikube
     mplayer
+    mustache-go
     nap
     nixpkgs-fmt
-    openjdk11
     openscad
     pandoc
     pavucontrol
@@ -116,6 +119,7 @@
     vlc
     zoom-us
     zsh
+    zk
 
     (jdt-language-server.overrideAttrs (old: rec { 
       version = "1.20.0";
@@ -144,8 +148,8 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.gnome3.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.tela-icon-theme;
+      name = "Tela";
     };
     theme = {
       package = pkgs.dracula-theme;

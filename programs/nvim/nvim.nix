@@ -78,6 +78,7 @@ in
       vim-nix
       vim-javascript
       vim-markdown
+      zk-nvim
       nvim-jdtls
       nvim-metals
       nvim-schemastore

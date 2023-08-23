@@ -6,7 +6,7 @@
       docked = {
         outputs = [
           {
-            criteria = "DP-5";
+            criteria = "LG Electronics LG ULTRAWIDE 0x000087DC";
             status = "enable";
             mode = "3440x1440";
             position = "0,0";

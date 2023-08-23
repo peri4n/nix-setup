@@ -12,9 +12,14 @@ in
   hardware.nvidia = {
     modesetting.enable = true;
     prime = {
+      # offload enable the card only on demand
       offload.enable = true;
       nvidiaBusId = "PCI:1:0:0";
       intelBusId = "PCI:0:2:0";
+    };
+    powerManagement = {
+      enable = true;
+      finegrained = true;
     };
   };
 
