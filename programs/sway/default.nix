@@ -23,7 +23,7 @@ in
       menu = "${pkgs.bemenu}/bin/bemenu-run";
 
       input = {
-        "1267:12572:VEN_04F3:00_04F3:311C_Touchpad" = {
+        "type:touchpad" = {
           tap = "enabled";
           dwt = "enabled";
           natural_scroll = "enabled";

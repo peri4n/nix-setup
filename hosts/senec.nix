@@ -10,7 +10,7 @@ in
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware/home/hardware-configuration.nix
+      ./hardware/senec/hardware-configuration.nix
       ./hardware/nvidia.nix
     ];
 
