@@ -44,7 +44,6 @@
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
     appimage-run
-    arduino
     argocd
     aspell
     aspellDicts.de
@@ -89,7 +88,6 @@
     libreoffice
     marksman
     maven
-    minikube
     mplayer
     mustache-go
     nap
@@ -99,8 +97,6 @@
     pavucontrol
     pinentry
     proselint
-    python39Packages.pygments
-    python39Packages.python-lsp-server
     ripgrep
     rnix-lsp
     rtorrent
@@ -111,13 +107,10 @@
     tasksh
     taskwarrior
     tealdeer
-    texlive.combined.scheme-full
-    timewarrior
     unzip
     v4l-utils
     vimgolf
     vlc
-    zoom-us
     zsh
     zk
 

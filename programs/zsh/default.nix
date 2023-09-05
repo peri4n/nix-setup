@@ -45,7 +45,9 @@
       # ================ Functions ====================
       mcd () {
           mkdir -p "$1" && cd "$1"
-        }
+      }
+
+      export BROWSER=brave
 
       export MANPAGER="${pkgs.less}/bin/less -s -M +Gg"
 
@@ -129,4 +131,6 @@
       qmk = "$HOME/dev/repos/qmk_firmware";
     };
   };
+
+  home.file.".zsh/functions/bookmarks.zsh".source = ./functions/bookmarks.zsh;
 }

@@ -7,6 +7,7 @@
       { id = "gfapcejdoghpoidkfodoiiffaaibpaem"; } # Dracula theme
       { id = "nngceckbapebfimnlniiiahkandclblb"; } # Bitwarden
       { id = "chphlpgkkbolifaimnlloiipkdnihall"; } # One tab
+      { id = "gfbliohnnapiefjpjlpjnehglfpaknnc"; } # One tab
     ];
   };
 }

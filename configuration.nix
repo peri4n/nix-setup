@@ -10,7 +10,7 @@ in
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware/mars/hardware-configuration.nix
+      ./hardware/home/hardware-configuration.nix
       ./hardware/nvidia.nix
     ];
 
@@ -24,7 +24,6 @@ in
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
   boot.tmp = {
     useTmpfs = true;
@@ -43,11 +42,6 @@ in
       libvdpau-va-gl
       intel-compute-runtime
     ];
-  };
-
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -220,7 +214,6 @@ in
 
       nixos-option
       inetutils
-      globalprotect-openconnect
 
       (pkgs.wrapOBS {
         plugins = with pkgs.obs-studio-plugins; [
@@ -235,17 +228,6 @@ in
 
       qpwgraph
     ];
-  };
-
-  services.globalprotect = {
-    enable = true;
-    settings = {
-      "vpn-eu.envision-digital.com" = {
-        openconnect-args = "--servercert pin-sha256:r6qE53Ea/kvnKMnktSoZMuCbrvbLlOEUZfAcCOqZ5Lg=";
-      };
-    };
-    # if you need a Host Integrity Protection report
-    csdWrapper = "${pkgs.openconnect}/libexec/openconnect/hipreport.sh";
   };
 
   services.greetd = {
