@@ -5,7 +5,7 @@
     repositories = {
       challenges = {
         path =  config.home.homeDirectory + "/dev/challenges";
-        uri = "git@github.com:peri4n/challenges.git";
+        uri = "git@github.com:peri4n/coding-challenges.git";
       };
       journal = {
         path =  config.home.homeDirectory + "/journal";
