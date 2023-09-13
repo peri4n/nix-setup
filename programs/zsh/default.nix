@@ -127,8 +127,8 @@
     dirHashes = {
       dl = "$HOME/downloads";
       nix = "$HOME/.config/nixpkgs";
-      zk = "$HOME/zk";
-      jl = "$HOME/journal";
+      zk = "$HOME/docs/zk";
+      jl = "$HOME/docs/journal";
       qmk = "$HOME/dev/repos/qmk_firmware";
     };
   };
