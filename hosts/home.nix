@@ -4,14 +4,13 @@
 
 { config, pkgs, ... }:
 let
-  colors = import ./themes/dracula.nix;
+  colors = import ../themes/dracula.nix;
 in
 {
   imports =
     [
       # Include the results of the hardware scan.
-      ./hardware/senec/hardware-configuration.nix
-      ./hardware/nvidia.nix
+      ../hardware/home/hardware-configuration.nix
     ];
 
   nix = {
@@ -44,7 +43,7 @@ in
     ];
   };
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "home"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

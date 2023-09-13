@@ -45,7 +45,6 @@
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
     appimage-run
-    argocd
     aspell
     aspellDicts.de
     bat
@@ -56,7 +55,6 @@
     broot
     btop
     buku
-    cabal2nix
     calibre
     cura
     darktable
@@ -86,11 +84,9 @@
     katago
     kubectl
     kubernetes-helm
-    libreoffice
     marksman
     maven
     mplayer
-    mustache-go
     nap
     nixpkgs-fmt
     openscad
@@ -113,7 +109,9 @@
     vimgolf
     vlc
     zsh
+
     zk
+    mustache-go
 
     (jdt-language-server.overrideAttrs (old: rec { 
       version = "1.20.0";
