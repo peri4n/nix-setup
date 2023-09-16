@@ -14,8 +14,26 @@ vim.keymap.set(
   "<Cmd>ZkNew { title = vim.fn.input('Title: '), dir = vim.fn.expand('%:p:h'),  }<CR>"
 )
 
--- Create a new note in the current directory with the current selection
+-- Create a new note in the current directory with the current selection as content
 vim.keymap.set("v",
   "<leader>zNc",
   ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>"
+)
+
+-- Create a new note in the current directory with the current selection as title
+vim.keymap.set("v",
+  "<leader>zNt",
+  ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>"
+)
+
+-- List all notes
+vim.keymap.set("n",
+  "<leader>zl",
+  ":ZkNotes<CR>"
+)
+
+-- List all notes in the current directory
+vim.keymap.set("n",
+  "<leader>zL",
+  ":ZkNotes { hrefs = { vim.fn.expand('%:p:h') } }<CR>"
 )
