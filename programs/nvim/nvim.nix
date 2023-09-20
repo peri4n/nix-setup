@@ -112,6 +112,27 @@ in
       indent-blankline-nvim
     ];
 
+    extraPackages = with pkgs; [
+      (jdt-language-server.overrideAttrs (old: rec { 
+        version = "1.27.1";
+        timestamp = "202309140221";
+      }))
+      checkstyle
+
+      # Lua
+      sumneko-lua-language-server
+      luaformatter
+
+      # Typescript
+      nodePackages.typescript-language-server
+
+      # HTML JSON CSS ESLINT
+      nodePackages.vscode-langservers-extracted
+      nodePackages.vscode-json-languageserver
+      nodePackages.yaml-language-server
+      nodePackages."@tailwindcss/language-server"
+    ];
+
     extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
   };
   home.packages = [ nvim-wrapped ];

@@ -112,25 +112,6 @@
 
     zk
     mustache-go
-
-    (jdt-language-server.overrideAttrs (old: rec { 
-      version = "1.20.0";
-      timestamp = "202302201605";
-    }))
-    checkstyle
-
-    # Lua
-    sumneko-lua-language-server
-    luaformatter
-
-    # Typescript
-    nodePackages.typescript-language-server
-
-    # HTML JSON CSS ESLINT
-    nodePackages.vscode-langservers-extracted
-    nodePackages.vscode-json-languageserver
-    nodePackages.yaml-language-server
-    nodePackages."@tailwindcss/language-server"
   ];
 
   nixpkgs.config.allowUnfree = true;
