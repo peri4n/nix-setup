@@ -37,3 +37,9 @@ vim.keymap.set("n",
   "<leader>zL",
   ":ZkNotes { hrefs = { vim.fn.expand('%:p:h') } }<CR>"
 )
+
+-- Insert link
+vim.keymap.set("n",
+  "<leader>zi",
+  ":ZkInsertLink<CR>"
+)
