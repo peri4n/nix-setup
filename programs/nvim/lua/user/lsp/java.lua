@@ -61,7 +61,7 @@ local config = {
         enabled = true
       },
       saveActions = {
-        organizeImports = true,
+        organizeImports = false,
       },
       inlayhints = {
         parameterNames = true
