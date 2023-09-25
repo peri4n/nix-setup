@@ -87,7 +87,7 @@
       rb = "rebase";
       rbi = "rebase -i";
       rbc = "rebase --continue";
-      rba = "rebase --aborti";
+      rba = "rebase --abort";
       s = "status --short --branch";
       st = "stash";
       sts = "stash save";
