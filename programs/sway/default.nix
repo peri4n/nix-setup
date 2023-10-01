@@ -65,7 +65,7 @@ in
         in
         lib.mkOptionDefault {
           "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty";
-          "${modifier}+Shift+q" = "kill";
+          "${modifier}+Shift+x" = "kill";
 
           "${modifier}+1" = "workspace ${ws1}";
           "${modifier}+2" = "workspace ${ws2}";
@@ -87,7 +87,7 @@ in
           "${modifier}+p" = "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
           "${modifier}+q" = "exec ${pkgs.swaylock}/bin/swaylock -lk";
           "${modifier}+n" = "exec ${pkgs.bemenu}/bin/bemenu-run ";
-          "${modifier}+c" = "exec grim  -g \"$(slurp)\" - | swappy -f - -o ~/$(date +'%H_%M_%S.png')";
+          "${modifier}+c" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.swappy}/bin/swappy -f - -o ~/$(date +'%H_%M_%S.png')";
         };
 
       startup = [
