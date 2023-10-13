@@ -25,6 +25,10 @@ window {
     background: @background;
 }
 
+#custom-logo {
+    color: @cyan;
+}
+
 #workspaces {
     margin: 0 5px;
 }

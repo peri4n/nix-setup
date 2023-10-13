@@ -5,7 +5,7 @@
     enable = true;
     systemd = {
       enable = true;
-      target = "sway-session.target";                     # Needed for waybar to start automatically
+      target = "sway-session.target"; # Needed for waybar to start automatically
     };
     settings = {
       mainBar = {
@@ -13,10 +13,14 @@
         position = "bottom";
         height = 20;
         spacing = 4;
-        modules-left = [ "sway/workspaces" "sway/mode" ];
+        modules-left = [ "custom/logo" "sway/workspaces" "sway/mode" ];
         modules-center = [ "sway/window" ];
         modules-right = [ "idle_inhibitor" "pulseaudio" "network" "cpu" "memory" "temperature" "backlight" "keyboard-state" "sway/language" "battery" "clock" "tray" ];
         # left
+        "custom/logo" = {
+          exec = "echo ' '";
+          interval = "once";
+        };
         "sway/workspaces" = {
           "disable-scroll" = true;
           "all-outputs" = true;
@@ -58,8 +62,29 @@
           "spacing" = 10;
         };
         "clock" = {
-          "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-          "format-alt" = "{:%d-%m-%Y}";
+          "format" = "{:%A, %B %d, %Y (%R)}  ";
+          "tooltip-format" = "<tt><small>{calendar}</small></tt>";
+          "calendar" = {
+            "mode" = "year";
+            "mode-mon-col" = 3;
+            "weeks-pos" = "right";
+            "on-scroll" = 1;
+            "on-click-right" = "mode";
+            "format" = {
+              "months" = "<span color='#ffead3'><b>{}</b></span>";
+              "days" = "<span color='#ecc6d9'><b>{}</b></span>";
+              "weeks" = "<span color='#99ffdd'><b>W{}</b></span>";
+              "weekdays" = "<span color='#ffcc66'><b>{}</b></span>";
+              "today" = "<span color='#ff6699'><b><u>{}</u></b></span>";
+            };
+          };
+          "actions" = {
+            "on-click-right" = "mode";
+            "on-click-forward" = "tz_up";
+            "on-click-backward" = "tz_down";
+            "on-scroll-up" = "shift_up";
+            "on-scroll-down" = "shift_down";
+          };
         };
         "cpu" = {
           "format" = "{usage}% ";
