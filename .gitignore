@@ -1,2 +1,4 @@
 result
 .direnv
+
+programs/nvim/lua/.luarc.json

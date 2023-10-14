@@ -1,4 +1,4 @@
-require("impatient")
+vim.loader.enable()
 require("user.dracula")
 require("user.highlights")
 require("user.settings")

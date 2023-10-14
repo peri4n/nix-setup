@@ -14,7 +14,7 @@ let
       sha256 = "/JM2KX70JXa3sydrUj13Vd4rRwhn3VrdW7qLLHqIqyY=";
     };
   };
-  nvim-metals = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  nvim-metals = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-metals";
     src = pkgs.fetchFromGitHub {
       owner = "scalameta";
@@ -23,7 +23,7 @@ let
       sha256 = "TIqp1udXn5GW23jcprPk08nV85E3nYLXatOEEyUeIXY=";
     };
   };
-  nvim-schemastore = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  nvim-schemastore = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-schemastore";
     src = pkgs.fetchFromGitHub {
       owner = "b0o";
@@ -108,7 +108,6 @@ in
       friendly-snippets
 
       vim-ledger
-      impatient-nvim
       indent-blankline-nvim
     ];
 

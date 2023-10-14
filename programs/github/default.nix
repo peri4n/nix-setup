@@ -2,7 +2,7 @@
 {
   programs.gh = {
     enable = true;
-    enableGitCredentialHelper = true;
+    gitCredentialHelper.enable = true;
     extensions = [ pkgs.gh-dash ];
     settings = {
       git_protocol = "ssh";
