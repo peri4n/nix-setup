@@ -85,7 +85,7 @@ in
 
           "${modifier}+Shift+c" = "reload";
           "${modifier}+p" = "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
-          "${modifier}+q" = "exec ${pkgs.swaylock}/bin/swaylock -lk";
+          "${modifier}+Shift+q" = "exec ${pkgs.swaylock}/bin/swaylock -lk";
           "${modifier}+n" = "exec ${pkgs.bemenu}/bin/bemenu-run ";
           "${modifier}+c" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.swappy}/bin/swappy -f - -o ~/$(date +'%H_%M_%S.png')";
         };
