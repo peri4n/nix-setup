@@ -44,6 +44,7 @@
 
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
+    anki
     appimage-run
     aspell
     aspellDicts.de
