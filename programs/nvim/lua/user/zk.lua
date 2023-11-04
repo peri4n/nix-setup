@@ -1,45 +1,61 @@
-local opts = { noremap = true, silent = false }
+--- Note Creation
 
 -- Create a new note after asking for its title.
 vim.keymap.set(
   "n",
-  "<leader>zn",
+  "<leader>zc",
   "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>"
 )
 
 -- Create a new note in the current directory after asking for its title.
 vim.keymap.set(
   "n",
-  "<leader>zN",
+  "<leader>zC",
   "<Cmd>ZkNew { title = vim.fn.input('Title: '), dir = vim.fn.expand('%:p:h'),  }<CR>"
 )
 
 -- Create a new note in the current directory with the current selection as content
 vim.keymap.set("v",
-  "<leader>zNc",
+  "<leader>zCc",
   ":'<,'>ZkNewFromContentSelection { dir = vim.fn.expand('%:p:h'), title = vim.fn.input('Title: ') }<CR>"
 )
 
 -- Create a new note in the current directory with the current selection as title
 vim.keymap.set("v",
-  "<leader>zNt",
+  "<leader>zCt",
   ":'<,'>ZkNewFromTitleSelection { dir = vim.fn.expand('%:p:h') }<CR>"
 )
 
--- List all notes
-vim.keymap.set("n",
-  "<leader>zl",
-  ":ZkNotes<CR>"
-)
-
--- List all notes in the current directory
-vim.keymap.set("n",
-  "<leader>zL",
-  ":ZkNotes { hrefs = { vim.fn.expand('%:p:h') } }<CR>"
-)
+--- Content creation
 
 -- Insert link
 vim.keymap.set("n",
   "<leader>zi",
   ":ZkInsertLink<CR>"
+)
+
+--- Navigation
+
+-- Backlinks
+vim.keymap.set("n",
+  "<leader>zb",
+  ":ZkBacklinks<CR>"
+)
+
+-- Backlinks
+vim.keymap.set("n",
+  "<leader>zl",
+  ":ZkLinks<CR>"
+)
+
+-- List all notes
+vim.keymap.set("n",
+  "<leader>zn",
+  ":ZkNotes<CR>"
+)
+
+-- List all notes in the current directory
+vim.keymap.set("n",
+  "<leader>zN",
+  ":ZkNotes { hrefs = { vim.fn.expand('%:p:h') } }<CR>"
 )
