@@ -113,8 +113,8 @@ in
 
     extraPackages = with pkgs; [
       (jdt-language-server.overrideAttrs (old: rec { 
-        version = "1.27.1";
-        timestamp = "202309140221";
+        version = "1.29.0";
+        timestamp = "202310261436";
       }))
       checkstyle
 
