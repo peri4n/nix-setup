@@ -46,7 +46,6 @@ in
     plugins = with pkgs.vimPlugins; [
       dracula-nvim
       (nvim-treesitter.withAllGrammars)
-      playground # treesitter playground
       nvim-treesitter-context
       nvim-treesitter-textobjects
       nvim-lspconfig
