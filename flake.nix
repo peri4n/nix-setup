@@ -8,6 +8,7 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: {
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixpkgs-fmt;
     nixosConfigurations = {
       home = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

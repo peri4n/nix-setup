@@ -17,7 +17,7 @@
       };
       directory = {
         style = "cyan";
-        truncation_length	= 2;
+        truncation_length = 2;
       };
       git_branch = {
         symbol = "";

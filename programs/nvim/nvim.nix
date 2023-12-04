@@ -111,7 +111,7 @@ in
     ];
 
     extraPackages = with pkgs; [
-      (jdt-language-server.overrideAttrs (old: rec { 
+      (jdt-language-server.overrideAttrs (old: rec {
         version = "1.29.0";
         timestamp = "202310261436";
       }))

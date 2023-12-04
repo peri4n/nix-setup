@@ -1,6 +1,6 @@
 { pkgs, lib, ... }:
 
-let 
+let
   colors = import ../themes/dracula.nix;
   toRgb = with lib.strings; str: "rgb(" + concatStringsSep ", " (splitString " " str) + ")";
 in
@@ -25,19 +25,19 @@ in
         flag_label = "none none";
       };
       verbs = [
-        { 
+        {
           key = "ctrl-h";
           internal = ":panel_left";
         }
-        { 
+        {
           key = "ctrl-n";
           internal = ":line_down";
         }
-        { 
+        {
           key = "ctrl-p";
           internal = ":line_up";
         }
-        { 
+        {
           key = "ctrl-l";
           internal = ":panel_right";
 

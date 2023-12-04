@@ -26,7 +26,7 @@ in
   environment.systemPackages = with pkgs; [
     nvidia-offload
   ];
- 
+
   services.xserver = {
     videoDrivers = [ "nvidia" ];
   };

@@ -139,20 +139,20 @@
   # };
   #
   home.sessionVariables = {
-      EDITOR = "nvim";
-      GPG_TTY = "$(tty)";
-      JDTLS_HOME = "$HOME/downloads/jdtls/";
+    EDITOR = "nvim";
+    GPG_TTY = "$(tty)";
+    JDTLS_HOME = "$HOME/downloads/jdtls/";
 
-      # XDG
-      XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
+    # XDG
+    XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
 
-      # Stack : Cargo
-      PATH = "$PATH:$HOME/.local/bin:$HOME/.cargo/bin";
+    # Stack : Cargo
+    PATH = "$PATH:$HOME/.local/bin:$HOME/.cargo/bin";
 
-      # Quickly switch vi modes
-      KEYTIMEOUT = 1;
+    # Quickly switch vi modes
+    KEYTIMEOUT = 1;
 
-      _JAVA_AWT_WM_NONREPARENTING = 1;
+    _JAVA_AWT_WM_NONREPARENTING = 1;
   };
 
   fonts.fontconfig.enable = true;
