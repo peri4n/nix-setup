@@ -85,6 +85,7 @@
     katago
     kubectl
     kubernetes-helm
+    libreoffice
     marksman
     maven
     mplayer
