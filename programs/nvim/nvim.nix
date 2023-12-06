@@ -51,7 +51,7 @@ in
       nvim-lspconfig
       nvim-dap
       nvim-dap-ui
-      lualine-lsp-progress
+      nvim-notify
       null-ls-nvim
       lsp-inlayhints-nvim
 
