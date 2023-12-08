@@ -54,6 +54,7 @@ in
       nvim-notify
       null-ls-nvim
       lsp-inlayhints-nvim
+      neorg
 
       # telescope
       telescope-nvim
