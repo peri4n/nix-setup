@@ -136,4 +136,5 @@ in
   home.packages = [ nvim-wrapped ];
 
   xdg.configFile."nvim/lua/user".source = ./lua/user;
+  xdg.configFile."nvim/ftplugin".source = ./ftplugin;
 }
