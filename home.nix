@@ -66,6 +66,7 @@
     fd
     feh
     fira-code
+    firefox-devedition
     foliate
     freecad
     fzf
