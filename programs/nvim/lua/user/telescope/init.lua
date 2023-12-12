@@ -8,7 +8,7 @@ telescope.setup {
     path_display = {
       shorten = {
         len = 3,
-        exclude = {1, -1, -2}
+        exclude = {-1, -2}
       }
     },
 
