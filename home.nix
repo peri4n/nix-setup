@@ -8,6 +8,7 @@
     ./programs/direnv.nix
     ./programs/exa.nix
     ./programs/fzf.nix
+    ./programs/firefox
     ./programs/git/git.nix
     ./programs/github
     ./programs/gpg.nix
@@ -66,7 +67,6 @@
     fd
     feh
     fira-code
-    firefox-devedition
     foliate
     freecad
     fzf
@@ -120,7 +120,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 
   gtk = {
     enable = true;
