@@ -57,6 +57,7 @@
     broot
     btop
     buku
+    bukubrow
     calibre
     cura
     darktable
@@ -165,12 +166,6 @@
       enable = true;
       defaultApplications = {
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
-        "text/html" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/about" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/http" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/https" = [ "brave-browser.desktop" ];
-        "x-scheme-handler/jetbrains" = [ "jetbrains-toolbox.desktop" ];
-        "x-scheme-handler/unknown" = [ "brave-browser.desktop" ];
       };
     };
 
