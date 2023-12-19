@@ -49,6 +49,7 @@
     appimage-run
     aspell
     aspellDicts.de
+    awscli2
     bat
     bemenu
     bitwarden-cli
