@@ -34,10 +34,6 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
--- Don't leave visual mode when changing indent
-vim.keymap.set('x', '>', '>gv')
-vim.keymap.set('x', '<', '<gv')
-
 -- Always use gF when pressing gf
 vim.keymap.set({'n', 'x'}, 'gf', 'gF')
 
