@@ -52,6 +52,7 @@ in
       nvim-dap
       nvim-dap-ui
       nvim-notify
+      nvim-lsp-notify
       null-ls-nvim
       lsp-inlayhints-nvim
       neorg

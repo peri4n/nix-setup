@@ -8,13 +8,19 @@ telescope.setup {
     path_display = {
       shorten = {
         len = 3,
-        exclude = {-1, -2}
+        exclude = { -1, -2 }
       }
     },
-
-    layout_strategy = "horizontal",
+    layout_strategy = "vertical",
     layout_config = {
-      vertical = { width = 0.8 }
+        vertical = {
+            width = 0.5,
+            height = 0.7,
+            preview_cutoff = 1,
+            prompt_position = "top",
+            preview_height = 0.4,
+            mirror = true,
+        },
     },
 
     selection_strategy = "reset",
@@ -51,4 +57,4 @@ vim.keymap.set('n', '<leader>sc', require('user.telescope.picker').edit_configs)
 
 telescope.load_extension("ui-select")
 telescope.load_extension('fzf')
-
+telescope.load_extension('fzf')
