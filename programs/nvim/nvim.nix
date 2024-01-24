@@ -55,7 +55,6 @@ in
       nvim-lsp-notify
       null-ls-nvim
       lsp-inlayhints-nvim
-      neorg
 
       # telescope
       telescope-nvim
@@ -71,6 +70,9 @@ in
       cmp-git
       cmp-cmdline
       lspkind-nvim
+
+      # copilot
+      copilot-lua
 
       lualine-nvim
 
@@ -113,9 +115,10 @@ in
     ];
 
     extraPackages = with pkgs; [
+      nodejs_21
       (jdt-language-server.overrideAttrs (old: rec {
-        version = "1.29.0";
-        timestamp = "202310261436";
+        version = "1.30.1";
+        timestamp = "202312071447";
       }))
       checkstyle
 

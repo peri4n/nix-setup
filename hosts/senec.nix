@@ -215,17 +215,6 @@ in
       nixos-option
       inetutils
 
-      (pkgs.wrapOBS {
-        plugins = with pkgs.obs-studio-plugins; [
-          wlrobs
-          obs-pipewire-audio-capture
-          obs-gstreamer
-          obs-backgroundremoval
-          input-overlay
-          looking-glass-obs
-        ];
-      })
-
       qpwgraph
     ];
   };

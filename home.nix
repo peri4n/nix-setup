@@ -8,7 +8,6 @@
     ./programs/direnv.nix
     ./programs/exa.nix
     ./programs/fzf.nix
-    ./programs/firefox
     ./programs/git/git.nix
     ./programs/github
     ./programs/gpg.nix
@@ -47,6 +46,7 @@
     (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
     anki
     appimage-run
+    arduino-cli
     aspell
     aspellDicts.de
     awscli2
@@ -60,7 +60,6 @@
     buku
     bukubrow
     calibre
-    cura
     darktable
     delta
     difftastic
@@ -92,6 +91,7 @@
     marksman
     maven
     mplayer
+    newsboat
     nap
     nixpkgs-fmt
     obsidian

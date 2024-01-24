@@ -77,9 +77,7 @@ local config = {
   },
 
   init_options = {
-    bundles = {
-      vim.fn.glob("/home/fbull/dev/tools/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-0.39.0.jar")
-    }
+    bundles = {}
   },
 
   on_attach = function(client, bufnr)
