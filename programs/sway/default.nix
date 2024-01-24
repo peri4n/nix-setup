@@ -81,7 +81,7 @@ in
 
           "${modifier}+Shift+y" = "move scratchpad";
           "${modifier}+y" = "scratchpad show";
-          "${modifier}+b" = "exec ${pkgs.kitty}/bin/kitty --class bookmarks_launcher -e $HOME/.zsh/functions/bookmarks.zsh";
+          "${modifier}+comma" = "exec ${pkgs.buku}/bin/buku -p -f 3 | ${pkgs.gnused}/bin/sed 's/\t/ /g' | ${pkgs.bemenu}/bin/bemenu -i -l 10 | ${pkgs.coreutils}/bin/cut -d ' ' -f 1 | ${pkgs.findutils}/bin/xargs --no-run-if-empty ${pkgs.buku}/bin/buku -o";
 
           "${modifier}+Shift+c" = "reload";
           "${modifier}+p" = "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
