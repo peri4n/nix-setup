@@ -25,5 +25,6 @@
   };
 
   xdg.configFile."kitty/diff.conf".source = ./diff.conf;
+  xdg.configFile."kitty/daily.conf".source = ./daily.conf;
   xdg.configFile."kitty/open-actions.conf".source = ./open-actions.conf;
 }

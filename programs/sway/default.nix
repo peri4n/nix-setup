@@ -82,6 +82,7 @@ in
           "${modifier}+Shift+y" = "move scratchpad";
           "${modifier}+y" = "scratchpad show";
           "${modifier}+comma" = "exec ${pkgs.buku}/bin/buku -p -f 3 | ${pkgs.gnused}/bin/sed 's/\t/ /g' | ${pkgs.bemenu}/bin/bemenu -i -l 10 | ${pkgs.coreutils}/bin/cut -d ' ' -f 1 | ${pkgs.findutils}/bin/xargs --no-run-if-empty ${pkgs.buku}/bin/buku -o";
+          "${modifier}+t" = "[app_id=\"kitty_daily\"] scratchpad show";
 
           "${modifier}+Shift+c" = "reload";
           "${modifier}+p" = "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
@@ -91,6 +92,9 @@ in
         };
 
       startup = [
+        {
+          command = "${pkgs.kitty}/bin/kitty --class=kitty_daily --session=$HOME/.config/kitty/daily.conf";
+        }
         {
           command = "${pkgs.swaycons}/bin/swaycons";
         }
@@ -166,6 +170,9 @@ in
 
     extraConfig = ''
       for_window [app_id="bookmarks_launcher"] floating enable, floating_minimum_size 2000 x 800, floating_maximum_size 2000 x 800, border none
+
+      for_window [app_id="kitty_daily"] move to scratchpad
+
 
       set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
       exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
