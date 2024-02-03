@@ -22,6 +22,10 @@
     keybindings = {
       "kitty_mod+t" = "new_tab_with_cwd";
     };
+    shellIntegration = {
+      mode = "enabled";
+      enableZshIntegration = true;
+    };
   };
 
   xdg.configFile."kitty/diff.conf".source = ./diff.conf;

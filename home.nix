@@ -12,7 +12,7 @@
     ./programs/git/git.nix
     ./programs/github
     ./programs/gpg.nix
-    ./programs/kitty/kitty.nix
+    ./programs/kitty
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
     ./programs/readline.nix
