@@ -12,6 +12,7 @@
     ./programs/git/git.nix
     ./programs/github
     ./programs/gpg.nix
+    ./programs/jq
     ./programs/kitty
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
