@@ -52,7 +52,6 @@
     aspellDicts.de
     awscli2
     bat
-    bemenu
     bitwarden-cli
     blueman
     brave
@@ -74,7 +73,6 @@
     fzf
     gcc
     gh
-    git
     git-extras
     gitlint
     graphviz
@@ -84,7 +82,6 @@
     hledger
     httpie
     jetbrains.idea-ultimate
-    jq
     katago
     kubectl
     kubernetes-helm
@@ -101,7 +98,6 @@
     pavucontrol
     pinentry
     proselint
-    ripgrep
     rnix-lsp
     rtorrent
     signal-desktop
