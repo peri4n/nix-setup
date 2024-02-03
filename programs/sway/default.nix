@@ -6,6 +6,7 @@ let
   ws3 = "3: files";
   ws4 = "4: system";
   ws5 = "5: music";
+  loadNotes = "${pkgs.kitty}/bin/kitty --class=kitty_daily --session=$HOME/.config/kitty/daily.conf";
 in
 {
   wayland.windowManager.sway = {
@@ -83,6 +84,7 @@ in
           "${modifier}+y" = "scratchpad show";
           "${modifier}+comma" = "exec ${pkgs.buku}/bin/buku -p -f 3 | ${pkgs.gnused}/bin/sed 's/\t/ /g' | ${pkgs.bemenu}/bin/bemenu -i -l 10 | ${pkgs.coreutils}/bin/cut -d ' ' -f 1 | ${pkgs.findutils}/bin/xargs --no-run-if-empty ${pkgs.buku}/bin/buku -o";
           "${modifier}+t" = "[app_id=\"kitty_daily\"] scratchpad show";
+          "${modifier}+Shift+t" = "exec ${loadNotes}";
 
           "${modifier}+Shift+c" = "reload";
           "${modifier}+p" = "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
@@ -93,7 +95,7 @@ in
 
       startup = [
         {
-          command = "${pkgs.kitty}/bin/kitty --class=kitty_daily --session=$HOME/.config/kitty/daily.conf";
+          command = loadNotes;
         }
         {
           command = "${pkgs.swaycons}/bin/swaycons";
