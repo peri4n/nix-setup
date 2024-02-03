@@ -2,6 +2,7 @@
 {
   imports = [
     ./programs/bat.nix
+    ./programs/bemenu
     ./programs/brave.nix
     ./programs/broot.nix
     ./programs/btop
