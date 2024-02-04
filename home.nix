@@ -23,7 +23,7 @@
     ./programs/swaylock
     ./programs/tealdeer.nix
     ./programs/waybar
-    ./programs/zathura.nix
+    ./programs/zathura
     ./programs/zsh
     ./programs/zoxide
 
