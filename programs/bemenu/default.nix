@@ -7,8 +7,8 @@ in
     enable = true;
     settings = with colors.dracula.hex; {
       tb = comment;
-      tf = foreground; 
-      fb = background; 
+      tf = foreground;
+      fb = background;
       ff = foreground;
       nb = background;
       nf = comment;
