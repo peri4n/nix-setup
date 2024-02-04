@@ -59,7 +59,7 @@
       export LESS_TERMCAP_se=$'\e[0m'         # reset reverse video
       export LESS_TERMCAP_ue=$'\e[0m'         # reset underline
 
-      export EXA_COLORS="uu=36:gu=37:sn=32:sb=32:da=34:ur=34:uw=35:ux=36:ue=36:gr=34:gw=35:gx=36:tr=34:tw=35:tx=36:"
+      export LS_COLORS=$(dircolors)
     '';
 
     shellAliases = {
