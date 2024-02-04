@@ -55,14 +55,10 @@
     aspell
     aspellDicts.de
     awscli2
-    bat
     bitwarden-cli
     blueman
-    brave
     broot
-    btop
     buku
-    bukubrow
     calibre
     darktable
     delta
@@ -71,7 +67,6 @@
     entr
     fd
     feh
-    fira-code
     foliate
     freecad
     fzf
@@ -79,10 +74,10 @@
     gh
     git-extras
     gitlint
-    graphviz
     glab
     glow
     gopls
+    graphviz
     hledger
     httpie
     jetbrains.idea-ultimate
@@ -90,10 +85,9 @@
     kubectl
     kubernetes-helm
     libreoffice
-    marksman
     maven
     mplayer
-    newsboat
+    mustache-go
     nap
     nixpkgs-fmt
     obsidian
@@ -110,15 +104,11 @@
     steam
     tasksh
     taskwarrior
-    tealdeer
     unzip
     v4l-utils
     vimgolf
     vlc
-    zsh
-
     zk
-    mustache-go
   ];
 
   nixpkgs.config.allowUnfree = true;
