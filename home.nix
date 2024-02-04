@@ -16,6 +16,7 @@
     ./programs/kitty
     ./programs/lesspipe.nix
     ./programs/nvim/nvim.nix
+    ./programs/newsboat
     ./programs/ripgrep
     ./programs/readline.nix
     ./programs/starship.nix
