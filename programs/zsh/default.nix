@@ -47,8 +47,6 @@
           mkdir -p "$1" && cd "$1"
       }
 
-      export BROWSER=firefox
-
       export MANPAGER="${pkgs.less}/bin/less -s -M +Gg"
 
       export LESS_TERMCAP_mb=$'\e[1;31m'      # begin bold
