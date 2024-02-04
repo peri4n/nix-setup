@@ -13,11 +13,53 @@
         autosetuprebase = "always";
       };
       color = {
-        ui = true;
+        ui = "auto";
       };
       commit = {
         gpgSign = false;
         template = "~/.gitmessage";
+      };
+      color."branch" = {
+        current ="cyan bold reverse";
+        local = "white";
+        plain = "";
+        remote = "cyan";
+      };
+      color."diff" = {
+        commit = "";
+        func = "cyan";
+        plain = "";
+        whitespace = "magenta reverse";
+        meta = "white";
+        frag = "cyan bold reverse";
+        old = "red";
+        new = "green";
+      };
+      color."grep" = {
+        context = "";
+        filename = "";
+        function = "";
+        linenumber = "white";
+        match = "";
+        selected = "";
+        separator = "";
+      };
+      color."interactive" = {
+        error = "";
+        header = "";
+        help = "";
+        prompt = "white";
+      };
+      color."status" = {
+        added = "green";
+        changed = "yellow";
+        header = "";
+        localBranch = "";
+        nobranch = "";
+        remoteBranch = "cyan bold";
+        unmerged = "magenta bold reverse";
+        untracked = "red";
+        updated = "green bold";
       };
       core = {
         editor = "nvim";
