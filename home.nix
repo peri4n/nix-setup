@@ -37,6 +37,7 @@
     ./services/nm-applet
     ./services/swayidle
     ./services/syncthing
+    ./services/wob
   ];
 
   programs.home-manager.enable = true;
@@ -144,9 +145,6 @@
     EDITOR = "nvim";
     GPG_TTY = "$(tty)";
     JDTLS_HOME = "$HOME/downloads/jdtls/";
-
-    # XDG
-    XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
 
     # Stack : Cargo
     PATH = "$PATH:$HOME/.local/bin:$HOME/.cargo/bin";

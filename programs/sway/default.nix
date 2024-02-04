@@ -175,9 +175,7 @@ in
 
       for_window [app_id="kitty_daily"] move to scratchpad
 
-
       set $WOBSOCK $XDG_RUNTIME_DIR/wob.sock
-      exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 
       # Brightness
       bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $WOBSOCK
