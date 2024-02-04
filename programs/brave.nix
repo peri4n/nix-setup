@@ -12,6 +12,7 @@
       { id = "pkehgijcmpdhfbdbbnkijodmdjhbjlgp"; } # Privacy Badger
       { id = "bkdgflcldnnnapblkhphbgpggdiikppg"; } # DuckDuckGo
       { id = "bcjindcccaagfpapjjmafapmmgkkhgoa"; } # JSON Formatter
+      { id = "clngdbkpkpeebahjckkjfobafhncgmne"; } # Stylus
     ];
   };
 }
