@@ -5,6 +5,7 @@
 { config, pkgs, ... }:
 let
   colors = import ../themes/dracula.nix;
+  homeManagerSessionVars = "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh";
 in
 {
   imports =
@@ -231,6 +232,7 @@ in
       default_session = initial_session;
     };
   };
+  environment.extraInit = "[[ -f ${homeManagerSessionVars} ]] && source ${homeManagerSessionVars}";
 
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
