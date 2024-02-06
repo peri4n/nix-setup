@@ -4,7 +4,7 @@
     ./programs/bat.nix
     ./programs/bemenu
     ./programs/brave.nix
-    ./programs/broot.nix
+    ./programs/broot
     ./programs/btop
     ./programs/direnv.nix
     ./programs/exa.nix

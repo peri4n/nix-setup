@@ -9,21 +9,13 @@ in
     enable = true;
     enableZshIntegration = true;
     settings = {
-      skin = with colors.dracula.rgb; {
-        default_fg = toRgb foreground;
-        default_bg = toRgb background;
-        tree_fg = "red";
-        directory = toRgb cyan + " " + toRgb pink;
-        input = "none none";
-        status_normal = "none none";
-        status_italic = toRgb yellow + " none";
-        status_bold = toRgb yellow + " none";
-        status_job = toRgb yellow + " none";
-        status_code = toRgb yellow + " none";
-        status_ellipsis = toRgb yellow + " none";
-        flag_value = toRgb yellow + " none";
-        flag_label = "none none";
-      };
+      imports = [
+        "verbs.hjson"
+        {
+          file = "skins/dracula.hjson";
+          luma = [ "dark" "unknown" "light" ];
+        }
+      ];
       verbs = [
         {
           key = "ctrl-h";
@@ -45,4 +37,5 @@ in
       ];
     };
   };
+  xdg.configFile."broot/skins/dracula.hjson".source = ./dracula.hjson;
 }
