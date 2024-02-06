@@ -55,7 +55,7 @@
     aspell
     aspellDicts.de
     awscli2
-    bitwarden-cli
+    rbw
     blueman
     broot
     buku
@@ -85,6 +85,7 @@
     kubectl
     kubernetes-helm
     libreoffice
+    libnotify
     maven
     mplayer
     mustache-go
@@ -108,6 +109,7 @@
     v4l-utils
     vimgolf
     vlc
+    yad
     zk
   ];
 
