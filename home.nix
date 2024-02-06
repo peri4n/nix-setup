@@ -96,6 +96,7 @@
     pandoc
     pavucontrol
     pinentry
+    pinentry-bemenu
     proselint
     rnix-lsp
     rtorrent
