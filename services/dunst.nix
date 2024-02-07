@@ -45,7 +45,7 @@ in
         separator_color = "frame";
 
         # Text
-        font = "Fira Code 10";
+        font = "FiraCode Nerd Font 10";
         line_height = 0;
         markup = "full";
         format = "%s %p\\n%b";
