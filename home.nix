@@ -154,6 +154,13 @@
 
   xdg = {
     enable = true;
+    userDirs = {
+      download = "${config.home.homeDirectory}/download";
+      documents = "${config.home.homeDirectory}/docs";
+      pictures = "${config.home.homeDirectory}/pics";
+      music = "${config.home.homeDirectory}/music";
+    };
+
     mime.enable = true;
     mimeApps = {
       enable = true;
