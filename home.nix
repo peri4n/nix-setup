@@ -38,6 +38,7 @@
     ./services/nm-applet
     ./services/swayidle
     ./services/syncthing
+    ./services/udiskie
     ./services/wob
   ];
 
