@@ -139,8 +139,6 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    GPG_TTY = "$(tty)";
-    JDTLS_HOME = "$HOME/downloads/jdtls/";
 
     # Stack : Cargo
     PATH = "$PATH:$HOME/.local/bin:$HOME/.cargo/bin";
