@@ -58,7 +58,9 @@ in
 
       # telescope
       telescope-nvim
+      telescope-project-nvim
       telescope-fzf-native-nvim
+      telescope-ui-select
       telescope-ui-select
 
       # cmp

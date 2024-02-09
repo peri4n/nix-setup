@@ -39,6 +39,22 @@ telescope.setup {
     },
     ["ui-select"] = {
       require("telescope.themes").get_dropdown()
+    },
+    project = {
+      base_dirs = {
+        {
+          path = '~/work/repos/firmwareupdate-service',
+          title = "Firmwareupdate Service"
+        },
+        '~/work/repos/pg-cluster-config',
+        '~/work/repos/qa-cluster-config',
+        '~/work/repos/prod-cluster-config',
+      },
+      hidden_files = true, -- default: false
+      theme = "dropdown",
+      order_by = "asc",
+      search_by = "title",
+      sync_with_nvim_tree = true, -- default false
     }
   }
 }
@@ -54,7 +70,8 @@ vim.keymap.set('n', '<leader>se', builtin.buffers)
 vim.keymap.set('n', '<leader>st', builtin.treesitter)
 vim.keymap.set('n', '<leader>sh', builtin.help_tags)
 vim.keymap.set('n', '<leader>sc', require('user.telescope.picker').edit_configs)
+vim.keymap.set('n', '<leader>sp', function() telescope.extensions.project.project({}) end)
 
-telescope.load_extension("ui-select")
+telescope.load_extension('ui-select')
 telescope.load_extension('fzf')
-telescope.load_extension('fzf')
+telescope.load_extension('project')
