@@ -19,6 +19,7 @@
     ./programs/newsboat
     ./programs/ripgrep
     ./programs/readline.nix
+    ./programs/rtorrent
     ./programs/starship.nix
     ./programs/sway
     ./programs/swaylock
@@ -100,7 +101,6 @@
     pinentry-bemenu
     proselint
     rnix-lsp
-    rtorrent
     signal-desktop
     slack
     spotify
