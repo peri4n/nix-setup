@@ -6,7 +6,7 @@ local workspace_dir = '/home/fbull/.cache/jdtls/' .. project_name
 
 local config = {
   cmd = {
-    'jdt-language-server',
+    'jdtls',
     '-data', workspace_dir
   },
 

@@ -118,10 +118,7 @@ in
 
     extraPackages = with pkgs; [
       nodejs_21
-      (jdt-language-server.overrideAttrs (old: rec {
-        version = "1.30.1";
-        timestamp = "202312071447";
-      }))
+      jdt-language-server
       checkstyle
 
       # Lua
