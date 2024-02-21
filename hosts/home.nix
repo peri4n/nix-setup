@@ -54,6 +54,25 @@ in
   # Enable networking
   networking.networkmanager.enable = true;
 
+  networking.extraHosts = ''
+    10.100.157.4   	ems-device-identity-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.5   	ems-controller-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.8   	ccoe-sonarqube-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.9   	ems-oscitool-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.10  	ems-wallbox-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.11  	ems-firmwareupdate-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.13  	ems-remote-console-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.14  	newsenec-portal-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.17  	ems-maintenance-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.18  	license-service-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.21  	islandmode-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.22  	pip-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.23  	ems-config-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.24  	ems-status-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.27   sg-ready-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.28  	battery-psql-eds-pg-01.postgres.database.azure.com
+  '';
+
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
   console.useXkbConfig = true;

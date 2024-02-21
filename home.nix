@@ -105,6 +105,7 @@
     slack
     spotify
     steam
+    usql
     tasksh
     taskwarrior
     unzip
