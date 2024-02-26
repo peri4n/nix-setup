@@ -36,11 +36,13 @@ in
     enable = true;
     driSupport32Bit = true;
     extraPackages = with pkgs; [
+      rocmPackages.clr.icd
       intel-media-driver
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
       intel-compute-runtime
+      amdvlk
     ];
   };
 
