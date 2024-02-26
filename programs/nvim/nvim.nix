@@ -1,9 +1,8 @@
 { config, pkgs, libs, ... }:
 
 let
-  nvim-wrapped = pkgs.writeShellScriptBin "v" ''
-    export JAVA_OPTS=-javaagent:${pkgs.lombok}/share/java/lombok.jar
-    nvim "$@"
+  jdtlsWrapped = pkgs.writeShellScriptBin "jdtls" ''
+    ${pkgs.jdt-language-server}/bin/jdtls --jvm-arg=-javaagent:${pkgs.lombok}/share/java/lombok.jar
   '';
   telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
     name = "telescope-ui-select";
@@ -118,7 +117,7 @@ in
 
     extraPackages = with pkgs; [
       nodejs_21
-      jdt-language-server
+      jdtlsWrapped
       checkstyle
 
       # Lua
@@ -137,7 +136,6 @@ in
 
     extraPython3Packages = (ps: with ps; [ python-lsp-server ]);
   };
-  home.packages = [ nvim-wrapped ];
 
   xdg.configFile."nvim/lua/user".source = ./lua/user;
   xdg.configFile."nvim/ftplugin".source = ./ftplugin;

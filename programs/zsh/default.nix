@@ -68,6 +68,7 @@
       mkdir = "mkdir -pv";
       o = "xdg-open";
       e = "exit";
+      v = "nvim";
 
       # navigation
       "..." = "cd ../..";
