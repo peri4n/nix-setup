@@ -110,7 +110,7 @@ in
       # editing
       vim-unimpaired
       vim-surround
-      leap-nvim
+      flash-nvim
       nvim-autopairs
       comment-nvim
 
