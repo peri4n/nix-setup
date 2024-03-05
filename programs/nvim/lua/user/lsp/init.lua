@@ -1,4 +1,4 @@
-require("user.lsp.null")
+require("user.lsp.none")
 require("user.lsp.java")
 require("user.lsp.rust")
 require("user.lsp.lua")

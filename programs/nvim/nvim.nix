@@ -59,8 +59,9 @@ in
       nvim-dap-ui
       nvim-notify
       nvim-lsp-notify
-      null-ls-nvim
+      none-ls-nvim
       lsp-inlayhints-nvim
+      playground
 
       # telescope
       telescope-nvim
