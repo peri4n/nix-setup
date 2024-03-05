@@ -1,8 +1,15 @@
 { config, pkgs, libs, ... }:
 
 let
+  lombok = pkgs.lombok.overrideAttrs (oldAttrs: {
+    version = "edge";
+    src = pkgs.fetchurl {
+      url = "https://projectlombok.org/lombok-edge.jar";
+      sha256 = "dKGXarBfccfROP7oH/GiQ8kkVYcIrU9w5t7PHIFXYSQ=";
+    };
+  });
   jdtlsWrapped = pkgs.writeShellScriptBin "jdtls" ''
-    ${pkgs.jdt-language-server}/bin/jdtls --jvm-arg=-javaagent:${pkgs.lombok}/share/java/lombok.jar
+    ${pkgs.jdt-language-server}/bin/jdtls --jvm-arg=-javaagent:${lombok}/share/java/lombok.jar
   '';
   telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
     name = "telescope-ui-select";
