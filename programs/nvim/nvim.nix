@@ -96,7 +96,7 @@ in
       nvim-schemastore
 
       # file browser
-      nvim-tree-lua
+      oil-nvim
 
       nvim-web-devicons
 
