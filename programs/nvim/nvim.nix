@@ -146,5 +146,6 @@ in
   };
 
   xdg.configFile."nvim/lua/user".source = ./lua/user;
+  xdg.configFile."nvim/queries".source = ./queries;
   xdg.configFile."nvim/ftplugin".source = ./ftplugin;
 }
