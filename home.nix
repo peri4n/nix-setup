@@ -62,6 +62,7 @@
     broot
     buku
     calibre
+    cura
     darktable
     delta
     difftastic
