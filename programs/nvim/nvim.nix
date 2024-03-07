@@ -113,6 +113,7 @@ in
       flash-nvim
       nvim-autopairs
       comment-nvim
+      rainbow-delimiters-nvim
 
       # snippets
       luasnip
