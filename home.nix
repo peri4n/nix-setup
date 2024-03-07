@@ -106,6 +106,7 @@
     spotify
     steam
     usql
+    tailspin
     tasksh
     taskwarrior
     unzip
