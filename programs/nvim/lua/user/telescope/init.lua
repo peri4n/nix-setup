@@ -42,13 +42,21 @@ telescope.setup {
     },
     project = {
       base_dirs = {
-        {
-          path = '~/work/repos/firmwareupdate-service',
-          title = "Firmwareupdate Service"
-        },
+        -- work
+        '~/work/repos/firmwareupdate-service',
         '~/work/repos/pg-cluster-config',
         '~/work/repos/qa-cluster-config',
         '~/work/repos/prod-cluster-config',
+
+        -- private
+        '~/dev/challenges/',
+
+        -- docs
+        '~/docs/blog/',
+        '~/docs/zk/',
+
+        -- setup
+        '~/.config/nixpkgs/',
       },
       hidden_files = true, -- default: false
       theme = "dropdown",
