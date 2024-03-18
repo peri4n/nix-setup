@@ -61,7 +61,7 @@
     broot
     buku
     calibre
-    cura
+    super-slicer
     darktable
     delta
     difftastic
@@ -105,6 +105,7 @@
     slack
     spotify
     steam
+    stylua
     usql
     tailspin
     tasksh
