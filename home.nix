@@ -61,12 +61,13 @@
     broot
     buku
     calibre
-    super-slicer
+    super-slicer-latest
     darktable
     delta
     difftastic
     dunst
     entr
+    exercism
     fd
     feh
     foliate
@@ -81,6 +82,7 @@
     gopls
     graphviz
     hledger
+    hugo
     httpie
     jetbrains.idea-ultimate
     katago
@@ -100,7 +102,6 @@
     pinentry
     pinentry-bemenu
     proselint
-    rnix-lsp
     signal-desktop
     slack
     spotify

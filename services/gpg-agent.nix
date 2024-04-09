@@ -5,7 +5,7 @@
     enable = true;
     enableZshIntegration = true;
     enableSshSupport = true;
-    pinentryFlavor = "tty";
+    pinentryPackage = pkgs.pinentry-tty;
     defaultCacheTtl = 1800;
   };
 }

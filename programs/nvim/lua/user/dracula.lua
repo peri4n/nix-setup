@@ -11,6 +11,7 @@ dracula.setup({
       ["@markup.heading.3"] = { fg = colors.yellow, bold = true, italic = true },
       ["@markup.heading.4"] = { fg = colors.green, bold = true, italic = true },
       ["@markup.heading.5"] = { fg = colors.cyan, bold = true, italic = true },
+      ["@markup.link"] = { fg = colors.cyan, bold = true, italic = true },
       ["@markup.todo.checked.conceal"] = { fg = colors.green },
       ["@markup.todo.unchecked.conceal"] = { fg = colors.bright_blue }
     }

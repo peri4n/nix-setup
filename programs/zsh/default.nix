@@ -5,7 +5,7 @@
     enable = true;
     autocd = true;
 
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = false;
     defaultKeymap = "viins";
 

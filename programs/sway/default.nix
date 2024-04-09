@@ -55,10 +55,10 @@ in
 
       assigns = {
         "${ws1}" = [{ class = "^Brave-browser$"; }];
-        "2: terms" = [{ app_id = "^kitty$"; }];
-        "3: files" = [{ app_id = "^broot$"; }];
-        "4: system" = [{ app_id = "^btop$"; }];
-        "5: music" = [{ class = "^Spotify$"; }];
+        "${ws2}" = [{ app_id = "^kitty$"; }];
+        "${ws3}" = [{ app_id = "^broot$"; }];
+        "${ws4}" = [{ app_id = "^btop$"; }];
+        "${ws5}" = [{ class = "^Spotify$"; }];
       };
 
       keybindings =
