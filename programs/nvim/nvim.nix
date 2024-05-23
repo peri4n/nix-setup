@@ -107,7 +107,7 @@ in
     ];
 
     extraPackages = with pkgs; [
-      nodejs_21
+      nodejs_22
       jdtlsWrapped
       checkstyle
 
