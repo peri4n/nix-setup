@@ -13,15 +13,6 @@ let
       sha256 = "/JM2KX70JXa3sydrUj13Vd4rRwhn3VrdW7qLLHqIqyY=";
     };
   };
-  nvim-metals = pkgs.vimUtils.buildVimPlugin {
-    name = "nvim-metals";
-    src = pkgs.fetchFromGitHub {
-      owner = "scalameta";
-      repo = "nvim-metals";
-      rev = "3312490ef74ea149121a82fde578a13b1921cef9";
-      sha256 = "TIqp1udXn5GW23jcprPk08nV85E3nYLXatOEEyUeIXY=";
-    };
-  };
   nvim-schemastore = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-schemastore";
     src = pkgs.fetchFromGitHub {
@@ -85,7 +76,6 @@ in
       vim-markdown
       zk-nvim
       nvim-jdtls
-      nvim-metals
       nvim-schemastore
 
       # file browser
