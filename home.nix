@@ -114,6 +114,7 @@
     tasksh
     taskwarrior
     unzip
+    unrar
     v4l-utils
     vimgolf
     vlc
