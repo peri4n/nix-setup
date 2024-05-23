@@ -107,6 +107,8 @@
     spotify
     steam
     stylua
+    spacenavd
+    spnavcfg
     usql
     tailspin
     tasksh

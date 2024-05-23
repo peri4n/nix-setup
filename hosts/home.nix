@@ -73,6 +73,7 @@ in
     10.100.157.24  	ems-status-psql-eds-pg-01.postgres.database.azure.com
     10.100.157.27   sg-ready-psql-eds-pg-01.postgres.database.azure.com
     10.100.157.28  	battery-psql-eds-pg-01.postgres.database.azure.com
+    10.100.157.33   v123-firmwareupdate-service-psql-eds-pg-01.postgres.database.azure.com
   '';
 
   # Set your time zone.
