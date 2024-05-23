@@ -44,8 +44,6 @@ in
       nvim-notify
       nvim-lsp-notify
       none-ls-nvim
-      lsp-inlayhints-nvim
-      playground
 
       # telescope
       telescope-nvim

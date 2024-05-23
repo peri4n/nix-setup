@@ -10,8 +10,6 @@ local config = {
     '-data', workspace_dir
   },
 
-  root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' }),
-
   -- Here you can configure eclipse.jdt.ls specific settings
   -- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
   -- for a list of options
@@ -64,7 +62,9 @@ local config = {
         organizeImports = false,
       },
       inlayhints = {
-        parameterNames = true
+        parameterNames = {
+          enabled = 'all'
+        },
       },
       jdt = {
         ls = {
