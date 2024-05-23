@@ -4,24 +4,6 @@ let
   jdtlsWrapped = pkgs.writeShellScriptBin "jdtls" ''
     ${pkgs.jdt-language-server}/bin/jdtls --jvm-arg=-javaagent:${pkgs.lombok}/share/java/lombok.jar
   '';
-  telescope-ui-select = pkgs.vimUtils.buildVimPlugin {
-    name = "telescope-ui-select";
-    src = pkgs.fetchFromGitHub {
-      owner = "nvim-telescope";
-      repo = "telescope-ui-select.nvim";
-      rev = "62ea5e58c7bbe191297b983a9e7e89420f581369";
-      sha256 = "/JM2KX70JXa3sydrUj13Vd4rRwhn3VrdW7qLLHqIqyY=";
-    };
-  };
-  nvim-schemastore = pkgs.vimUtils.buildVimPlugin {
-    name = "nvim-schemastore";
-    src = pkgs.fetchFromGitHub {
-      owner = "b0o";
-      repo = "SchemaStore.nvim";
-      rev = "5e1225507dbc46710e7f2bec86f2444e578a959e";
-      sha256 = "ZVCFe74vTQl7joDY1VmRCG3ot4CMH7w18cxQi5KvxMc=";
-    };
-  };
 in
 {
   programs.neovim = {
@@ -49,7 +31,7 @@ in
       telescope-nvim
       telescope-project-nvim
       telescope-fzf-native-nvim
-      telescope-ui-select
+      telescope-ui-select-nvim
 
       # cmp
       nvim-cmp
@@ -73,7 +55,7 @@ in
       vim-markdown
       zk-nvim
       nvim-jdtls
-      nvim-schemastore
+      SchemaStore-nvim
 
       # file browser
       oil-nvim
