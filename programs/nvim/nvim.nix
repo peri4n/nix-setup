@@ -1,4 +1,4 @@
-{ config, pkgs, libs, ... }:
+{ pkgs, ... }:
 
 let
   jdtlsWrapped = pkgs.writeShellScriptBin "jdtls" ''
@@ -51,7 +51,6 @@ in
       telescope-nvim
       telescope-project-nvim
       telescope-fzf-native-nvim
-      telescope-ui-select
       telescope-ui-select
 
       # cmp
@@ -111,6 +110,9 @@ in
       nodejs_21
       jdtlsWrapped
       checkstyle
+
+      # Nix
+      nil
 
       # Lua
       sumneko-lua-language-server
