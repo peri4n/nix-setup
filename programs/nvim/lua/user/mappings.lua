@@ -43,3 +43,6 @@ vim.keymap.set({'n', 'x'}, 'gF', ':e <cfile><CR>')
 -- TODO only apply in markdown buffers-- Zettelkasten
 -- Zettelkasten
 vim.keymap.set('n', '<leader>zc', ':e Cards/')
+
+--- Autofix word under cursor
+vim.keymap.set("n", "za", "1z=")
