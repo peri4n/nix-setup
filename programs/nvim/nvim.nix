@@ -21,10 +21,6 @@ in
       nvim-treesitter-context
       nvim-treesitter-textobjects
       nvim-lspconfig
-      nvim-dap
-      nvim-dap-ui
-      nvim-notify
-      nvim-lsp-notify
       none-ls-nvim
 
       # telescope
@@ -74,7 +70,6 @@ in
       vim-surround
       flash-nvim
       nvim-autopairs
-      comment-nvim
       rainbow-delimiters-nvim
 
       # snippets

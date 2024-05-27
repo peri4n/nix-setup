@@ -36,6 +36,10 @@
         title = "Zettelkasten Forum";
       }
       {
+        url = "https://zettelkasten.de/feed.atom";
+        title = "Zettelkasten Blog";
+      }
+      {
         url = "https://www.heise.de/rss/heise-atom.xml";
         title = "Heise Online";
       }
