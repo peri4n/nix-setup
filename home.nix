@@ -76,20 +76,24 @@
     gcc
     gh
     git-extras
+    git-town
     gitlint
     glab
     glow
+    gnuplot
     gopls
     graphviz
     hledger
     hugo
     httpie
     jetbrains.idea-ultimate
+    jdk21
     katago
     kubectl
     kubernetes-helm
     libreoffice
     libnotify
+    man-pages
     maven
     mplayer
     mustache-go
