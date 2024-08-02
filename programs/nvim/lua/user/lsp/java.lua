@@ -87,8 +87,6 @@ local config = {
     vim.api.nvim_buf_create_user_command(bufnr, "JdtJol", function() require('jdtls').jol() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtBytecode", function() require('jdtls').javap() end, {})
     vim.api.nvim_buf_create_user_command(bufnr, "JdtJshell", function() require('jdtls').jshell() end, {})
-
-    require('jdtls').setup_dap({ hotcodereplace = 'auto' })
   end
 }
 
