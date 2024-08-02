@@ -75,7 +75,75 @@
         url = "https://chaosradio.de/feed/m4a";
         title = "Chaosradio";
       }
+      {
+        url = "https://buttondown.email/hillelwayne/rss";
+        title = "Hillel Wayne";
+      }
+      {
+        url = "https://this-week-in-rust.org/rss.xml";
+        title = "This Week in Rust";
+      }
+      {
+        url = "https://blog.rust-lang.org/feed.xml";
+        title = "Rust Main Blog";
+        tags = ["rust"];
+      }
+      {
+        url = "https://blog.rust-lang.org/inside-rust/feed.xml";
+        title = "Inside Rust Blog";
+        tags = ["rust"];
+      }
+      {
+        url = "https://feeds.feedburner.com/ThePragmaticEngineer";
+        title = "The Pragmatic Engineer";
+      }
+      {
+        url = "https://developerlife.com/feed.xml";
+        title = "Building with Naz";
+        tags = ["rust"];
+      }
+      {
+        url = "https://rustacean-station.org/podcast.rss";
+        title = "Rustacean Station";
+        tags = ["rust"];
+      }
+      {
+        url = "https://jamesmunns.com/podcast-feed-m4a.xml";
+        title = "Chats with James";
+      }
+      {
+        url = "https://logbuch-netzpolitik.de/feed/m4a";
+        title = "Logbuch Netzpolitik";
+      }
+      {
+        url = "https://bit-rauschen.podigee.io/feed/mp3";
+        title = "Bit-Rauschen";
+      }
+      {
+        url = "https://holub.com/feed/";
+        title = "Allen Holub";
+      }
+      {
+        url = "https://newrustacean.com/feed.xml";
+        title = "New Rustacean";
+        tags = ["rust"];
+      }
+      {
+        url = "https://raw.githubusercontent.com/request-for-explanation/podcast/gh-pages/rss.xml";
+        title = "Request for Explanation";
+        tags = ["rust"];
+      }
+      {
+        url = "https://letscast.fm/podcasts/rust-in-production-82281512/feed";
+        title = "Rust in Production";
+        tags = ["rust"];
+      }
+      {
+        url = "https://software-architektur.tv/feed.xml";
+        title = "Software Architektur TV";
+      }
     ];
+
     extraConfig = ''
       color background default default
       color listnormal color255 default
@@ -94,6 +162,11 @@
       highlight article ":.*\\(link\\)$" cyan default
       highlight article ":.*\\(image\\)$" blue default
       highlight article ":.*\\(embedded flash\\)$" magenta default
+
+      player mplayer
+      download-path "~/podcasts/%n"
+      download-filename-format "%F-%t.%e"
+      max-downloads 3
     '';
   };
 }
