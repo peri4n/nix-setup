@@ -56,8 +56,6 @@
       export LESS_TERMCAP_me=$'\e[0m'         # reset bold/blink
       export LESS_TERMCAP_se=$'\e[0m'         # reset reverse video
       export LESS_TERMCAP_ue=$'\e[0m'         # reset underline
-
-      export LS_COLORS=$(dircolors)
     '';
 
     shellAliases = {
