@@ -8,6 +8,11 @@
         title = "Reddit NixOS";
       }
       {
+        url = "https://www.reddit.com/r/rust.rss";
+        title = "Reddit Rust";
+        tags = ["rust"];
+      }
+      {
         url = "https://nixos.org/blog/announcements-rss.xml";
         title = "NixOS News";
       }
@@ -40,10 +45,6 @@
         title = "Zettelkasten Blog";
       }
       {
-        url = "https://www.heise.de/rss/heise-atom.xml";
-        title = "Heise Online";
-      }
-      {
         url = "https://www.heise.de/developer/rss/news-atom.xml";
         title = "Heise Developer";
       }
@@ -56,7 +57,7 @@
         title = "Martin Fowler Blog";
       }
       {
-        url = "https://blog.fefe.de/rss.xml";
+        url = "https://blog.fefe.de/rss.xml?html";
         title = "Fefe Blog";
       }
       {
@@ -142,6 +143,22 @@
         url = "https://software-architektur.tv/feed.xml";
         title = "Software Architektur TV";
       }
+      {
+        url = "https://softwareengineeringdaily.com/category/podcast/feed/";
+        title = "Software Engineering Daily";
+      }
+      { 
+        url = "https://feeds.transistor.fm/programming-throwdown";
+        title = "Programming Throwdown";
+      }
+      { 
+        url = "https://passwort.podigee.io/feed/mp3";
+        title = "Passwort - Der Podcast von Heise Security";
+      }
+      {
+        url = "https://wayofthecrab.com/rss.xml";
+        title = "The Way of the Crab";
+      }
     ];
 
     extraConfig = ''
@@ -163,10 +180,14 @@
       highlight article ":.*\\(image\\)$" blue default
       highlight article ":.*\\(embedded flash\\)$" magenta default
 
+      feedlist-format "%4i %n %11u %t %> %T "
+
       player mplayer
       download-path "~/podcasts/%n"
       download-filename-format "%F-%t.%e"
       max-downloads 3
+
+      podcast-auto-enqueue yes
     '';
   };
 }

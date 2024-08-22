@@ -1,4 +1,5 @@
 { config, pkgs, lib, ... }:
+
 {
   imports = [
     ./programs/bat.nix
@@ -55,7 +56,7 @@
     arduino-cli
     aspell
     aspellDicts.de
-    awscli2
+    # awscli2
     rbw
     blueman
     broot
@@ -63,7 +64,7 @@
     calibre
     super-slicer-latest
     darktable
-    delta
+    # delta
     difftastic
     dunst
     entr
@@ -117,6 +118,7 @@
     tailspin
     tasksh
     taskwarrior
+    typst
     unzip
     unrar
     v4l-utils
@@ -163,11 +165,16 @@
 
   xdg = {
     enable = true;
-    userDirs = {
-      download = "${config.home.homeDirectory}/download";
+    userDirs = rec {
+      enable = true;
+      createDirectories = true;
+      download = "${config.home.homeDirectory}/downloads";
       documents = "${config.home.homeDirectory}/docs";
+      templates = "${documents}/templates";
       pictures = "${config.home.homeDirectory}/pics";
       music = "${config.home.homeDirectory}/music";
+      videos = "${config.home.homeDirectory}/videos";
+      publicShare = "${config.home.homeDirectory}/public";
     };
 
     mime.enable = true;

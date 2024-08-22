@@ -108,7 +108,6 @@ in
   services.udisks2.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -246,7 +245,66 @@ in
       default_session = initial_session;
     };
   };
+
   environment.extraInit = "[[ -f ${homeManagerSessionVars} ]] && source ${homeManagerSessionVars}";
+
+  systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
+  systemd.services.phpfpm.serviceConfig.ProtectHome = "read-only";
+
+  services.nginx = {
+    enable = true;
+    user = "fbull";
+    virtualHosts."internal-monitoring.org" = {
+      root = "/var/www/html";
+      locations."/" = {
+        index = "index.php index.html index.htm";
+      };
+      locations."~ \\.php$" = {
+        extraConfig = ''
+          try_files $uri /index.html index.php;
+
+          fastcgi_split_path_info ^(.+\.php)(/.+)$;
+
+          fastcgi_pass  unix:${config.services.phpfpm.pools.mypool.socket};
+          fastcgi_index index.php;
+
+          include ${pkgs.nginx}/conf/fastcgi_params;
+          include ${pkgs.nginx}/conf/fastcgi.conf;
+        '';
+      };
+    };
+  };
+
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb;
+    ensureUsers = [
+      {
+        name = "fbull";
+        ensurePermissions = {
+          "*.*" = "ALL PRIVILEGES";
+        };
+      }
+    ];
+  };
+
+  services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
+    user = "nobody";                                                                                                                                                                                                                           
+    settings = {                                                                                                                                                                                                                               
+      "pm" = "dynamic";            
+      "listen.owner" = config.services.nginx.user;                                                                                                                                                                                                              
+      "pm.max_children" = 5;                                                                                                                                                                                                                   
+      "pm.start_servers" = 2;                                                                                                                                                                                                                  
+      "pm.min_spare_servers" = 1;                                                                                                                                                                                                              
+      "pm.max_spare_servers" = 3;                                                                                                                                                                                                              
+      "pm.max_requests" = 500;                                                                                                                                                                                                                 
+
+      "php_admin_value[error_log]" = "stderr";
+      "php_admin_flag[log_errors]" = true;
+      "catch_workers_output" = true;
+    };                                                                                                                                                                                                                                         
+  };
+
 
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
@@ -264,7 +322,6 @@ in
       pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-gtk
     ];
-    gtkUsePortal = true;
   };
 
   # enable sway window manager
