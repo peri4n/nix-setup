@@ -56,7 +56,7 @@
     arduino-cli
     aspell
     aspellDicts.de
-    # awscli2
+    awscli2
     rbw
     blueman
     broot
@@ -64,7 +64,7 @@
     calibre
     super-slicer-latest
     darktable
-    # delta
+    delta
     difftastic
     dunst
     entr
