@@ -125,6 +125,7 @@
     vimgolf
     vlc
     yad
+    zeal
     zk
   ];
 
