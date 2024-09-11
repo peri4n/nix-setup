@@ -71,14 +71,16 @@ in
       flash-nvim
       nvim-autopairs
       rainbow-delimiters-nvim
+      indent-blankline-nvim
 
       # snippets
       luasnip
       cmp_luasnip
       friendly-snippets
 
+      # misc
       vim-ledger
-      indent-blankline-nvim
+      todo-comments-nvim 
     ];
 
     extraPackages = with pkgs; [

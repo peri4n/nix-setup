@@ -15,6 +15,9 @@ local config = {
   -- for a list of options
   settings = {
     java = {
+      settings = {
+        url = "~/.config/nvim/jdtls_settings.pref";
+      };
       sources = {
         organizeImports = {
           starThreshold = 9999;
@@ -47,7 +50,7 @@ local config = {
         enabled = false
       },
       format = {
-        enabled = true;
+        enabled = false;
         settings = {
           url = "~/.config/nixpkgs/programs/nvim/GoogleStyle.xml";
           profile = "GoogleStyle";
