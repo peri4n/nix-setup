@@ -182,6 +182,7 @@
       enable = true;
       defaultApplications = {
         "application/pdf" = [ "org.pwmt.zathura.desktop" ];
+        "application/epub+zip" = [ "com.github.johnfactotum.Foliate.desktop" ];
       };
     };
 
