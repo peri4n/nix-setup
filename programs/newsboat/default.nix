@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   programs.newsboat = {
     enable = true;
@@ -45,20 +45,12 @@
         title = "Zettelkasten Blog";
       }
       {
-        url = "https://www.heise.de/developer/rss/news-atom.xml";
-        title = "Heise Developer";
-      }
-      {
         url = "https://serokell.io/blog.rss.xml";
         title = "Serokell Blog";
       }
       {
         url = "https://martinfowler.com/bliki/bliki.atom";
         title = "Martin Fowler Blog";
-      }
-      {
-        url = "https://blog.fefe.de/rss.xml?html";
-        title = "Fefe Blog";
       }
       {
         url = "https://media.ccc.de/updates.rdf";
@@ -158,6 +150,7 @@
       {
         url = "https://wayofthecrab.com/rss.xml";
         title = "The Way of the Crab";
+        tags = [ "rust" ];
       }
     ];
 
