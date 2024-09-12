@@ -136,12 +136,18 @@
   gtk = {
     enable = true;
     iconTheme = {
-      package = pkgs.tela-icon-theme;
-      name = "Tela";
+      package = pkgs.dracula-icon-theme;
+      name = "Dracula";
     };
     theme = {
       package = pkgs.dracula-theme;
       name = "Dracula";
+    };
+    gtk3 = {
+      bookmarks = [ 
+        "file:///home/fbull/work/"
+        "file:///home/fbull/docs/prints/"
+      ];
     };
   };
 
