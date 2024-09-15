@@ -13,6 +13,13 @@ in
 {
   services.dunst = {
     enable = true;
+
+    iconTheme = {
+      package = pkgs.dracula-icon-theme;
+      name = "Dracula";
+      size = "scalable";
+    };
+
     settings = {
       global = {
         monitor = 0;
@@ -73,16 +80,19 @@ in
         class = "Dunst";
         corner_radius = 0;
       };
+
       urgency_low = {
         timeout = 10;
         foreground = "${foreground}";
         background = "${background}";
       };
+
       urgency_normal = {
         timeout = 10;
         foreground = "${normal_foreground}";
         background = "${background}";
       };
+
       urgency_critical = {
         timeout = 0;
         foreground = "${critical_foreground}";

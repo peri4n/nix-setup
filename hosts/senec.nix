@@ -95,7 +95,6 @@ in
   services.udisks2.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -251,7 +250,6 @@ in
       pkgs.xdg-desktop-portal-wlr
       pkgs.xdg-desktop-portal-gtk
     ];
-    gtkUsePortal = true;
   };
 
   # enable sway window manager

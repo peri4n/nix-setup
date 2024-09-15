@@ -11,6 +11,7 @@ in
 {
   hardware.nvidia = {
     modesetting.enable = true;
+    open = false;
     prime = {
       # offload enable the card only on demand
       offload.enable = true;
@@ -23,7 +24,7 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = [
     nvidia-offload
   ];
 

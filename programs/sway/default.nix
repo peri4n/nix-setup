@@ -174,6 +174,8 @@ in
     ];
 
     extraConfig = ''
+      seat * hide_cursor 3000
+
       for_window [app_id="bookmarks_launcher"] floating enable, floating_minimum_size 2000 x 800, floating_maximum_size 2000 x 800, border none
 
       for_window [app_id="kitty_daily"] move to scratchpad
