@@ -1,7 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
+    ./programs/atuin
     ./programs/bat.nix
     ./programs/bemenu
     ./programs/brave.nix

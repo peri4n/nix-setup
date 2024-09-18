@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 let
   colors = import ../../themes/dracula.nix;
 in
