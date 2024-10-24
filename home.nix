@@ -125,6 +125,7 @@
     v4l-utils
     vimgolf
     vlc
+    wine
     yad
     zeal
     zk
@@ -145,7 +146,7 @@
       name = "Dracula";
     };
     gtk3 = {
-      bookmarks = [ 
+      bookmarks = [
         "file:///home/fbull/work/"
         "file:///home/fbull/docs/prints/"
       ];

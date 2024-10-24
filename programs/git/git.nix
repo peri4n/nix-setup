@@ -20,7 +20,7 @@
         template = "~/.gitmessage";
       };
       color."branch" = {
-        current ="cyan bold reverse";
+        current = "cyan bold reverse";
         local = "white";
         plain = "";
         remote = "cyan";

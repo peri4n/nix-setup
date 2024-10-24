@@ -10,7 +10,7 @@
       {
         url = "https://www.reddit.com/r/rust.rss";
         title = "Reddit Rust";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://nixos.org/blog/announcements-rss.xml";
@@ -79,12 +79,12 @@
       {
         url = "https://blog.rust-lang.org/feed.xml";
         title = "Rust Main Blog";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://blog.rust-lang.org/inside-rust/feed.xml";
         title = "Inside Rust Blog";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://feeds.feedburner.com/ThePragmaticEngineer";
@@ -93,12 +93,12 @@
       {
         url = "https://developerlife.com/feed.xml";
         title = "Building with Naz";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://rustacean-station.org/podcast.rss";
         title = "Rustacean Station";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://jamesmunns.com/podcast-feed-m4a.xml";
@@ -119,17 +119,17 @@
       {
         url = "https://newrustacean.com/feed.xml";
         title = "New Rustacean";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://raw.githubusercontent.com/request-for-explanation/podcast/gh-pages/rss.xml";
         title = "Request for Explanation";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://letscast.fm/podcasts/rust-in-production-82281512/feed";
         title = "Rust in Production";
-        tags = ["rust"];
+        tags = [ "rust" ];
       }
       {
         url = "https://software-architektur.tv/feed.xml";
@@ -139,11 +139,11 @@
         url = "https://softwareengineeringdaily.com/category/podcast/feed/";
         title = "Software Engineering Daily";
       }
-      { 
+      {
         url = "https://feeds.transistor.fm/programming-throwdown";
         title = "Programming Throwdown";
       }
-      { 
+      {
         url = "https://passwort.podigee.io/feed/mp3";
         title = "Passwort - Der Podcast von Heise Security";
       }

@@ -80,7 +80,7 @@ in
 
       # misc
       vim-ledger
-      todo-comments-nvim 
+      todo-comments-nvim
     ];
 
     extraPackages = with pkgs; [

@@ -8,7 +8,7 @@ require("user.lsp.yamlls")
 local common = require('user.lsp.common')
 local nvim_lsp = require('lspconfig')
 
-local servers = { "hls", "nil_ls", "tsserver", "pylsp", "gopls", "cssls", "html", "tailwindcss" }
+local servers = { "hls", "nil_ls", "ts_ls", "pylsp", "gopls", "cssls", "html", "tailwindcss" }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = common.add_mappings,

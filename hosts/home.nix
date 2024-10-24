@@ -32,6 +32,8 @@ in
 
   hardware.keyboard.qmk.enable = true;
 
+  hardware.rtl-sdr.enable = true;
+
   hardware.opengl = {
     enable = true;
     driSupport32Bit = true;
@@ -43,6 +45,7 @@ in
       libvdpau-va-gl
       intel-compute-runtime
       amdvlk
+      rtl-sdr
     ];
   };
 
@@ -123,7 +126,7 @@ in
   users.users.fbull = {
     isNormalUser = true;
     description = "fbull";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker" "audio" "dialout" "tty" ];
+    extraGroups = [ "networkmanager" "wheel" "video" "docker" "audio" "dialout" "tty" "plugdev" ];
     shell = pkgs.zsh;
   };
 
@@ -288,21 +291,21 @@ in
     ];
   };
 
-  services.phpfpm.pools.mypool = {                                                                                                                                                                                                             
-    user = "nobody";                                                                                                                                                                                                                           
-    settings = {                                                                                                                                                                                                                               
-      "pm" = "dynamic";            
-      "listen.owner" = config.services.nginx.user;                                                                                                                                                                                                              
-      "pm.max_children" = 5;                                                                                                                                                                                                                   
-      "pm.start_servers" = 2;                                                                                                                                                                                                                  
-      "pm.min_spare_servers" = 1;                                                                                                                                                                                                              
-      "pm.max_spare_servers" = 3;                                                                                                                                                                                                              
-      "pm.max_requests" = 500;                                                                                                                                                                                                                 
+  services.phpfpm.pools.mypool = {
+    user = "nobody";
+    settings = {
+      "pm" = "dynamic";
+      "listen.owner" = config.services.nginx.user;
+      "pm.max_children" = 5;
+      "pm.start_servers" = 2;
+      "pm.min_spare_servers" = 1;
+      "pm.max_spare_servers" = 3;
+      "pm.max_requests" = 500;
 
       "php_admin_value[error_log]" = "stderr";
       "php_admin_flag[log_errors]" = true;
       "catch_workers_output" = true;
-    };                                                                                                                                                                                                                                         
+    };
   };
 
 
