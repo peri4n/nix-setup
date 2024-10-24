@@ -1,6 +1,1 @@
-{ config, pkgs, lib, ... }:
-{
-  services.clipman = {
-    enable = true;
-  };
-}
+{ config, pkgs, lib, ... }: { services.clipman = { enable = true; }; }

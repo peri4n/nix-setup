@@ -2,8 +2,7 @@
 let
   colors = import ../../themes/dracula.nix;
   dropHashTag = color: lib.substring 1 10 color;
-in
-{
+in {
   services.wob = {
     enable = true;
     settings = with colors.dracula.hex; {

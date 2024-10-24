@@ -49,7 +49,6 @@
   home.username = "fbull";
   home.homeDirectory = "/home/fbull";
 
-
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "Hasklig" ]; })
     anki
@@ -146,10 +145,8 @@
       name = "Dracula";
     };
     gtk3 = {
-      bookmarks = [
-        "file:///home/fbull/work/"
-        "file:///home/fbull/docs/prints/"
-      ];
+      bookmarks =
+        [ "file:///home/fbull/work/" "file:///home/fbull/docs/prints/" ];
     };
   };
 

@@ -6,15 +6,9 @@
     userName = "Fabian Bull";
     userEmail = "spam+github@fbull.de";
     extraConfig = {
-      user = {
-        signingkey = "5CFF22DEB3BEAFDD";
-      };
-      branch = {
-        autosetuprebase = "always";
-      };
-      color = {
-        ui = "auto";
-      };
+      user = { signingkey = "5CFF22DEB3BEAFDD"; };
+      branch = { autosetuprebase = "always"; };
+      color = { ui = "auto"; };
       commit = {
         gpgSign = false;
         template = "~/.gitmessage";
@@ -79,16 +73,12 @@
         hyperlinks = true;
         syntax-theme = "Dracula";
       };
-      init = {
-        defaultBranch = "main";
-      };
+      init = { defaultBranch = "main"; };
       merge = {
         renamelimit = 2000;
         conflictstyle = "diff3";
       };
-      tag = {
-        gpgSign = false;
-      };
+      tag = { gpgSign = false; };
       push = {
         default = "simple";
         autoSetupRemote = true;
@@ -97,14 +87,13 @@
         rebase = true;
         ff = "only";
       };
-      rerere = {
-        enabled = true;
-      };
+      rerere = { enabled = true; };
     };
     aliases = {
       a = "add";
       aa = "add --all";
-      b = "branch --format='%(HEAD) %(color:cyan)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
+      b =
+        "branch --format='%(HEAD) %(color:cyan)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate";
       bd = "branch -d";
       c = "commit -v";
       ca = "commit -am";
@@ -122,8 +111,10 @@
       f = "fetch";
       pl = "pull --ff-only";
       plr = "pull --rebase";
-      ll = "log --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
-      ls = "log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat";
+      ll =
+        "log --graph --pretty=format:'%C(cyan)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
+      ls =
+        "log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s%Cblue [%cn]' --decorate --numstat";
       ph = "push";
       phf = "push -f";
       rb = "rebase";
@@ -135,7 +126,9 @@
       sts = "stash save";
       stl = "stash list";
       stp = "stash pop";
-      rc = "! git rev-parse HEAD | tr -d '\n' | wl-copy";
+      rc = ''
+        ! git rev-parse HEAD | tr -d '
+        ' | wl-copy'';
     };
   };
 

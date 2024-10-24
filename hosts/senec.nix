@@ -5,15 +5,14 @@
 { config, pkgs, ... }:
 let
   colors = import ../themes/dracula.nix;
-  homeManagerSessionVars = "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh";
-in
-{
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ../hardware/senec/hardware-configuration.nix
-      ../hardware/nvidia.nix
-    ];
+  homeManagerSessionVars =
+    "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh";
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ../hardware/senec/hardware-configuration.nix
+    ../hardware/nvidia.nix
+  ];
 
   nix = {
     package = pkgs.nixFlakes;
@@ -189,9 +188,7 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   environment = {
     variables.EDITOR = "nvim";
@@ -232,7 +229,8 @@ in
       default_session = initial_session;
     };
   };
-  environment.extraInit = "[[ -f ${homeManagerSessionVars} ]] && source ${homeManagerSessionVars}";
+  environment.extraInit =
+    "[[ -f ${homeManagerSessionVars} ]] && source ${homeManagerSessionVars}";
 
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
@@ -246,10 +244,7 @@ in
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
-    extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
   };
 
   # enable sway window manager

@@ -19,9 +19,7 @@
       copy_on_select = "yes";
       background_opacity = "0.95";
     };
-    keybindings = {
-      "kitty_mod+t" = "new_tab_with_cwd";
-    };
+    keybindings = { "kitty_mod+t" = "new_tab_with_cwd"; };
     shellIntegration = {
       mode = "enabled";
       enableZshIntegration = true;

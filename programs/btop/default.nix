@@ -1,9 +1,6 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.btop = {
     enable = true;
-    settings = {
-      color_theme = "dracula";
-    };
+    settings = { color_theme = "dracula"; };
   };
 }

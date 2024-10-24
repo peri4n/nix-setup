@@ -9,8 +9,7 @@ let
   critical_background = "#ff5555";
   critical_foreground = "#f8f8f2";
   critical_frame_color = "#ff5555";
-in
-{
+in {
   services.dunst = {
     enable = true;
 

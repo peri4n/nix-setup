@@ -2,9 +2,10 @@
 
 let
   colors = import ../themes/dracula.nix;
-  toRgb = with lib.strings; str: "rgb(" + concatStringsSep ", " (splitString " " str) + ")";
-in
-{
+  toRgb = with lib.strings;
+    str:
+    "rgb(" + concatStringsSep ", " (splitString " " str) + ")";
+in {
   programs.broot = {
     enable = true;
     enableZshIntegration = true;

@@ -4,8 +4,7 @@ let
   jdtlsWrapped = pkgs.writeShellScriptBin "jdtls" ''
     ${pkgs.jdt-language-server}/bin/jdtls --jvm-arg=-javaagent:${pkgs.lombok}/share/java/lombok.jar
   '';
-in
-{
+in {
   programs.neovim = {
     enable = true;
     viAlias = true;

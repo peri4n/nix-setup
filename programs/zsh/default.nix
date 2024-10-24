@@ -108,7 +108,8 @@
 
       # tldr
       t = "tldr";
-      tf = "tldr --list | fzf --preview \"tldr {1} --color=always\" --preview-window=right,60% | xargs tldr";
+      tf = ''
+        tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,60% | xargs tldr'';
 
       # bat
       cat = "bat";

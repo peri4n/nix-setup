@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
-let
-  colors = import ../themes/dracula.nix;
-in
-{
+let colors = import ../themes/dracula.nix;
+in {
   programs.fzf = {
     enable = true;
     enableZshIntegration = true;
@@ -22,10 +20,9 @@ in
       header = comment;
     };
     defaultCommand = "${pkgs.fd}/bin/fd --type f";
-    defaultOptions = [
-      "--height 40%"
-    ];
+    defaultOptions = [ "--height 40%" ];
     fileWidgetCommand = "${pkgs.fd}/bin/fd --type f";
-    fileWidgetOptions = [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
+    fileWidgetOptions =
+      [ "--preview 'bat --style=numbers --color=always --line-range :500 {}'" ];
   };
 }

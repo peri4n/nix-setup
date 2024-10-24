@@ -7,8 +7,7 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec "$@"
   '';
-in
-{
+in {
   hardware.nvidia = {
     modesetting.enable = true;
     open = false;
@@ -24,11 +23,7 @@ in
     };
   };
 
-  environment.systemPackages = [
-    nvidia-offload
-  ];
+  environment.systemPackages = [ nvidia-offload ];
 
-  services.xserver = {
-    videoDrivers = [ "nvidia" ];
-  };
+  services.xserver = { videoDrivers = [ "nvidia" ]; };
 }

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   services.kanshi = {
     enable = true;
     profiles = {
@@ -17,20 +16,20 @@
             status = "disable";
           }
         ];
-        exec = "${pkgs.libnotify}/bin/notify-send 'Switched to DOCKED environment'";
+        exec =
+          "${pkgs.libnotify}/bin/notify-send 'Switched to DOCKED environment'";
       };
 
       undocked = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-            scale = 1.5;
-            mode = "3840x2400";
-            position = "0,0";
-          }
-        ];
-        exec = "${pkgs.libnotify}/bin/notify-send 'Switched to UNDOCKED environment'";
+        outputs = [{
+          criteria = "eDP-1";
+          status = "enable";
+          scale = 1.5;
+          mode = "3840x2400";
+          position = "0,0";
+        }];
+        exec =
+          "${pkgs.libnotify}/bin/notify-send 'Switched to UNDOCKED environment'";
       };
     };
   };

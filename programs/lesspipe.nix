@@ -1,7 +1,5 @@
 { config, pkgs, lib, ... }:
 
 {
-  programs.lesspipe = {
-    enable = true;
-  };
+  programs.lesspipe = { enable = true; };
 }

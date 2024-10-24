@@ -1,8 +1,6 @@
 { config, pkgs, lib, ... }:
-let
-  colors = import ../../themes/dracula.nix;
-in
-{
+let colors = import ../../themes/dracula.nix;
+in {
   programs.zathura = {
     enable = true;
     options = with colors.dracula.hex; {

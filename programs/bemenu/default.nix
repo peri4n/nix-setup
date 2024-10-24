@@ -1,8 +1,6 @@
 { ... }:
-let
-  colors = import ../../themes/dracula.nix;
-in
-{
+let colors = import ../../themes/dracula.nix;
+in {
   programs.bemenu = {
     enable = true;
     settings = with colors.dracula.hex; {

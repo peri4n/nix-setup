@@ -1,5 +1,4 @@
-{ config, pkgs, lib, ... }:
-{
+{ config, pkgs, lib, ... }: {
   services.gammastep = {
     enable = true;
     latitude = 51.5;

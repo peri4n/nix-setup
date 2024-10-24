@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.newsboat = {
     enable = true;
     urls = [
@@ -122,7 +121,8 @@
         tags = [ "rust" ];
       }
       {
-        url = "https://raw.githubusercontent.com/request-for-explanation/podcast/gh-pages/rss.xml";
+        url =
+          "https://raw.githubusercontent.com/request-for-explanation/podcast/gh-pages/rss.xml";
         title = "Request for Explanation";
         tags = [ "rust" ];
       }

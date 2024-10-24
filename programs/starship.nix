@@ -6,9 +6,7 @@
     enableZshIntegration = true;
     settings = {
       add_newline = false;
-      format = lib.concatStrings [
-        "$directory$git_branch$character"
-      ];
+      format = lib.concatStrings [ "$directory$git_branch$character" ];
       scan_timeout = 10;
       character = {
         success_symbol = "[λ](green)";

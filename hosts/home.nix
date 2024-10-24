@@ -5,14 +5,13 @@
 { config, pkgs, ... }:
 let
   colors = import ../themes/dracula.nix;
-  homeManagerSessionVars = "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh";
-in
-{
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ../hardware/home/hardware-configuration.nix
-    ];
+  homeManagerSessionVars =
+    "/etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh";
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ../hardware/home/hardware-configuration.nix
+  ];
 
   nix = {
     package = pkgs.nixFlakes;
@@ -126,7 +125,16 @@ in
   users.users.fbull = {
     isNormalUser = true;
     description = "fbull";
-    extraGroups = [ "networkmanager" "wheel" "video" "docker" "audio" "dialout" "tty" "plugdev" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "video"
+      "docker"
+      "audio"
+      "dialout"
+      "tty"
+      "plugdev"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -205,9 +213,7 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ "electron-25.9.0" ];
 
   environment = {
     variables.EDITOR = "nvim";
@@ -249,7 +255,8 @@ in
     };
   };
 
-  environment.extraInit = "[[ -f ${homeManagerSessionVars} ]] && source ${homeManagerSessionVars}";
+  environment.extraInit =
+    "[[ -f ${homeManagerSessionVars} ]] && source ${homeManagerSessionVars}";
 
   systemd.services.nginx.serviceConfig.ProtectHome = "read-only";
   systemd.services.phpfpm.serviceConfig.ProtectHome = "read-only";
@@ -259,9 +266,7 @@ in
     user = "fbull";
     virtualHosts."internal-monitoring.org" = {
       root = "/var/www/html";
-      locations."/" = {
-        index = "index.php index.html index.htm";
-      };
+      locations."/" = { index = "index.php index.html index.htm"; };
       locations."~ \\.php$" = {
         extraConfig = ''
           try_files $uri /index.html index.php;
@@ -281,14 +286,10 @@ in
   services.mysql = {
     enable = true;
     package = pkgs.mariadb;
-    ensureUsers = [
-      {
-        name = "fbull";
-        ensurePermissions = {
-          "*.*" = "ALL PRIVILEGES";
-        };
-      }
-    ];
+    ensureUsers = [{
+      name = "fbull";
+      ensurePermissions = { "*.*" = "ALL PRIVILEGES"; };
+    }];
   };
 
   services.phpfpm.pools.mypool = {
@@ -308,7 +309,6 @@ in
     };
   };
 
-
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
   # (org.freedesktop.portal.Desktop) and object path
@@ -321,10 +321,7 @@ in
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
-    extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-    ];
+    extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
   };
 
   # enable sway window manager

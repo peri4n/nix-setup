@@ -15,7 +15,20 @@
         spacing = 4;
         modules-left = [ "custom/logo" "sway/workspaces" "sway/mode" ];
         modules-center = [ "sway/window" ];
-        modules-right = [ "idle_inhibitor" "pulseaudio" "network" "cpu" "memory" "temperature" "backlight" "keyboard-state" "sway/language" "battery" "clock" "tray" ];
+        modules-right = [
+          "idle_inhibitor"
+          "pulseaudio"
+          "network"
+          "cpu"
+          "memory"
+          "temperature"
+          "backlight"
+          "keyboard-state"
+          "sway/language"
+          "battery"
+          "clock"
+          "tray"
+        ];
         # left
         "custom/logo" = {
           exec = "echo ' '";
@@ -58,9 +71,7 @@
             "deactivated" = "";
           };
         };
-        "tray" = {
-          "spacing" = 10;
-        };
+        "tray" = { "spacing" = 10; };
         "clock" = {
           "format" = "{:%A, %B %d, %Y (%R)}  ";
           "tooltip-format" = "<tt><small>{calendar}</small></tt>";
@@ -90,9 +101,7 @@
           "format" = "{usage}% ";
           "tooltip" = false;
         };
-        "memory" = {
-          "format" = "{}% ";
-        };
+        "memory" = { "format" = "{}% "; };
         "temperature" = {
           "critical-threshold" = 80;
           "format" = "{temperatureC}°C {icon} ";

@@ -1,6 +1,1 @@
-{ pkgs, ... }:
-{
-  programs.ripgrep = {
-    enable = true;
-  };
-}
+{ pkgs, ... }: { programs.ripgrep = { enable = true; }; }

@@ -6,10 +6,10 @@ let
   ws3 = "3: files";
   ws4 = "4: system";
   ws5 = "5: music";
-  loadNotes = "${pkgs.kitty}/bin/kitty --class=kitty_daily --session=$HOME/.config/kitty/daily.conf";
+  loadNotes =
+    "${pkgs.kitty}/bin/kitty --class=kitty_daily --session=$HOME/.config/kitty/daily.conf";
   bw-launcher = pkgs.callPackage ./bw-launcher.nix { inherit pkgs; };
-in
-{
+in {
   wayland.windowManager.sway = {
     enable = true;
     systemd.enable = true;
@@ -35,9 +35,7 @@ in
           xkb_layout = "us";
           xkb_variant = "colemak_dh";
         };
-        "type:keyboard" = {
-          xkb_options = "caps:ctrl_modifier,compose:ralt";
-        };
+        "type:keyboard" = { xkb_options = "caps:ctrl_modifier,compose:ralt"; };
       };
 
       fonts = {
@@ -62,10 +60,8 @@ in
       };
 
       keybindings =
-        let
-          modifier = config.wayland.windowManager.sway.config.modifier;
-        in
-        lib.mkOptionDefault {
+        let modifier = config.wayland.windowManager.sway.config.modifier;
+        in lib.mkOptionDefault {
           "${modifier}+Return" = "exec ${pkgs.kitty}/bin/kitty";
           "${modifier}+Shift+x" = "kill";
 
@@ -81,40 +77,36 @@ in
           "${modifier}+Shift+4" = "move container to workspace ${ws4}";
           "${modifier}+Shift+5" = "move container to workspace ${ws5}";
 
-          "${modifier}+d" = "exec ${bw-launcher}/bin/bw-launcher username | ${pkgs.wl-clipboard}/bin/wl-copy";
-          "${modifier}+Shift+d" = "exec ${bw-launcher}/bin/bw-launcher password | ${pkgs.wl-clipboard}/bin/wl-copy -o";
+          "${modifier}+d" =
+            "exec ${bw-launcher}/bin/bw-launcher username | ${pkgs.wl-clipboard}/bin/wl-copy";
+          "${modifier}+Shift+d" =
+            "exec ${bw-launcher}/bin/bw-launcher password | ${pkgs.wl-clipboard}/bin/wl-copy -o";
           "${modifier}+Shift+y" = "move scratchpad";
           "${modifier}+y" = "scratchpad show";
-          "${modifier}+comma" = "exec ${pkgs.buku}/bin/buku -p -f 3 | ${pkgs.gnused}/bin/sed 's/\t/ /g' | ${pkgs.bemenu}/bin/bemenu -i -l 10 | ${pkgs.coreutils}/bin/cut -d ' ' -f 1 | ${pkgs.findutils}/bin/xargs --no-run-if-empty ${pkgs.buku}/bin/buku -o";
-          "${modifier}+t" = "[app_id=\"kitty_daily\"] scratchpad show";
+          "${modifier}+comma" =
+            "exec ${pkgs.buku}/bin/buku -p -f 3 | ${pkgs.gnused}/bin/sed 's/	/ /g' | ${pkgs.bemenu}/bin/bemenu -i -l 10 | ${pkgs.coreutils}/bin/cut -d ' ' -f 1 | ${pkgs.findutils}/bin/xargs --no-run-if-empty ${pkgs.buku}/bin/buku -o";
+          "${modifier}+t" = ''[app_id="kitty_daily"] scratchpad show'';
           "${modifier}+Shift+t" = "exec ${loadNotes}";
 
           "${modifier}+Shift+c" = "reload";
-          "${modifier}+p" = "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
+          "${modifier}+p" =
+            "exec ${pkgs.clipman}/bin/clipman pick --tool=bemenu";
           "${modifier}+Shift+q" = "exec ${pkgs.swaylock}/bin/swaylock -lk";
           "${modifier}+n" = "exec ${pkgs.bemenu}/bin/bemenu-run ";
-          "${modifier}+c" = "exec ${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.swappy}/bin/swappy -f - -o ~/$(date +'%H_%M_%S.png')";
+          "${modifier}+c" = ''
+            exec ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" - | ${pkgs.swappy}/bin/swappy -f - -o ~/$(date +'%H_%M_%S.png')'';
         };
 
       startup = [
+        { command = loadNotes; }
+        { command = "${pkgs.swaycons}/bin/swaycons"; }
         {
-          command = loadNotes;
+          command =
+            "${pkgs.swaybg}/bin/swaybg -i ${../swaylock/lake-wallpaper.jpg}";
         }
-        {
-          command = "${pkgs.swaycons}/bin/swaycons";
-        }
-        {
-          command = "${pkgs.swaybg}/bin/swaybg -i ${../swaylock/lake-wallpaper.jpg}";
-        }
-        {
-          command = "${pkgs.brave}/bin/brave";
-        }
-        {
-          command = "${pkgs.kitty}/bin/kitty --class broot -e broot";
-        }
-        {
-          command = "${pkgs.kitty}/bin/kitty --class btop -e btop";
-        }
+        { command = "${pkgs.brave}/bin/brave"; }
+        { command = "${pkgs.kitty}/bin/kitty --class broot -e broot"; }
+        { command = "${pkgs.kitty}/bin/kitty --class btop -e btop"; }
       ];
 
       colors = with colors.dracula.hex; {
@@ -169,9 +161,7 @@ in
       gtk = true;
     };
 
-    extraOptions = [
-      "--unsupported-gpu"
-    ];
+    extraOptions = [ "--unsupported-gpu" ];
 
     extraConfig = ''
       seat * hide_cursor 3000
@@ -194,4 +184,4 @@ in
       exec_always "systemctl --user restart kanshi.service"
     '';
   };
-} 
+}
