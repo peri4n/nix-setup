@@ -88,7 +88,7 @@ in {
       checkstyle
 
       # Nix
-      nil
+      nixd
 
       # Lua
       sumneko-lua-language-server
