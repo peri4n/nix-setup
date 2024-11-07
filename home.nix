@@ -115,7 +115,6 @@
     spacenavd
     spnavcfg
     usql
-    tailspin
     tasksh
     taskwarrior
     typst
