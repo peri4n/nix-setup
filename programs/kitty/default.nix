@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   programs.kitty = {
     enable = true;
-    theme = "Dracula";
+    themeFile = "Dracula";
     settings = {
       font_size = "11.0";
       font_family = "Fira Code Nerd Font";

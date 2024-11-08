@@ -36,7 +36,6 @@
     ./services/dunst.nix
     ./services/gammastep
     ./services/gpg-agent.nix
-    ./services/kanshi
     ./services/nm-applet
     ./services/swayidle
     ./services/syncthing
@@ -116,7 +115,7 @@
     spnavcfg
     usql
     tasksh
-    taskwarrior
+    taskwarrior3
     typst
     unzip
     unrar
